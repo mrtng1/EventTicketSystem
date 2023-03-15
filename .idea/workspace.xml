@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/barexample.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_11_2_1_jre18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/materialfx-11.13.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mssql-jdbc-11.2.1.jre18.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/virtualizedfx-11.2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bll/LogicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/LogicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dal/DbConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/DbConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/view/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/mainWindow.fxml" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Main window first attempt">
+      <change afterPath="$PROJECT_DIR$/src/ets/be/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +15,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -113,11 +98,23 @@
       <option name="presentableId" value="Default" />
       <updated>1678872081057</updated>
       <workItem from="1678872082088" duration="3877000" />
-      <workItem from="1678912298978" duration="3926000" />
+      <workItem from="1678912298978" duration="4227000" />
     </task>
+    <task id="LOCAL-00001" summary="Main window first attempt">
+      <created>1678916754135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678916754135</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Main window first attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main window first attempt" />
   </component>
 </project>

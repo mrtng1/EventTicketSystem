@@ -12,7 +12,7 @@ public class DbConnect {
     public DbConnect(){
         dataSource = new SQLServerDataSource();
         dataSource.setServerName("10.176.111.34");
-        dataSource.setDatabaseName("CSe2022B_e_17_TicketSystem");
+        dataSource.setDatabaseName("CSe2022B_e_17_EventTicketSystem");
         dataSource.setUser("CSe2022B_e_17");
         dataSource.setPassword("CSe2022BE17#");
         dataSource.setPortNumber(1433);

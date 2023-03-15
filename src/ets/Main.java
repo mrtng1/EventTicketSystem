@@ -1,3 +1,5 @@
+package ets;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Load the FXML file
-        URL fxmlUrl = getClass().getResource("gui/view/MainWindow.fxml");
+        URL fxmlUrl = getClass().getResource("gui/view/mainWindow.fxml");
         Parent root = FXMLLoader.load(fxmlUrl);
 
         Scene scene = new Scene(root); // Set the window width and height

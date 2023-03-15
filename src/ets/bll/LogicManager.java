@@ -1,4 +1,4 @@
-package bll;
+package ets.bll;
 
 public class LogicManager {
 

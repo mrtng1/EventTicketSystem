@@ -1,8 +1,10 @@
-package dal;
+package ets.dal;
 
+// microsoft sql imports
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
+// java imports
 import java.sql.Connection;
 import java.sql.SQLException;
 

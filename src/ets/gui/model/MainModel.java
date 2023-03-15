@@ -1,4 +1,4 @@
-package gui.model;
+package ets.gui.model;
 
 public class MainModel {
 }

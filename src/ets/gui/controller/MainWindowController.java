@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -15,6 +17,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -30,7 +34,7 @@ public class MainWindowController implements Initializable {
     private GridPane eventPane;
 
     @FXML
-    private void handleButtonClick(ActionEvent event) {
+    private void viewEventsBtn(ActionEvent event) {
         double startValue = scrollPane.getVvalue();
         double endValue = startValue + 1;
         Timeline timeline = new Timeline(
@@ -39,6 +43,49 @@ public class MainWindowController implements Initializable {
                 )
         );
         timeline.play();
+    }
+    @FXML
+    private void createEventBtn(ActionEvent event) {
+        System.out.println("creating event...");
+
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createEvent.fxml"));
+            Parent createEventParent = fxmlLoader.load();
+
+            // Create a new stage and scene
+            Stage createEventStage = new Stage();
+            createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            createEventStage.setTitle("Create Event");
+            createEventStage.setScene(new Scene(createEventParent));
+
+            // Show the new stage
+            createEventStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void createCoordinatorBtn(ActionEvent event){
+        System.out.println("creating coordinator...");
+
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createCoordinator.fxml"));
+            Parent createEventParent = fxmlLoader.load();
+
+            // Create a new stage and scene
+            Stage createEventStage = new Stage();
+            createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            createEventStage.setTitle("Create Coordinator");
+            createEventStage.setScene(new Scene(createEventParent));
+
+            // Show the new stage
+            createEventStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

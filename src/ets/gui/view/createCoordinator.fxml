@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorController">
+   <children>
+      <HBox layoutX="-2.0" layoutY="-3.0" prefHeight="406.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="406.0" prefWidth="118.0">
+               <children>
+                  <HBox prefHeight="47.0" prefWidth="136.0">
+                     <children>
+                        <MFXToggleButton fx:id="customToggle" prefHeight="34.0" prefWidth="57.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </MFXToggleButton>
+                        <Label prefHeight="20.0" prefWidth="192.0" text="custom">
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="406.0" prefWidth="485.0">
+               <children>
+                  <TextField fx:id="nameField">
+                     <VBox.margin>
+                        <Insets left="125.0" right="125.0" top="100.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="passwordField" layoutX="10.0" layoutY="40.0">
+                     <VBox.margin>
+                        <Insets left="125.0" right="125.0" top="15.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

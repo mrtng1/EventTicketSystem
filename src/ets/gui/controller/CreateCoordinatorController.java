@@ -1,10 +1,14 @@
 package ets.gui.controller;
 
+import com.sun.security.jgss.GSSUtil;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -14,6 +18,8 @@ public class CreateCoordinatorController implements Initializable {
     private TextField nameField, passwordField;
     @FXML
     private MFXToggleButton customToggle;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String randomUsername = generateRandomText(6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")+"EASV";
@@ -37,5 +43,21 @@ public class CreateCoordinatorController implements Initializable {
         }
 
         return randomText.toString();
+    }
+
+    @FXML
+    public void cancelBtn(javafx.event.ActionEvent event) {
+        System.out.println("canceling...");
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    public void createBtn(javafx.event.ActionEvent event) {
+        System.out.println("creating...");
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

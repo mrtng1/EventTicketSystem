@@ -1,6 +1,6 @@
 package ets.dal;
 
-// microsoft sql imports
+// imports
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
@@ -8,6 +8,10 @@ import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class DbConnect {
     private SQLServerDataSource dataSource;
 

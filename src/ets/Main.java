@@ -1,14 +1,20 @@
 package ets;
 
+// imports
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+// java imports
 import java.io.IOException;
 import java.net.URL;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class Main extends Application {
 
     public static void main(String[] args) {

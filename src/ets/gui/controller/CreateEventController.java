@@ -1,11 +1,15 @@
 package ets.gui.controller;
 
+// imports
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
-
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class CreateEventController {
     @FXML
     private void createBtn(ActionEvent event){

@@ -1,6 +1,6 @@
 package ets.gui.controller;
 
-import com.sun.security.jgss.GSSUtil;
+// imports
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,11 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
+// java imports
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class CreateCoordinatorController implements Initializable {
     @FXML
     private TextField nameField, passwordField;

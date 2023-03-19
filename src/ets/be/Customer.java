@@ -1,5 +1,9 @@
 package ets.be;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class Customer {
 
     private int id;

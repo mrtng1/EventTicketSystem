@@ -1,30 +1,30 @@
 package ets.gui.controller;
 
+// imports
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
+// java imports
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class MainWindowController implements Initializable {
 
     @FXML
@@ -46,8 +46,6 @@ public class MainWindowController implements Initializable {
     }
     @FXML
     private void createEventBtn(ActionEvent event) {
-        System.out.println("creating event...");
-
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createEvent.fxml"));
@@ -56,6 +54,7 @@ public class MainWindowController implements Initializable {
             // Create a new stage and scene
             Stage createEventStage = new Stage();
             createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            createEventStage.initStyle(StageStyle.TRANSPARENT);
             createEventStage.setTitle("Create Event");
             createEventStage.setScene(new Scene(createEventParent));
 
@@ -68,8 +67,6 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private void createCoordinatorBtn(ActionEvent event){
-        System.out.println("creating coordinator...");
-
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createCoordinator.fxml"));
@@ -78,6 +75,7 @@ public class MainWindowController implements Initializable {
             // Create a new stage and scene
             Stage createEventStage = new Stage();
             createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            createEventStage.initStyle(StageStyle.TRANSPARENT);
             createEventStage.setTitle("Create Coordinator");
             createEventStage.setScene(new Scene(createEventParent));
 
@@ -85,15 +83,6 @@ public class MainWindowController implements Initializable {
             createEventStage.show();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
-            populateGridPane();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -122,4 +111,12 @@ public class MainWindowController implements Initializable {
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            populateGridPane();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

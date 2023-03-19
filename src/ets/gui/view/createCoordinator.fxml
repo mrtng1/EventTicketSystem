@@ -33,12 +33,12 @@
             </VBox>
             <VBox prefHeight="406.0" prefWidth="485.0">
                <children>
-                  <TextField fx:id="nameField">
+                  <TextField fx:id="nameField" editable="false">
                      <VBox.margin>
                         <Insets left="125.0" right="125.0" top="100.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="passwordField" layoutX="10.0" layoutY="40.0">
+                  <TextField fx:id="passwordField" editable="false" layoutX="10.0" layoutY="40.0">
                      <VBox.margin>
                         <Insets left="125.0" right="125.0" top="15.0" />
                      </VBox.margin>

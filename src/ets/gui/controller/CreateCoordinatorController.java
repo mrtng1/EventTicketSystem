@@ -16,19 +16,18 @@ public class CreateCoordinatorController implements Initializable {
     private MFXToggleButton customToggle;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        String randomUsername = generateRandomText(10);
-        String randomPassword = generateRandomText(10);
+        String randomUsername = generateRandomText(6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")+"EASV";
+        String randomPassword = generateRandomText(10, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
         nameField.setText(randomUsername);
         passwordField.setText(randomPassword);
 
-        customToggle.setOnAction(event -> {
-            nameField.clear();
-            passwordField.clear();
+        customToggle.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            nameField.setEditable(isSelected);
+            passwordField.setEditable(isSelected);
         });
     }
 
-    private String generateRandomText(int length) {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private String generateRandomText(int length, String characters) {
         Random random = new Random();
         StringBuilder randomText = new StringBuilder();
 

@@ -1,6 +1,7 @@
 package ets.be;
 
 // imports
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -14,9 +15,9 @@ public class Event {
     private int id;
     private String name;
     private String location;
-    private Date date;
+    private LocalDate date;
 
-    public Event(UUID uuid, int id, String name, String location, Date date) {
+    public Event(UUID uuid, int id, String name, String location, LocalDate date) {
         this.uuid = uuid;
         this.id = id;
         this.name = name;
@@ -56,11 +57,11 @@ public class Event {
         this.location = location;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

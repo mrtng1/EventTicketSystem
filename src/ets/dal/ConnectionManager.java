@@ -12,10 +12,10 @@ import java.sql.SQLException;
  *
  * @author tomdra01, mrtng1
  */
-public class DbConnect {
+public class ConnectionManager {
     private SQLServerDataSource dataSource;
 
-    public DbConnect(){
+    public ConnectionManager(){
         dataSource = new SQLServerDataSource();
         dataSource.setServerName("10.176.111.34");
         dataSource.setDatabaseName("CSe2022B_e_17_EventTicketSystem");
@@ -30,7 +30,7 @@ public class DbConnect {
     }
 
     public static void main(String[] args) throws SQLException {
-        DbConnect dataBaseConnection = new DbConnect();
+        ConnectionManager dataBaseConnection = new ConnectionManager();
         Connection connection = dataBaseConnection.getConnection();
 
         System.out.println("Database connected" + !connection.isClosed());

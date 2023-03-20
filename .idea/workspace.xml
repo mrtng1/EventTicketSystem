@@ -4,12 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="uz mám dost na dnes">
-      <change afterPath="$PROJECT_DIR$/src/ets/be/Admin.java" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="createEvent.fxml">
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/TicketLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/exceptions/ApplicationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/exceptions/DatabaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/util/QRCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/dal/IDataAccess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/dal/TicketDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/LogicManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/dal/DbConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/mainWindow.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +34,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -69,8 +83,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="DbConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ets.dal.DbConnect" />
+    <configuration name="ConnectionManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ets.dal.ConnectionManager" />
       <module name="EventTicketSystem" />
       <extension name="coverage">
         <pattern>
@@ -91,11 +105,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.DbConnect" />
+      <item itemvalue="Application.ConnectionManager" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DbConnect" />
+        <item itemvalue="Application.ConnectionManager" />
       </list>
     </recent_temporary>
   </component>

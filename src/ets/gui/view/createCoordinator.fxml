@@ -1,46 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXToggleButton?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorController">
+<AnchorPane maxHeight="300.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorController">
    <children>
-      <VBox layoutX="-2.0" layoutY="-3.0" prefHeight="403.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <MFXToggleButton fx:id="customToggle" />
-            <TextField fx:id="nameField" editable="false" maxHeight="25.0" maxWidth="200.0" minHeight="25.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets left="125.0" right="125.0" top="100.0" />
-               </VBox.margin>
-            </TextField>
-            <TextField fx:id="passwordField" editable="false" layoutX="10.0" layoutY="40.0" maxHeight="25.0" maxWidth="200.0" minHeight="25.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets left="125.0" right="125.0" top="15.0" />
-               </VBox.margin>
-            </TextField>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <VBox.margin>
-                  <Insets left="360.0" top="180.0" />
-               </VBox.margin>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#createBtn" text="Create">
-                     <HBox.margin>
-                        <Insets left="100.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel">
-                     <HBox.margin>
-                        <Insets left="10.0" top="20.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
+      <MFXToggleButton fx:id="customToggle" />
+      <TextField fx:id="nameField" editable="false" layoutX="125.0" layoutY="141.0" maxHeight="25.0" maxWidth="200.0" minHeight="25.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="passwordField" editable="false" layoutX="125.0" layoutY="181.0" maxHeight="25.0" maxWidth="200.0" minHeight="25.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutX="383.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
+      <Button layoutX="444.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
    </children>
 </AnchorPane>

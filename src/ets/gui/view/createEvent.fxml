@@ -10,31 +10,27 @@
 
 <AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
    <children>
-      <Button layoutX="355.0" layoutY="293.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
-      <Button layoutX="424.0" layoutY="293.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
-      <VBox layoutX="32.0" layoutY="8.0" prefHeight="325.0" prefWidth="150.0">
+      <Button layoutX="330.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
+      <Button layoutX="399.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
+      <VBox layoutX="45.0" layoutY="33.0" prefHeight="200.0" prefWidth="150.0">
          <children>
             <TextField alignment="TOP_LEFT" promptText="Event name">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField promptText="Location">
+               <VBox.margin>
+                  <Insets top="30.0" />
                </VBox.margin>
             </TextField>
             <DatePicker nodeOrientation="LEFT_TO_RIGHT" promptText="Date" showWeekNumbers="true">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="30.0" />
                </VBox.margin>
             </DatePicker>
-            <TextField promptText="Location">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </TextField>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-               <VBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </VBox.margin>
-            </Pane>
          </children>
       </VBox>
+      <Pane layoutX="255.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
    </children>
 </AnchorPane>

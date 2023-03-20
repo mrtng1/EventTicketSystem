@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="wtf">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mssql_jdbc_11_2_1_jre18.xml" beforeDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="uz mám dost na dnes">
+      <change afterPath="$PROJECT_DIR$/src/ets/be/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>

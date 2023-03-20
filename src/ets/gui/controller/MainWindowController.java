@@ -38,7 +38,7 @@ public class MainWindowController implements Initializable {
         double startValue = scrollPane.getVvalue();
         double endValue = startValue + 1;
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(0.5),
+                new KeyFrame(Duration.seconds(1),
                         new KeyValue(scrollPane.vvalueProperty(), endValue, Interpolator.EASE_BOTH)
                 )
         );

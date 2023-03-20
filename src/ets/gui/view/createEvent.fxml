@@ -1,54 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="mainPane" opacity="0.8" prefHeight="385.0" prefWidth="600.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
+<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
    <children>
-      <HBox layoutX="-1.0" prefHeight="385.0" prefWidth="600.0">
+      <Button layoutX="355.0" layoutY="293.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
+      <Button layoutX="424.0" layoutY="293.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
+      <VBox layoutX="32.0" layoutY="8.0" prefHeight="325.0" prefWidth="150.0">
          <children>
-            <VBox prefHeight="385.0" prefWidth="167.0">
-               <children>
-                  <TextField fx:id="nameField" promptText="name">
-                     <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="nameField1" layoutX="30.0" layoutY="30.0" promptText="location">
-                     <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
-                     </VBox.margin>
-                  </TextField>
-                  <MFXDatePicker>
-                     <VBox.margin>
-                        <Insets left="20.0" top="20.0" />
-                     </VBox.margin>
-                  </MFXDatePicker>
-               </children>
-            </VBox>
-            <HBox prefHeight="385.0" prefWidth="140.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#createBtn" text="Create">
-                     <HBox.margin>
-                        <Insets top="350.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#cancelBtn" text="Cancel">
-                     <HBox.margin>
-                        <Insets left="15.0" top="350.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-               <HBox.margin>
-                  <Insets left="300.0" />
-               </HBox.margin>
-            </HBox>
+            <TextField alignment="TOP_LEFT" promptText="Event name">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <DatePicker nodeOrientation="LEFT_TO_RIGHT" promptText="Date" showWeekNumbers="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </DatePicker>
+            <TextField promptText="Location">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </Pane>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

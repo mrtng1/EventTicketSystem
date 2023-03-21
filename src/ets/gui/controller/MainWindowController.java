@@ -1,6 +1,8 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Event;
+import ets.dal.EventDAO;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
 import javafx.animation.*;
@@ -21,6 +23,8 @@ import javafx.util.Duration;
 // java imports
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -63,6 +67,7 @@ public class MainWindowController implements Initializable {
             // Set the model for the CreateEventController
             CreateEventController createEventController = fxmlLoader.getController();
             createEventController.setModel(new EventModel());
+            createEventController.setRefreshCallback(this::refreshEventCards);
 
             // Show the new stage
             stage.show();
@@ -98,27 +103,45 @@ public class MainWindowController implements Initializable {
     }
 
     private void populateGridPane() throws IOException {
+        EventDAO eventDAO = new EventDAO();
+        List<Event> events;
+        try {
+            events = eventDAO.getAllEvents();
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to fetch events from the database.", e);
+        }
+
         int numRows = 5;
         int numColumns = 3;
-        String borderColor = "#000000"; // You can change this to any color you like (e.g., #FF0000 for red)
-        double borderWidth = 1.0; // Adjust the border width as needed
+        String borderColor = "#000000";
+        double borderWidth = 1.0;
 
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numColumns; col++) {
+                int eventIndex = row * numColumns + col;
+                if (eventIndex >= events.size()) {
+                    break;
+                }
+
                 Pane pane = new Pane();
 
-                // Load the FXML file
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/eventCard.fxml"));
+                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex)));
                 Pane contentPane = fxmlLoader.load();
 
-                // Add the loaded content to the pane
                 pane.getChildren().add(contentPane);
-
-                // Apply the border outline
                 pane.setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: " + borderWidth + ";");
 
                 eventPane.add(pane, col, row);
             }
+        }
+    }
+
+    public void refreshEventCards() {
+        try {
+            populateGridPane();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

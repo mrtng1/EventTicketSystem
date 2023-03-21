@@ -25,10 +25,12 @@ public class CreateEventController implements Initializable {
     private TextField nameField, locationField;
     @FXML
     private DatePicker dateField;
+    private Runnable refreshCallback;
 
     public void setModel(EventModel model){
         this.eventModel = model;
     }
+    public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
     @FXML
     private void createBtn(ActionEvent event){
         System.out.println("creating...");
@@ -39,6 +41,10 @@ public class CreateEventController implements Initializable {
 
         try {
             eventModel.createEvent(name, location, date);
+            // Call the refreshCallback
+            if (refreshCallback != null) {
+                refreshCallback.run();
+            }
         } catch (SQLException e) {
             // Handle the exception (e.g., show an error message)
             e.printStackTrace();

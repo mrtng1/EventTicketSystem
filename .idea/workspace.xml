@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="createEvent.fxml">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/person.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/images/questionmark.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,8 +66,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view\images" />
+      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\libraries" />
     </key>
   </component>

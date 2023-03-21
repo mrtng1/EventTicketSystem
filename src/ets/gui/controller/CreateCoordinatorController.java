@@ -32,11 +32,14 @@ public class CreateCoordinatorController implements Initializable {
         this.model = model;
     }
 
+    private String charactersNum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        String randomUsername = generateRandomText(6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")+"EASV";
-        String randomPassword = generateRandomText(10, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+        String randomUsername = generateRandomText(6, characters)+"EASV";
+        String randomPassword = generateRandomText(10, charactersNum);
         nameField.setText(randomUsername);
         passwordField.setText(randomPassword);
 
@@ -45,8 +48,8 @@ public class CreateCoordinatorController implements Initializable {
                 nameField.clear();
                 passwordField.clear();
             } else {
-                String randomUsername2 = generateRandomText(6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")+"EASV";
-                String randomPassword2 = generateRandomText(10, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+                String randomUsername2 = generateRandomText(6, characters)+"EASV";
+                String randomPassword2 = generateRandomText(10, charactersNum);
                 nameField.setText(randomUsername2);
                 passwordField.setText(randomPassword2);
             }

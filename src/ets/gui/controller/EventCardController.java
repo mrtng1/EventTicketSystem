@@ -1,13 +1,22 @@
 package ets.gui.controller;
 
 import ets.be.Event;
+import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.event.ActionEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Duration;
@@ -64,12 +73,30 @@ public class EventCardController implements Initializable {
 
     @FXML
     public void eventViewBtn(ActionEvent actionEvent) {
-        System.out.println("view");
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/eventCardView.fxml"));
+            Parent createEventParent = fxmlLoader.load();
+
+            EventCardViewController eventCardViewController = fxmlLoader.getController();
+            eventCardViewController.setEvent(event);
+
+            // Create a new stage and scene
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setTitle(event.getName());
+            stage.setScene(new Scene(createEventParent));
+
+            // Show the new stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void deleteBtn(ActionEvent actionEvent){
-        System.out.println("delete");
         try {
             eventModel.deleteEvent(event);
             mainWindowController.refreshEventCards();

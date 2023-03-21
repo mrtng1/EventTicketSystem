@@ -116,6 +116,8 @@ public class MainWindowController implements Initializable {
         String borderColor = "#000000";
         double borderWidth = 1.0;
 
+        EventModel eventModel = new EventModel();
+
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numColumns; col++) {
                 int eventIndex = row * numColumns + col;
@@ -126,7 +128,8 @@ public class MainWindowController implements Initializable {
                 Pane pane = new Pane();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/eventCard.fxml"));
-                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex)));
+                // Pass both Event and EventModel instances to the constructor
+                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), eventModel, this));
                 Pane contentPane = fxmlLoader.load();
 
                 pane.getChildren().add(contentPane);
@@ -139,6 +142,7 @@ public class MainWindowController implements Initializable {
 
     public void refreshEventCards() {
         try {
+            eventPane.getChildren().clear();
             populateGridPane();
         } catch (IOException e) {
             throw new RuntimeException(e);

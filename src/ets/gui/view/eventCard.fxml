@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="194.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
    <children>
-      <Button fx:id="eventView" layoutX="135.0" layoutY="84.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="45.0" text="View" />
+      <Button fx:id="eventView" layoutX="135.0" layoutY="84.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" text="View" />
       <Label fx:id="eventTitle" layoutX="9.0" layoutY="11.0" text="Empty event" />
       <VBox layoutY="62.0" prefHeight="44.0" prefWidth="66.0">
          <children>
@@ -48,5 +48,6 @@
             <Insets bottom="-5.0" left="5.0" />
          </padding>
       </VBox>
+      <Button fx:id="deleteButton" layoutX="76.0" layoutY="84.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="25.0" prefWidth="52.0" text="Delete" visible="false" />
    </children>
 </Pane>

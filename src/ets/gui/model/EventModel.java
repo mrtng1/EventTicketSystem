@@ -26,7 +26,7 @@ public class EventModel {
         return event;
     }
 
-    public void deletePerson(Event event) throws SQLException {
+    public void deleteEvent(Event event) throws SQLException {
         eventLogic.deleteEvent(event);
     }
 }

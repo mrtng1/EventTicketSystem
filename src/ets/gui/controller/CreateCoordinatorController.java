@@ -41,6 +41,15 @@ public class CreateCoordinatorController implements Initializable {
         passwordField.setText(randomPassword);
 
         customToggle.selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+            if (isSelected) {
+                nameField.clear();
+                passwordField.clear();
+            } else {
+                String randomUsername2 = generateRandomText(6, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")+"EASV";
+                String randomPassword2 = generateRandomText(10, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+                nameField.setText(randomUsername2);
+                passwordField.setText(randomPassword2);
+            }
             nameField.setEditable(isSelected);
             passwordField.setEditable(isSelected);
         });

@@ -10,28 +10,19 @@ import java.util.UUID;
  * @author tomdra01, mrtng1
  */
 public class Event {
-
-    private UUID uuid;
     private int id;
     private String name;
     private String location;
     private LocalDate date;
 
-    public Event(UUID uuid, int id, String name, String location, LocalDate date) {
-        this.uuid = uuid;
+    public Event(int id, String name, String location, LocalDate date) {
         this.id = id;
         this.name = name;
         this.location = location;
         this.date = date;
     }
 
-    public UUID getUuid() {
-        return uuid;
-    }
 
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
-    }
 
     public int getId() {
         return id;
@@ -68,7 +59,6 @@ public class Event {
     @Override
     public String toString() {
         return "Event{" +
-                "uuid=" + uuid +
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +

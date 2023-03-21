@@ -8,23 +8,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
+<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
    <children>
       <Button layoutX="330.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
       <Button layoutX="399.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
       <VBox layoutX="45.0" layoutY="33.0" prefHeight="200.0" prefWidth="150.0">
          <children>
-            <TextField alignment="TOP_LEFT" promptText="Event name">
+            <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Event name">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
             </TextField>
-            <TextField promptText="Location">
+            <TextField fx:id="locationField" promptText="Location">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
             </TextField>
-            <DatePicker nodeOrientation="LEFT_TO_RIGHT" promptText="Date" showWeekNumbers="true">
+            <DatePicker fx:id="dateField" nodeOrientation="LEFT_TO_RIGHT" promptText="Date" showWeekNumbers="true">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>

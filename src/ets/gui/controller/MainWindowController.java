@@ -1,6 +1,7 @@
 package ets.gui.controller;
 
 // imports
+import ets.gui.model.EventModel;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,18 +53,23 @@ public class MainWindowController implements Initializable {
             Parent createEventParent = fxmlLoader.load();
 
             // Create a new stage and scene
-            Stage createEventStage = new Stage();
-            createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
-            createEventStage.initStyle(StageStyle.TRANSPARENT);
-            createEventStage.setTitle("Create Event");
-            createEventStage.setScene(new Scene(createEventParent));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setTitle("Create Event");
+            stage.setScene(new Scene(createEventParent));
+
+            // Set the model for the CreateEventController
+            CreateEventController createEventController = fxmlLoader.getController();
+            createEventController.setModel(new EventModel());
 
             // Show the new stage
-            createEventStage.show();
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     private void createCoordinatorBtn(ActionEvent event){
@@ -73,14 +79,15 @@ public class MainWindowController implements Initializable {
             Parent createEventParent = fxmlLoader.load();
 
             // Create a new stage and scene
-            Stage createEventStage = new Stage();
-            createEventStage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
-            createEventStage.initStyle(StageStyle.TRANSPARENT);
-            createEventStage.setTitle("Create Coordinator");
-            createEventStage.setScene(new Scene(createEventParent));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setTitle("Create Coordinator");
+            stage.setScene(new Scene(createEventParent));
+
 
             // Show the new stage
-            createEventStage.show();
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

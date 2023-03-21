@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
+<AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
    <children>
       <Button layoutX="330.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
       <Button layoutX="399.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />

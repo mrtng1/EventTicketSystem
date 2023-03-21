@@ -1,7 +1,9 @@
 package ets.dal;
 
+// imports
 import ets.be.Event;
 
+// java imports
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,7 +39,6 @@ public class EventDAO {
                     allEvents.add(event);
                 }
             }
-
         } return allEvents;
     }
 
@@ -67,7 +68,4 @@ public class EventDAO {
             statement.executeUpdate();
         }
     }
-
-
-
 }

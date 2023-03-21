@@ -1,10 +1,12 @@
 package ets.gui.model;
 
+// imports
 import ets.be.Event;
 import ets.bll.EventLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+// java imports
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -13,6 +15,7 @@ import java.time.LocalDate;
  * @author tomdra01, mrtng1
  */
 public class EventModel {
+
     EventLogic eventLogic = new EventLogic();
 
     private ObservableList<Event> events = FXCollections.observableArrayList();
@@ -26,5 +29,4 @@ public class EventModel {
     public void deletePerson(Event event) throws SQLException {
         eventLogic.deleteEvent(event);
     }
-
 }

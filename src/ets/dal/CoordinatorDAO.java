@@ -1,10 +1,10 @@
 package ets.dal;
 
+//imports
 import ets.be.Coordinator;
-import ets.be.Event;
 
+// java imports
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +13,7 @@ import java.util.List;
  * @author tomdra01, mrtng1
  */
 public class CoordinatorDAO {
+
     private ConnectionManager connectionManager;
 
     public CoordinatorDAO() {
@@ -36,7 +37,6 @@ public class CoordinatorDAO {
                     allCoordinators.add(coordinator);
                 }
             }
-
         } return allCoordinators;
     }
 

@@ -1,12 +1,11 @@
 package ets.bll;
 
+// imports
 import ets.be.Coordinator;
-import ets.be.Event;
 import ets.dal.CoordinatorDAO;
-import ets.dal.EventDAO;
 
+// java imports
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -20,7 +19,6 @@ public class CoordinatorLogic {
     public Coordinator createEvent(String username, String password) throws SQLException {
         return coordinatorDAO.createCoordinator(username, password);
     }
-
 
     public List<Coordinator> getAllCoordinators() throws SQLException{
         return coordinatorDAO.getAllCoordinators();

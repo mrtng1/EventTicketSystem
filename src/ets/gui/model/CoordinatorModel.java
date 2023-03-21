@@ -1,15 +1,18 @@
 package ets.gui.model;
 
+// imports
 import ets.be.Coordinator;
-import ets.be.Event;
 import ets.bll.CoordinatorLogic;
-import ets.bll.EventLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+// java imports
 import java.sql.SQLException;
-import java.time.LocalDate;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class CoordinatorModel {
 
     CoordinatorLogic coordinatorLogic = new CoordinatorLogic();

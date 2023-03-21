@@ -7,47 +7,45 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="194.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="194.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
    <children>
-      <Button fx:id="eventView" layoutX="135.0" layoutY="84.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" text="View" />
-      <Label fx:id="eventTitle" layoutX="9.0" layoutY="11.0" text="Empty event" />
-      <VBox layoutY="62.0" prefHeight="44.0" prefWidth="66.0">
+      <Button fx:id="eventView" layoutX="125.0" layoutY="84.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" text="View" />
+      <HBox layoutX="10.0" layoutY="87.0" prefHeight="22.0" prefWidth="51.0">
          <children>
-            <HBox fx:id="daysLeft" prefHeight="22.0" prefWidth="51.0">
-               <children>
-                  <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/clock.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="timeNumber" prefHeight="17.0" prefWidth="44.0" text="0" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="2.0" top="2.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox prefHeight="22.0" prefWidth="51.0">
-               <children>
-                  <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/person.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="2.0" top="2.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
+            <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/person.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="5.0" top="2.0" />
+               </HBox.margin>
+            </Label>
          </children>
-         <padding>
-            <Insets bottom="-5.0" left="5.0" />
-         </padding>
-      </VBox>
-      <Button fx:id="deleteButton" layoutX="76.0" layoutY="84.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="25.0" prefWidth="52.0" text="Delete" visible="false" />
+      </HBox>
+      <Button fx:id="deleteButton" layoutX="66.0" layoutY="84.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="25.0" prefWidth="52.0" text="Delete" visible="false" />
+      <HBox fx:id="daysLeft" layoutX="5.0" layoutY="5.0" prefHeight="22.0" prefWidth="189.0">
+         <children>
+            <Label fx:id="eventTitle" prefHeight="17.0" prefWidth="100.0" text="Empty event">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></Label>
+            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/clock.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="timeNumber" prefHeight="17.0" prefWidth="45.0" text="0" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="5.0" top="2.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </Pane>

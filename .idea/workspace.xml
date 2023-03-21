@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="createEvent.fxml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +115,7 @@
       <workItem from="1679247094562" duration="168000" />
       <workItem from="1679249144013" duration="4345000" />
       <workItem from="1679397349927" duration="844000" />
+      <workItem from="1679410953634" duration="1399000" />
     </task>
     <servers />
   </component>

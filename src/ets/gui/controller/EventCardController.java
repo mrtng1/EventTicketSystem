@@ -24,18 +24,19 @@ public class EventCardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         eventTitle.setText(event.getName());
         //eventLocation.setText(event.getLocation());
-        long daysRemaining = calculateDaysRemaining(event.getDate());
-        if (daysRemaining > -1) {
-            timeNumber.setText(daysRemaining + " d");
-        } else {
+        Duration duration = calculateTimeRemaining(event.getDate());
+        if (duration.toHours() < 0) {
             timeNumber.setText("passed");
+        } else if (duration.toDays() >= 1) {
+            timeNumber.setText(duration.toDays() + " d");
+        } else {
+            timeNumber.setText(duration.toHours() + " h");
         }
     }
 
-    private long calculateDaysRemaining(LocalDate eventDate) {
+    private Duration calculateTimeRemaining(LocalDate eventDate) {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime eventDateTime = LocalDateTime.of(eventDate, LocalTime.MIDNIGHT);
-        Duration duration = Duration.between(now, eventDateTime);
-        return duration.toDays();
+        return Duration.between(now, eventDateTime);
     }
 }

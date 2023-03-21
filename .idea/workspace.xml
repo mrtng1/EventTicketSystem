@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="createEvent.fxml">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Coordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

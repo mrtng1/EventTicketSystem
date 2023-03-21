@@ -1,6 +1,7 @@
 package ets.gui.controller;
 
 // imports
+import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -84,6 +85,9 @@ public class MainWindowController implements Initializable {
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle("Create Coordinator");
             stage.setScene(new Scene(createEventParent));
+
+            CreateCoordinatorController createCoordinatorController = fxmlLoader.getController();
+            createCoordinatorController.setModel(new CoordinatorModel());
 
 
             // Show the new stage

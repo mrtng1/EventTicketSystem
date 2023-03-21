@@ -1,6 +1,8 @@
 package ets.gui.controller;
 
 // imports
+import ets.gui.model.CoordinatorModel;
+import ets.gui.model.EventModel;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +12,8 @@ import javafx.stage.Stage;
 
 // java imports
 import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -18,10 +22,15 @@ import java.util.ResourceBundle;
  * @author tomdra01, mrtng1
  */
 public class CreateCoordinatorController implements Initializable {
+    private CoordinatorModel model;
     @FXML
     private TextField nameField, passwordField;
     @FXML
     private MFXToggleButton customToggle;
+
+    public void setModel(CoordinatorModel model){
+        this.model = model;
+    }
 
 
     @Override
@@ -60,6 +69,19 @@ public class CreateCoordinatorController implements Initializable {
     @FXML
     public void createBtn(javafx.event.ActionEvent event) {
         System.out.println("creating...");
+
+
+
+        String username = nameField.getText();
+        String password = passwordField.getText();
+
+        try {
+            model.createCoordinator(username, password);
+        } catch (SQLException e) {
+            // Handle the exception (e.g., show an error message)
+            e.printStackTrace();
+        }
+
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();

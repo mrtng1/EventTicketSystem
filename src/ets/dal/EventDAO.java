@@ -62,9 +62,9 @@ public class EventDAO {
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement pstMovie = con.prepareStatement("DELETE FROM Event WHERE id = ?;");
-            pstMovie.setInt(1, event.getId());
-            pstMovie.executeUpdate();
+            PreparedStatement statement = con.prepareStatement("DELETE FROM Event WHERE id = ?;");
+            statement.setInt(1, event.getId());
+            statement.executeUpdate();
         }
     }
 

@@ -10,11 +10,10 @@ public class Coordinator {
     private String password;
     private int event_id;
 
-    public Coordinator(int id, String username, String password, int event_id){
+    public Coordinator(int id, String username, String password){
         this.id=id;
         this.username=username;
         this.password=password;
-        this.event_id=event_id;
     }
 
     public int getId() {
@@ -41,11 +40,4 @@ public class Coordinator {
         this.password = password;
     }
 
-    public int getEvent_id() {
-        return event_id;
-    }
-
-    public void setEvent_id(int event_id) {
-        this.event_id = event_id;
-    }
 }

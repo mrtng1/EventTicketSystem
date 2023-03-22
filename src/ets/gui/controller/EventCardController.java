@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 // java imports
 import java.io.IOException;
@@ -37,7 +36,7 @@ public class EventCardController implements Initializable {
     private Button deleteButton;
     private Event event;
     private EventModel eventModel;
-    private MainWindowController mainWindowController;
+    private AdminWindowController adminWindowController;
 
     public EventCardController(Event event, EventModel eventModel) {
         this.event = event;
@@ -48,10 +47,10 @@ public class EventCardController implements Initializable {
         this.event = event;
     }
 
-    public EventCardController(Event event, EventModel eventModel, MainWindowController mainWindowController) {
+    public EventCardController(Event event, EventModel eventModel, AdminWindowController adminWindowController) {
         this.event = event;
         this.eventModel = eventModel;
-        this.mainWindowController = mainWindowController;
+        this.adminWindowController = adminWindowController;
     }
 
 
@@ -81,11 +80,11 @@ public class EventCardController implements Initializable {
     public void eventViewBtn(ActionEvent actionEvent) {
         try {
             // Load the FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/eventCardView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_info_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
-            EventCardViewController eventCardViewController = fxmlLoader.getController();
-            eventCardViewController.setEvent(event);
+            EventInfoWindowController eventInfoWindowController = fxmlLoader.getController();
+            eventInfoWindowController.setEvent(event);
 
             // Create a new stage and scene
             Stage stage = new Stage();
@@ -105,7 +104,7 @@ public class EventCardController implements Initializable {
     public void deleteBtn(ActionEvent actionEvent){
         try {
             eventModel.deleteEvent(event);
-            mainWindowController.refreshEventCards();
+            adminWindowController.refreshEventCards();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

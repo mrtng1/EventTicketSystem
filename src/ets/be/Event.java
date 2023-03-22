@@ -8,6 +8,7 @@ import java.time.LocalDate;
  * @author tomdra01, mrtng1
  */
 public class Event {
+
     private int id;
     private String name;
     private String location;

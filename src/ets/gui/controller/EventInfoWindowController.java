@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
  *
  * @author tomdra01, mrtng1
  */
-public class EventCardViewController implements Initializable {
+public class EventInfoWindowController implements Initializable {
 
     @FXML
     private Button closeButton;
@@ -25,7 +25,7 @@ public class EventCardViewController implements Initializable {
     private Label eventTitleLabel;
     private Event event;
 
-    public EventCardViewController() {
+    public EventInfoWindowController() {
     }
 
     public void setEvent(Event event) {

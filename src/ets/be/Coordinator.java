@@ -9,7 +9,6 @@ public class Coordinator {
     private int id;
     private String username;
     private String password;
-    private int event_id;
 
     public Coordinator(String username, String password) {
         this.username = username;
@@ -51,7 +50,6 @@ public class Coordinator {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", event_id=" + event_id +
                 '}';
     }
 }

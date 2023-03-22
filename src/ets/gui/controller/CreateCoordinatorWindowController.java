@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
  *
  * @author tomdra01, mrtng1
  */
-public class CreateCoordinatorController implements Initializable {
+public class CreateCoordinatorWindowController implements Initializable {
 
     private CoordinatorModel model;
     @FXML

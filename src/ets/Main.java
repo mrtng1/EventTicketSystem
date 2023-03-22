@@ -24,7 +24,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Load the FXML file
-        URL fxmlUrl = getClass().getResource("gui/view/mainWindow.fxml");
+        URL fxmlUrl = getClass().getResource("gui/view/login_window.fxml");
         Parent root = FXMLLoader.load(fxmlUrl);
 
         Scene scene = new Scene(root); // Set the window width and height

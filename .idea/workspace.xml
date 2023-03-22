@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Martin nevie programovať" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Martin nevie programovať">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/loginStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Coordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -120,6 +139,8 @@
       <workItem from="1679473227857" duration="3753000" />
       <workItem from="1679478040747" duration="3099000" />
       <workItem from="1679510330932" duration="680000" />
+      <workItem from="1679512138806" duration="3164000" />
+      <workItem from="1679525906628" duration="693000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -156,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679510932044</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Martin nevie programovať">
+      <created>1679512280883</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679512280883</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

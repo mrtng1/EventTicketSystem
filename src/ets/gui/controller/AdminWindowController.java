@@ -17,11 +17,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 // java imports
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -32,7 +30,7 @@ import java.util.ResourceBundle;
  *
  * @author tomdra01, mrtng1
  */
-public class MainWindowController implements Initializable {
+public class AdminWindowController implements Initializable {
 
     @FXML
     private ScrollPane scrollPane;
@@ -55,7 +53,7 @@ public class MainWindowController implements Initializable {
     private void createEventBtn(ActionEvent event) {
         try {
             // Load the FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createEvent.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_event_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
             // Create a new stage and scene
@@ -66,10 +64,10 @@ public class MainWindowController implements Initializable {
             Scene scene = new Scene(createEventParent);
             stage.setScene(scene);
 
-            // Set the model for the CreateEventController
-            CreateEventController createEventController = fxmlLoader.getController();
-            createEventController.setModel(new EventModel());
-            createEventController.setRefreshCallback(this::refreshEventCards);
+            // Set the model for the CreateEventWindowController
+            CreateEventWindowController createEventWindowController = fxmlLoader.getController();
+            createEventWindowController.setModel(new EventModel());
+            createEventWindowController.setRefreshCallback(this::refreshEventCards);
 
             // Show the new stage
             stage.show();
@@ -82,7 +80,7 @@ public class MainWindowController implements Initializable {
     private void createCoordinatorBtn(ActionEvent event){
         try {
             // Load the FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/createCoordinator.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
             // Create a new stage and scene
@@ -92,8 +90,8 @@ public class MainWindowController implements Initializable {
             stage.setTitle("Create Coordinator");
             stage.setScene(new Scene(createEventParent));
 
-            CreateCoordinatorController createCoordinatorController = fxmlLoader.getController();
-            createCoordinatorController.setModel(new CoordinatorModel());
+            CreateCoordinatorWindowController createCoordinatorWindowController = fxmlLoader.getController();
+            createCoordinatorWindowController.setModel(new CoordinatorModel());
 
             // Show the new stage
             stage.show();
@@ -127,7 +125,7 @@ public class MainWindowController implements Initializable {
 
                 Pane pane = new Pane();
 
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/eventCard.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
                 // Pass both Event and EventModel instances to the constructor
                 fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), eventModel, this));
                 Pane contentPane = fxmlLoader.load();

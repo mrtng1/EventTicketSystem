@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
  *
  * @author tomdra01, mrtng1
  */
-public class CreateEventController implements Initializable {
+public class CreateEventWindowController implements Initializable {
 
     private EventModel eventModel;
     @FXML

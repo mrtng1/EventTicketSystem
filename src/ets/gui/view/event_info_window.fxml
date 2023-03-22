@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="eventCardViewAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardViewController">
+<AnchorPane fx:id="eventCardViewAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
    <children>
       <Button fx:id="closeButton" layoutX="537.0" layoutY="360.0" mnemonicParsing="false" onAction="#closeBtn" text="Close" />
       <Label fx:id="eventTitleLabel" alignment="CENTER" layoutX="252.0" layoutY="25.0" prefHeight="17.0" prefWidth="300.0" text="---event---" textFill="#616161">

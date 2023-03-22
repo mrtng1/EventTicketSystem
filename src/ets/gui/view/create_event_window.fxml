@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventWindowController">
+   <children>
+      <Pane prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
+         <children>
+            <VBox layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="150.0">
+               <children>
+                  <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Event name">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="locationField" promptText="Location">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <DatePicker fx:id="dateField" nodeOrientation="LEFT_TO_RIGHT" promptText="Date" showWeekNumbers="true">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </DatePicker>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Button layoutX="322.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
+      <Button layoutX="391.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
+      <ImageView fitHeight="166.0" fitWidth="156.0" layoutX="306.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/easvImg.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

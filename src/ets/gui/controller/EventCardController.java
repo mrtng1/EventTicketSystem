@@ -90,7 +90,7 @@ public class EventCardController implements Initializable {
             // Create a new stage and scene
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
-            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setResizable(false);
             stage.setTitle(event.getName());
             stage.setScene(new Scene(createEventParent));
 

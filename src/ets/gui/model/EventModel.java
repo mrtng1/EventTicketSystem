@@ -20,10 +20,10 @@ public class EventModel {
 
     private ObservableList<Event> events = FXCollections.observableArrayList();
 
-    public Event createEvent(String name, String location, LocalDate date) throws SQLException {
-        Event event = eventLogic.createEvent(name, location, date);
-        events.add(event);
-        return event;
+    public Event createEvent(Event event) throws SQLException {
+        Event e = eventLogic.createEvent(event);
+        events.add(e);
+        return e;
     }
 
     public void deleteEvent(Event event) throws SQLException {

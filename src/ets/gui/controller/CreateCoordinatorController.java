@@ -1,6 +1,7 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Coordinator;
 import ets.gui.model.CoordinatorModel;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
@@ -81,7 +82,8 @@ public class CreateCoordinatorController implements Initializable {
         String password = passwordField.getText();
 
         try {
-            model.createCoordinator(username, password);
+            Coordinator coordinator = new Coordinator(username, password);
+            model.createCoordinator(coordinator);
         } catch (SQLException e) {
             // Handle the exception (e.g., show an error message)
             e.printStackTrace();

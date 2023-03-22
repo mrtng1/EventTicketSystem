@@ -1,6 +1,7 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Event;
 import ets.gui.model.EventModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ import java.util.ResourceBundle;
  * @author tomdra01, mrtng1
  */
 public class CreateEventController implements Initializable {
+
     private EventModel eventModel;
     @FXML
     private TextField nameField, locationField;
@@ -33,8 +35,9 @@ public class CreateEventController implements Initializable {
         this.eventModel = model;
     }
     public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
+
     @FXML
-    private void createBtn(ActionEvent event) {
+    private void createBtn(ActionEvent actionEvent) {
         System.out.println("creating...");
 
         String name = nameField.getText();
@@ -49,7 +52,9 @@ public class CreateEventController implements Initializable {
             alert.showAndWait();
         } else {
             try {
-                eventModel.createEvent(name, location, date);
+                Event event = new Event(name, location, date);
+                eventModel.createEvent(event);
+
                 // Call the refreshCallback
                 if (refreshCallback != null) {
                     refreshCallback.run();
@@ -59,22 +64,21 @@ public class CreateEventController implements Initializable {
                 e.printStackTrace();
             }
 
-            Node source = (Node) event.getSource();
+            Node source = (Node) actionEvent.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
         }
     }
 
     @FXML
-    private void cancelBtn(ActionEvent event){
+    private void cancelBtn(ActionEvent actionEvent){
         System.out.println("canceling...");
-        Node source = (Node) event.getSource();
+        Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

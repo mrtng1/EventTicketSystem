@@ -13,11 +13,15 @@ public class Event {
     private String location;
     private LocalDate date;
 
-    public Event(int id, String name, String location, LocalDate date) {
-        this.id = id;
+    public Event(String name, String location, LocalDate date) {
         this.name = name;
         this.location = location;
         this.date = date;
+    }
+
+    public Event(int id, String name, String location, LocalDate date){
+        this(name, location, date);
+        this.id = id;
     }
 
     public int getId() {

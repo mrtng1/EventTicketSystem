@@ -1,6 +1,7 @@
 package ets.dal;
 
 // imports
+import ets.be.Coordinator;
 import ets.be.Event;
 
 // java imports
@@ -42,23 +43,21 @@ public class EventDAO {
         } return allEvents;
     }
 
-    public Event createEvent(String name, String location, LocalDate date) throws SQLException {
+    public Event createEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            String psql = "INSERT INTO Event (name, location, date) OUTPUT INSERTED.id VALUES (?,?,?)";
-            PreparedStatement statement = con.prepareStatement(psql);
-            statement.setString(1, name);
-            statement.setString(2, location);
-            statement.setDate(3, Date.valueOf(date));
+            PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, date, location) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            pst.setString(1, event.getName());
+            pst.setDate(2, Date.valueOf(event.getDate()));
+            pst.setString(3, event.getName());
+            pst.execute();
 
-            int id;
-            ResultSet rs = statement.executeQuery();
-            if (rs.next()) {
-                id = rs.getInt(1);
-                return new Event(id, name, location, date);
-            } else {
-                throw new SQLException("Failed to retrieve the generated ID.");
+            if (pst.getGeneratedKeys().next()) {
+                int id = pst.getGeneratedKeys().getInt(1);
+                event.setId(id);
+                return event;
             }
         }
+        throw new RuntimeException("Id not set");
     }
 
     public void deleteEvent(Event event) throws SQLException {

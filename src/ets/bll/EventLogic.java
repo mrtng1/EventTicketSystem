@@ -17,8 +17,8 @@ public class EventLogic {
 
     EventDAO eventDAO = new EventDAO();
 
-    public Event createEvent(String name, String location, LocalDate date) throws SQLException {
-        return eventDAO.createEvent(name, location, date);
+    public Event createEvent(Event event) throws SQLException {
+        return eventDAO.createEvent(event);
     }
 
     public List<Event> getAllEvents() throws SQLException{

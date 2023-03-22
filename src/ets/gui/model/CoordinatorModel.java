@@ -19,10 +19,10 @@ public class CoordinatorModel {
 
     private ObservableList<Coordinator> coordinators = FXCollections.observableArrayList();
 
-    public Coordinator createCoordinator(String username, String password) throws SQLException {
-        Coordinator coordinator = coordinatorLogic.createEvent(username, password);
-        coordinators.add(coordinator);
-        return coordinator;
+    public Coordinator createCoordinator(Coordinator coordinator) throws SQLException {
+        Coordinator c = coordinatorLogic.createEvent(coordinator);
+        coordinators.add(c);
+        return c;
     }
 
     public void deleteCoordinator(Coordinator coordinator) throws SQLException {

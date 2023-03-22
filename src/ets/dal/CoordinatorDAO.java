@@ -40,22 +40,20 @@ public class CoordinatorDAO {
         } return allCoordinators;
     }
 
-    public Coordinator createCoordinator(String username, String password) throws SQLException {
+    public Coordinator createCoordinator(Coordinator coordinator) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            String psql = "INSERT INTO Coordinator (username, password) OUTPUT INSERTED.id VALUES (?,?)";
-            PreparedStatement statement = con.prepareStatement(psql);
-            statement.setString(1, username);
-            statement.setString(2, password);
+            PreparedStatement pst = con.prepareStatement("INSERT INTO Coordinator (username, password) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
+            pst.setString(1, coordinator.getUsername());
+            pst.setString(2, coordinator.getPassword());
+            pst.execute();
 
-            int id;
-            ResultSet rs = statement.executeQuery();
-            if (rs.next()) {
-                id = rs.getInt(1);
-                return new Coordinator(id, username, password);
-            } else {
-                throw new SQLException("Failed to retrieve the generated ID.");
+            if (pst.getGeneratedKeys().next()) {
+                int id = pst.getGeneratedKeys().getInt(1);
+                coordinator.setId(id);
+                return coordinator;
             }
         }
+        throw new RuntimeException("Id not set");
     }
 
     public void deleteCoordinator(Coordinator coordinator) throws SQLException {

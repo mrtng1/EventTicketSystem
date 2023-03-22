@@ -2,8 +2,6 @@ package ets.be;
 
 // imports
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.UUID;
 
 /**
  *
@@ -21,8 +19,6 @@ public class Event {
         this.location = location;
         this.date = date;
     }
-
-
 
     public int getId() {
         return id;

@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="eventCard.fxml fixes">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/clockIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/participantsIcon.png" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="22.3.2023 - 9:33 push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/images/clock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/images/person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +70,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images/icons" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view\images" />
-      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\libraries" />
     </key>
   </component>
@@ -124,7 +126,7 @@
       <workItem from="1679249144013" duration="4345000" />
       <workItem from="1679397349927" duration="844000" />
       <workItem from="1679410953634" duration="1831000" />
-      <workItem from="1679473227857" duration="608000" />
+      <workItem from="1679473227857" duration="3164000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -133,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679436883233</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="22.3.2023 - 9:33 push">
+      <created>1679474038485</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679474038485</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +151,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="eventCard.fxml fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="eventCard.fxml fixes" />
+    <MESSAGE value="22.3.2023 - 9:33 push" />
+    <option name="LAST_COMMIT_MESSAGE" value="22.3.2023 - 9:33 push" />
   </component>
 </project>

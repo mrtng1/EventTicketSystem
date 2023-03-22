@@ -21,6 +21,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 // java imports
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -35,7 +36,6 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private ScrollPane scrollPane;
-
     @FXML
     private GridPane eventPane;
 
@@ -50,6 +50,7 @@ public class MainWindowController implements Initializable {
         );
         timeline.play();
     }
+
     @FXML
     private void createEventBtn(ActionEvent event) {
         try {
@@ -59,10 +60,11 @@ public class MainWindowController implements Initializable {
 
             // Create a new stage and scene
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
-            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);// Set the modality if you want to block interaction with other windows while this one is open
             stage.setTitle("Create Event");
-            stage.setScene(new Scene(createEventParent));
+            stage.setResizable(false);
+            Scene scene = new Scene(createEventParent);
+            stage.setScene(scene);
 
             // Set the model for the CreateEventController
             CreateEventController createEventController = fxmlLoader.getController();
@@ -76,7 +78,6 @@ public class MainWindowController implements Initializable {
         }
     }
 
-
     @FXML
     private void createCoordinatorBtn(ActionEvent event){
         try {
@@ -87,13 +88,12 @@ public class MainWindowController implements Initializable {
             // Create a new stage and scene
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
-            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setResizable(false);
             stage.setTitle("Create Coordinator");
             stage.setScene(new Scene(createEventParent));
 
             CreateCoordinatorController createCoordinatorController = fxmlLoader.getController();
             createCoordinatorController.setModel(new CoordinatorModel());
-
 
             // Show the new stage
             stage.show();

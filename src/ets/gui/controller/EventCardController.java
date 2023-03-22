@@ -1,7 +1,7 @@
 package ets.gui.controller;
 
+// imports
 import ets.be.Event;
-import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +10,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
 import javafx.event.ActionEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+// java imports
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -25,7 +25,12 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class EventCardController implements Initializable {
+
     @FXML
     private Label participantsNumber, timeNumber, eventTitle;
     @FXML
@@ -33,6 +38,7 @@ public class EventCardController implements Initializable {
     private Event event;
     private EventModel eventModel;
     private MainWindowController mainWindowController;
+
     public EventCardController(Event event, EventModel eventModel) {
         this.event = event;
         this.eventModel = eventModel;

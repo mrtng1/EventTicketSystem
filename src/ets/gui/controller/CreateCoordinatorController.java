@@ -2,7 +2,6 @@ package ets.gui.controller;
 
 // imports
 import ets.gui.model.CoordinatorModel;
-import ets.gui.model.EventModel;
 import io.github.palexdev.materialfx.controls.MFXToggleButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +12,6 @@ import javafx.stage.Stage;
 // java imports
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -22,6 +20,7 @@ import java.util.ResourceBundle;
  * @author tomdra01, mrtng1
  */
 public class CreateCoordinatorController implements Initializable {
+
     private CoordinatorModel model;
     @FXML
     private TextField nameField, passwordField;
@@ -34,7 +33,6 @@ public class CreateCoordinatorController implements Initializable {
 
     private String charactersNum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -66,7 +64,6 @@ public class CreateCoordinatorController implements Initializable {
             int randomIndex = random.nextInt(characters.length());
             randomText.append(characters.charAt(randomIndex));
         }
-
         return randomText.toString();
     }
 
@@ -80,10 +77,6 @@ public class CreateCoordinatorController implements Initializable {
 
     @FXML
     public void createBtn(javafx.event.ActionEvent event) {
-        System.out.println("creating...");
-
-
-
         String username = nameField.getText();
         String password = passwordField.getText();
 
@@ -93,7 +86,6 @@ public class CreateCoordinatorController implements Initializable {
             // Handle the exception (e.g., show an error message)
             e.printStackTrace();
         }
-
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();

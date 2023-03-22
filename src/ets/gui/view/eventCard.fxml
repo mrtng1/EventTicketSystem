@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/person.png" />
+                  <Image url="@images/icons/participantsIcon.png" />
                </image>
             </ImageView>
             <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
@@ -34,7 +34,7 @@
                </HBox.margin></Label>
             <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/clock.png" />
+                  <Image url="@images/icons/clockIcon.png" />
                </image>
                <HBox.margin>
                   <Insets left="25.0" />

@@ -4,8 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane fx:id="mainPane" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventController">
@@ -31,6 +32,10 @@
             </DatePicker>
          </children>
       </VBox>
-      <Pane layoutX="255.0" layoutY="33.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="257.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/easvImg.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 package ets.dal;
 
 // imports
-import ets.be.Coordinator;
 import ets.be.Event;
 
 // java imports
@@ -48,7 +47,7 @@ public class EventDAO {
             PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, date, location) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setString(1, event.getName());
             pst.setDate(2, Date.valueOf(event.getDate()));
-            pst.setString(3, event.getName());
+            pst.setString(3, event.getLocation());
             pst.execute();
 
             if (pst.getGeneratedKeys().next()) {

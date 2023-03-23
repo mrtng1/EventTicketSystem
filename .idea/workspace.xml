@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="coordinator_window.fxml">
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="new style for pop up window">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/eventCardStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +18,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="CSS File" />
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -128,7 +126,8 @@
       <workItem from="1679510330932" duration="680000" />
       <workItem from="1679512138806" duration="3164000" />
       <workItem from="1679525906628" duration="693000" />
-      <workItem from="1679565618276" duration="1978000" />
+      <workItem from="1679565618276" duration="2117000" />
+      <workItem from="1679582245042" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -179,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679564423683</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new style for pop up window">
+      <created>1679567737800</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679567737800</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +199,7 @@
     <MESSAGE value="neviem" />
     <MESSAGE value="Martin nevie programovať" />
     <MESSAGE value="coordinator_window.fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="coordinator_window.fxml" />
+    <MESSAGE value="new style for pop up window" />
+    <option name="LAST_COMMIT_MESSAGE" value="new style for pop up window" />
   </component>
 </project>

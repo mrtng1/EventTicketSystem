@@ -1,16 +1,21 @@
 package ets.gui.controller;
 
+import ets.gui.model.AdminModel;
 import ets.gui.model.EventModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,24 +32,41 @@ public class LoginWindowController implements Initializable {
     @FXML
     private Button loginButton;
 
-    public void openMainWindow(ActionEvent actionEvent) {
-        try {
-            // Load the FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/admin_window.fxml"));
-            Parent adminWindow = fxmlLoader.load();
+    @FXML
+    private TextField passwordField, nameField;
+    private AdminModel adminModel = new AdminModel();
 
-            // Create a new stage and scene
-            Stage stage = new Stage();
-            stage.setTitle("Create Event");
-            stage.setResizable(false);
-            Scene scene = new Scene(adminWindow);
-            stage.setScene(scene);
+    public void loginButtonClicked(ActionEvent actionEvent) {
+        String inputUsername = nameField.getText();
+        String inputPassword = passwordField.getText();
 
-            // Show the new stage
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (adminModel.isValidAdmin(inputUsername, inputPassword)) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/admin_window.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Admin Window");
+                stage.show();
+
+                // Close the login window if you need to
+                ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
+        else {
+            showAlert("Invalid Credentials", "Username or password is incorrect");
+        }
+    }
+
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
     @Override

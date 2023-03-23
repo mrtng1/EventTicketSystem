@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="new style for pop up window">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/eventCardStyle.css" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="coordinator_window.fxml">
+      <change afterPath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/dal/AdminDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/model/AdminModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +22,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>

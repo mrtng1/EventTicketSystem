@@ -2,6 +2,7 @@ package ets.gui.controller;
 
 // imports
 import ets.be.Event;
+import ets.gui.model.EventModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 
 // java imports
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -22,8 +24,11 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     private Button closeButton;
     @FXML
-    private Label eventTitleLabel;
+    private Label eventTitleLabel, locationLabel, dateLabel;
     private Event event;
+    EventModel eventModel = new EventModel();
+
+
 
     public EventInfoWindowController() {
     }
@@ -32,6 +37,13 @@ public class EventInfoWindowController implements Initializable {
         this.event = event;
         if (eventTitleLabel != null) {
             eventTitleLabel.setText(event.getName());
+        }
+        if (locationLabel != null){
+            locationLabel.setText("Location: "+event.getLocation());
+        }
+
+        if(dateLabel != null) {
+            dateLabel.setText("Date: "+String.valueOf(event.getDate()));
         }
     }
 
@@ -47,5 +59,19 @@ public class EventInfoWindowController implements Initializable {
         if (event != null) {
             eventTitleLabel.setText(event.getName());
         }
+    }
+
+    @FXML
+    private void deleteEventBtn(javafx.event.ActionEvent actionEvent){
+        try {
+            eventModel.deleteEvent(this.event);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+
     }
 }

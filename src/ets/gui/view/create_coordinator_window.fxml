@@ -12,18 +12,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorWindowController">
+<AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorWindowController">
    <children>
       <Pane layoutX="230.0" prefHeight="300.0" prefWidth="270.0" style="-fx-background-color: white; -fx-background-radius: 20 0 0 20;">
          <children>
             <VBox layoutX="60.0" layoutY="80.0" prefHeight="140.0" prefWidth="150.0">
                <children>
-                  <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Coordinator name" style="-fx-background-radius: 20;">
+                  <TextField fx:id="nameField" alignment="TOP_LEFT" editable="false" promptText="Coordinator name" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="passwordField" promptText="password" style="-fx-background-radius: 20;">
+                  <TextField fx:id="passwordField" editable="false" promptText="password" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>

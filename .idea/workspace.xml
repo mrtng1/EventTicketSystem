@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Martin nevie programovať">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/loginStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/createEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/eventCardView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>

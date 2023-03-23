@@ -13,16 +13,16 @@
 
 <AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventWindowController">
    <children>
-      <Pane prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
+      <Pane layoutX="230.0" prefHeight="300.0" prefWidth="270.0" style="-fx-background-color: white; -fx-background-radius: 20 0 0 20;">
          <children>
-            <VBox layoutX="50.0" layoutY="50.0" prefHeight="200.0" prefWidth="150.0">
+            <VBox layoutX="60.0" layoutY="36.0" prefHeight="200.0" prefWidth="150.0">
                <children>
-                  <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Event name">
+                  <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Event name" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="locationField" promptText="Location">
+                  <TextField fx:id="locationField" promptText="Location" style="-fx-background-radius: 20;">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
@@ -34,14 +34,14 @@
                   </DatePicker>
                </children>
             </VBox>
+            <Button layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
+            <Button layoutX="138.0" layoutY="245.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
          </children>
          <effect>
             <DropShadow />
          </effect>
       </Pane>
-      <Button layoutX="322.0" layoutY="260.0" mnemonicParsing="false" onAction="#createBtn" text="Create" />
-      <Button layoutX="391.0" layoutY="260.0" mnemonicParsing="false" onAction="#cancelBtn" text="Cancel" />
-      <ImageView fitHeight="166.0" fitWidth="156.0" layoutX="306.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/easvImg.png" />
          </image>

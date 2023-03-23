@@ -8,7 +8,6 @@ import javafx.collections.ObservableList;
 
 // java imports
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 /**
  *

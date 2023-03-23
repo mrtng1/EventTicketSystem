@@ -1,3 +1,12 @@
 #createEventAnchorPane{
-    -fx-background-color: linear-gradient(to right bottom, #281714, #59221b, #8d2922, #c52e28, #ff2e2e);
+    -fx-background-color: linear-gradient(to left top, #281714, #59221b, #8d2922, #c52e28, #ff2e2e);
+}
+
+.button {
+    -fx-background-color: transparent;
+}
+
+.button:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
 }

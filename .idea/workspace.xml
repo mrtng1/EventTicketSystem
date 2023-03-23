@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Martin nevie programovať">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="coordinator_window.fxml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/popupStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -125,6 +128,7 @@
       <workItem from="1679510330932" duration="680000" />
       <workItem from="1679512138806" duration="3164000" />
       <workItem from="1679525906628" duration="693000" />
+      <workItem from="1679565618276" duration="1978000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -168,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679512280883</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="coordinator_window.fxml">
+      <created>1679564423683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679564423683</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +192,7 @@
     <MESSAGE value="los custom" />
     <MESSAGE value="neviem" />
     <MESSAGE value="Martin nevie programovať" />
-    <option name="LAST_COMMIT_MESSAGE" value="Martin nevie programovať" />
+    <MESSAGE value="coordinator_window.fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="coordinator_window.fxml" />
   </component>
 </project>

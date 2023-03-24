@@ -10,12 +10,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.CheckComboBox?>
 
 <AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventWindowController">
    <children>
       <Pane layoutX="230.0" prefHeight="300.0" prefWidth="270.0" style="-fx-background-color: white; -fx-background-radius: 20 0 0 20;">
          <children>
-            <VBox layoutX="60.0" layoutY="36.0" prefHeight="200.0" prefWidth="150.0">
+            <VBox layoutX="60.0" prefHeight="245.0" prefWidth="150.0">
                <children>
                   <TextField fx:id="nameField" alignment="TOP_LEFT" promptText="Event name" style="-fx-background-radius: 20;">
                      <VBox.margin>
@@ -32,10 +33,18 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </DatePicker>
+                  <CheckComboBox prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </CheckComboBox>
                </children>
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding>
             </VBox>
-            <Button layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
-            <Button layoutX="138.0" layoutY="245.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
+            <Button layoutX="64.0" layoutY="255.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
+            <Button layoutX="138.0" layoutY="255.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
          </children>
          <effect>
             <DropShadow />

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="coordinator_window.fxml">
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="login - passwordField">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,8 @@
       <workItem from="1679525906628" duration="693000" />
       <workItem from="1679565618276" duration="2117000" />
       <workItem from="1679582245042" duration="655000" />
-      <workItem from="1679608051479" duration="662000" />
+      <workItem from="1679608051479" duration="960000" />
+      <workItem from="1679651083237" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -184,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679567737800</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="login - passwordField">
+      <created>1679608977914</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679608977914</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +209,7 @@
     <MESSAGE value="Martin nevie programovať" />
     <MESSAGE value="coordinator_window.fxml" />
     <MESSAGE value="new style for pop up window" />
-    <option name="LAST_COMMIT_MESSAGE" value="new style for pop up window" />
+    <MESSAGE value="login - passwordField" />
+    <option name="LAST_COMMIT_MESSAGE" value="login - passwordField" />
   </component>
 </project>

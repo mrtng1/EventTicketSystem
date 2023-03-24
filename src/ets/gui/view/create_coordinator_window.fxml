@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorWindowController">
+<AnchorPane fx:id="createEventAnchorPane" prefHeight="300.0" prefWidth="500.0" stylesheets="@styles/popupStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateCoordinatorWindowController">
    <children>
       <Pane layoutX="230.0" prefHeight="300.0" prefWidth="270.0" style="-fx-background-color: white; -fx-background-radius: 20 0 0 20;">
          <children>
@@ -30,8 +30,8 @@
                   </TextField>
                </children>
             </VBox>
-            <Button layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
-            <Button layoutX="138.0" layoutY="245.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
+            <Button layoutX="64.0" layoutY="255.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
+            <Button layoutX="138.0" layoutY="255.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
             <VBox layoutX="10.0" layoutY="10.0">
                <children>
                   <MFXToggleButton fx:id="customToggle" />

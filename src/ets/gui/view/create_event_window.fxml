@@ -50,9 +50,9 @@
             <DropShadow />
          </effect>
       </Pane>
-      <Pane layoutX="398.0" layoutY="125.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to left top, #281714, #59221b, #8d2922, #c52e28, #ff2e2e); -fx-background-radius: 80;">
+      <Pane layoutX="396.0" layoutY="130.0" prefHeight="140.0" prefWidth="140.0" style="-fx-background-color: linear-gradient(to left top, #281714, #59221b, #8d2922, #c52e28, #ff2e2e); -fx-background-radius: 80;">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="70.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="100.0" fitWidth="70.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons/event_icon.png" />
                </image>

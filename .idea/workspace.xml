@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/calendar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/clock_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/coordinator_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/event_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +127,7 @@
       <workItem from="1679608051479" duration="960000" />
       <workItem from="1679651083237" duration="5027000" />
       <workItem from="1679675450327" duration="599000" />
-      <workItem from="1679899702298" duration="8159000" />
+      <workItem from="1679899702298" duration="8474000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -226,7 +213,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679901351299</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="new UI + features">
+      <created>1679925955584</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679925955584</updated>
+    </task>
+    <task id="LOCAL-00014" summary="bug">
+      <created>1679926030780</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679926030780</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +246,8 @@
     <MESSAGE value="combocheckbox" />
     <MESSAGE value="Data access interface implemented" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="new UI + features" />
+    <MESSAGE value="bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug" />
   </component>
 </project>

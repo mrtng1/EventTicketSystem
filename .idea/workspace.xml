@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="combocheckbox">
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Data access interface implemented">
+      <change afterPath="$PROJECT_DIR$/src/ets/dal/DAFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Coordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Coordinator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/IDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/IDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/mainStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/mainStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/ILogicAccess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/dal/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/TicketDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="CSS File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -140,7 +133,7 @@
       <workItem from="1679608051479" duration="960000" />
       <workItem from="1679651083237" duration="5027000" />
       <workItem from="1679675450327" duration="599000" />
-      <workItem from="1679899702298" duration="415000" />
+      <workItem from="1679899702298" duration="1364000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -212,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679651663925</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Data access interface implemented">
+      <created>1679900428837</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679900428837</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +229,7 @@
     <MESSAGE value="new style for pop up window" />
     <MESSAGE value="login - passwordField" />
     <MESSAGE value="combocheckbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="combocheckbox" />
+    <MESSAGE value="Data access interface implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data access interface implemented" />
   </component>
 </project>

@@ -2,6 +2,7 @@ package ets.bll;
 
 // imports
 import ets.be.Event;
+import ets.dal.EventDAO;
 import ets.dal.IDataAccess;
 
 // java imports
@@ -14,17 +15,17 @@ import java.util.List;
  */
 public class EventLogic {
 
-    IDataAccess dataAccess;
+    EventDAO eventDAO = new EventDAO();
 
     public Event createEvent(Event event) throws SQLException {
-        return dataAccess.createEvent(event);
+        return eventDAO.createEvent(event);
     }
 
     public List<Event> getAllEvents() throws SQLException{
-        return dataAccess.getAllEvents();
+        return eventDAO.getAllEvents();
     }
 
     public void deleteEvent(Event event) throws SQLException{
-        dataAccess.deleteEvent(event);
+        eventDAO.deleteEvent(event);
     }
 }

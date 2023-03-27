@@ -2,7 +2,7 @@ package ets.bll;
 
 // imports
 import ets.be.Admin;
-import ets.dal.IDataAccess;
+import ets.dal.AdminDAO;
 
 // java imports
 import java.sql.SQLException;
@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class AdminLogic {
 
-    IDataAccess dataAccess;
+    AdminDAO adminDAO = new AdminDAO();
 
     public List<Admin> getAllAdmins() throws SQLException{
-        return dataAccess.getAllAdmins();
+        return adminDAO.getAllAdmins();
     }
 
 }

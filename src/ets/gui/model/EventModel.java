@@ -1,6 +1,7 @@
 package ets.gui.model;
 
 // imports
+import ets.be.Coordinator;
 import ets.be.Event;
 import ets.bll.EventLogic;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ public class EventModel {
     EventLogic eventLogic = new EventLogic();
 
     private ObservableList<Event> events = FXCollections.observableArrayList();
+    private ObservableList<Coordinator> coordinators = FXCollections.observableArrayList();
 
     public Event createEvent(Event event) throws SQLException {
         Event e = eventLogic.createEvent(event);

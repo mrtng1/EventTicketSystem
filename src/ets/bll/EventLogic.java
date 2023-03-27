@@ -2,11 +2,10 @@ package ets.bll;
 
 // imports
 import ets.be.Event;
-import ets.dal.EventDAO;
+import ets.dal.IDataAccess;
 
 // java imports
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -15,17 +14,17 @@ import java.util.List;
  */
 public class EventLogic {
 
-    EventDAO eventDAO = new EventDAO();
+    IDataAccess dataAccess;
 
     public Event createEvent(Event event) throws SQLException {
-        return eventDAO.createEvent(event);
+        return dataAccess.createEvent(event);
     }
 
     public List<Event> getAllEvents() throws SQLException{
-        return eventDAO.getAllEvents();
+        return dataAccess.getAllEvents();
     }
 
     public void deleteEvent(Event event) throws SQLException{
-        eventDAO.deleteEvent(event);
+        dataAccess.deleteEvent(event);
     }
 }

@@ -2,7 +2,7 @@ package ets.bll;
 
 // imports
 import ets.be.Coordinator;
-import ets.dal.CoordinatorDAO;
+import ets.dal.IDataAccess;
 
 // java imports
 import java.sql.SQLException;
@@ -14,17 +14,17 @@ import java.util.List;
  */
 public class CoordinatorLogic {
 
-    CoordinatorDAO coordinatorDAO = new CoordinatorDAO();
+    IDataAccess dataAccess;
 
     public Coordinator createEvent(Coordinator coordinator) throws SQLException {
-        return coordinatorDAO.createCoordinator(coordinator);
+        return dataAccess.createCoordinator(coordinator);
     }
 
     public List<Coordinator> getAllCoordinators() throws SQLException{
-        return coordinatorDAO.getAllCoordinators();
+        return dataAccess.getAllCoordinators();
     }
 
     public void deleteCoordinator(Coordinator coordinator) throws SQLException{
-        coordinatorDAO.deleteCoordinator(coordinator);
+        dataAccess.deleteCoordinator(coordinator);
     }
 }

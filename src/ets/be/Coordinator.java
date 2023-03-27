@@ -46,10 +46,6 @@ public class Coordinator {
 
     @Override
     public String toString() {
-        return "Coordinator{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return username;
     }
 }

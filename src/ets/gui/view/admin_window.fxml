@@ -32,7 +32,7 @@
                   </ImageView>
                   <HBox prefHeight="100.0" prefWidth="899.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#viewEventsBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="See all the events">
+                        <Button mnemonicParsing="false" onAction="#createEventBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="Create event">
                            <font>
                               <Font name="Serif Regular" size="13.0" />
                            </font>
@@ -47,7 +47,7 @@
                               <Insets left="225.0" right="25.0" top="25.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#createEventBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="Create event">
+                        <Button mnemonicParsing="false" onAction="#viewEventsBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="See all events">
                            <font>
                               <Font name="Serif Regular" size="13.0" />
                            </font>

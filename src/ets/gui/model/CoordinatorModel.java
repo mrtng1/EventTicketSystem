@@ -28,6 +28,10 @@ public class CoordinatorModel {
 
     private ObservableList<Coordinator> coordinators = FXCollections.observableArrayList();
 
+    public ObservableList<Coordinator> getCoordinators() {
+        return coordinators;
+    }
+
     public Coordinator createCoordinator(Coordinator coordinator) throws SQLException {
         Coordinator c = coordinatorLogic.createEvent(coordinator);
         coordinators.add(c);

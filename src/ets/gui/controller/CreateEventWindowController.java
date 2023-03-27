@@ -1,8 +1,11 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Coordinator;
 import ets.be.Event;
+import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,11 +14,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.CheckComboBox;
 
 // java imports
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -24,22 +29,36 @@ import java.util.ResourceBundle;
  */
 public class CreateEventWindowController implements Initializable {
 
-    private EventModel eventModel;
+    @FXML
+    private CheckComboBox selectCoordinators;
     @FXML
     private TextField nameField, locationField;
     @FXML
     private DatePicker dateField;
     private Runnable refreshCallback;
+    private EventModel eventModel;
+    private CoordinatorModel coordinatorModel;
 
-    public void setModel(EventModel model){
-        this.eventModel = model;
+    public void setCoordinatorModel(CoordinatorModel coordinatorModel) {
+        this.coordinatorModel = coordinatorModel;
+
+        selectCoordinators.setTitle("Coordinators");
+        selectCoordinators.getItems().addAll(coordinatorModel.getCoordinators());
+
+        coordinatorModel.getCoordinators().addListener((ListChangeListener<? super Coordinator>) obs->{
+            selectCoordinators.getItems().clear();
+            selectCoordinators.getItems().addAll(coordinatorModel.getCoordinators());
+        });
     }
+
+    public void setEventModel(EventModel eventModel) {
+        this.eventModel = eventModel;
+    }
+
     public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
 
     @FXML
     private void createBtn(ActionEvent actionEvent) {
-        System.out.println("creating...");
-
         String name = nameField.getText();
         String location = locationField.getText();
         LocalDate date = dateField.getValue();
@@ -81,4 +100,6 @@ public class CreateEventWindowController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
+
+
 }

@@ -33,7 +33,7 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </DatePicker>
-                  <CheckComboBox prefWidth="150.0">
+                  <CheckComboBox fx:id="selectCoordinators" prefWidth="150.0">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>

@@ -66,7 +66,8 @@ public class AdminWindowController implements Initializable {
 
             // Set the model for the CreateEventWindowController
             CreateEventWindowController createEventWindowController = fxmlLoader.getController();
-            createEventWindowController.setModel(new EventModel());
+            createEventWindowController.setEventModel(new EventModel());
+            createEventWindowController.setCoordinatorModel(new CoordinatorModel());
             createEventWindowController.setRefreshCallback(this::refreshEventCards);
 
             // Show the new stage

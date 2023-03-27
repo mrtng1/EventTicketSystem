@@ -1,6 +1,7 @@
 package ets.dal;
 
 // imports
+import ets.be.Coordinator;
 import ets.be.Event;
 
 // java imports

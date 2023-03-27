@@ -13,6 +13,8 @@ public class Event {
     private String name;
     private String location;
     private LocalDate date;
+    private String message;
+    private byte[] image;
 
     public Event(String name, String location, LocalDate date) {
         this.name = name;

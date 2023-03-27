@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Data access interface implemented">
-      <change afterPath="$PROJECT_DIR$/src/ets/dal/DAFacade.java" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/calendar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/clock_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/coordinator_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/event_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/ILogicAccess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +74,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images/icons" />
+      <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view\images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\libraries" />
     </key>
@@ -133,7 +140,7 @@
       <workItem from="1679608051479" duration="960000" />
       <workItem from="1679651083237" duration="5027000" />
       <workItem from="1679675450327" duration="599000" />
-      <workItem from="1679899702298" duration="1364000" />
+      <workItem from="1679899702298" duration="8159000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -212,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679900428837</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix">
+      <created>1679901351299</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679901351299</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +244,7 @@
     <MESSAGE value="login - passwordField" />
     <MESSAGE value="combocheckbox" />
     <MESSAGE value="Data access interface implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data access interface implemented" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

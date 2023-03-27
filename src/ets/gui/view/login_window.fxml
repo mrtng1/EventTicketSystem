@@ -29,7 +29,7 @@
          </effect></Pane>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="64.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/easvImg.png" />
+            <Image url="@images/easv_logo.png" />
          </image>
          <effect>
             <DropShadow />

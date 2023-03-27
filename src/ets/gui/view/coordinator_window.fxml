@@ -24,7 +24,7 @@
                     <children>
                         <ImageView fitHeight="500.0" fitWidth="900.0" pickOnBounds="true">
                             <image>
-                                <Image url="@images/barImg.png" />
+                                <Image url="@images/bar_image.png" />
                             </image>
                             <VBox.margin>
                                 <Insets />
@@ -32,7 +32,7 @@
                         </ImageView>
                         <HBox prefHeight="100.0" prefWidth="899.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#viewEventsBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="See all the events">
+                                <Button mnemonicParsing="false" onAction="#createCoordinatorBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="Create coordinator">
                                     <font>
                                         <Font name="Serif Regular" size="13.0" />
                                     </font>
@@ -44,9 +44,24 @@
                                         </DropShadow>
                                     </effect>
                                     <HBox.margin>
-                                        <Insets left="388.0" right="25.0" top="25.0" />
+                                        <Insets left="317.0" right="25.0" top="25.0" />
                                     </HBox.margin>
                                 </Button>
+                        <Button layoutX="398.0" layoutY="35.0" mnemonicParsing="false" onAction="#viewEventsBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="See all events">
+                           <font>
+                              <Font name="Serif Regular" size="13.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color red="0.5263158082962036" green="0.5263158082962036" blue="0.5263158082962036" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                           <HBox.margin>
+                              <Insets right="25.0" top="25.0" />
+                           </HBox.margin>
+                        </Button>
                             </children>
                         </HBox>
                         <Pane prefHeight="600.0" prefWidth="900.0">

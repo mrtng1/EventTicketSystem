@@ -62,7 +62,7 @@ public class EventDAO {
 
     public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(EventId, CoordinatorId) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(Eventid, Coordinatorid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, event.getId());
             pst.setInt(2, coordinator.getId());
             pst.executeUpdate();
@@ -71,9 +71,13 @@ public class EventDAO {
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement statement = con.prepareStatement("DELETE FROM Event WHERE id = ?;");
-            statement.setInt(1, event.getId());
-            statement.executeUpdate();
+            PreparedStatement pstEventCoordinator = con.prepareStatement("DELETE FROM EventCoordinator WHERE Eventid = ?");
+            pstEventCoordinator.setInt(1, event.getId());
+            pstEventCoordinator.executeUpdate();
+
+            PreparedStatement pstEvent = con.prepareStatement("DELETE FROM Event WHERE id = ?");
+            pstEvent.setInt(1, event.getId());
+            pstEvent.executeUpdate();
         }
     }
 }

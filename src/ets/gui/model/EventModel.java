@@ -27,6 +27,11 @@ public class EventModel {
         return e;
     }
 
+    public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
+        eventLogic.assignEventCoordinator(event, coordinator);
+        coordinators.add(coordinator);
+    }
+
     public void deleteEvent(Event event) throws SQLException {
         eventLogic.deleteEvent(event);
     }

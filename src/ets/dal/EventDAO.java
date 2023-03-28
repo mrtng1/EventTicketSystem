@@ -60,6 +60,15 @@ public class EventDAO {
         throw new RuntimeException("Id not set");
     }
 
+    public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
+        try (Connection con = connectionManager.getConnection()) {
+            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(EventId, CoordinatorId) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+            pst.setInt(1, event.getId());
+            pst.setInt(2, coordinator.getId());
+            pst.executeUpdate();
+        }
+    }
+
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
             PreparedStatement statement = con.prepareStatement("DELETE FROM Event WHERE id = ?;");

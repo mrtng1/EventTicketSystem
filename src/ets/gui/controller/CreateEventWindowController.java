@@ -74,6 +74,12 @@ public class CreateEventWindowController implements Initializable {
                 Event event = new Event(name, location, date);
                 eventModel.createEvent(event);
 
+                // assign coordinators to the event
+                List<Coordinator> selectedItems = selectCoordinators.getCheckModel().getCheckedItems();
+                for (Coordinator item : selectedItems) { //Loop
+                    eventModel.assignEventCoordinator(event, new Coordinator(item.getId(), item.getUsername(), item.getPassword()));
+                }
+
                 // Call the refreshCallback
                 if (refreshCallback != null) {
                     refreshCallback.run();

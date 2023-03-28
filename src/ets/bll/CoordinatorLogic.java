@@ -16,7 +16,7 @@ public class CoordinatorLogic {
 
     CoordinatorDAO coordinatorDAO = new CoordinatorDAO();
 
-    public Coordinator createEvent(Coordinator coordinator) throws SQLException {
+    public Coordinator createCoordinator(Coordinator coordinator) throws SQLException {
         return coordinatorDAO.createCoordinator(coordinator);
     }
 

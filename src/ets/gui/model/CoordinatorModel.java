@@ -33,7 +33,7 @@ public class CoordinatorModel {
     }
 
     public Coordinator createCoordinator(Coordinator coordinator) throws SQLException {
-        Coordinator c = coordinatorLogic.createEvent(coordinator);
+        Coordinator c = coordinatorLogic.createCoordinator(coordinator);
         coordinators.add(c);
         return c;
     }

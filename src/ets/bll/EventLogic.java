@@ -1,6 +1,7 @@
 package ets.bll;
 
 // imports
+import ets.be.Coordinator;
 import ets.be.Event;
 import ets.dal.EventDAO;
 import ets.dal.IDataAccess;
@@ -17,12 +18,16 @@ public class EventLogic {
 
     EventDAO eventDAO = new EventDAO();
 
+    public List<Event> getAllEvents() throws SQLException{
+        return eventDAO.getAllEvents();
+    }
+
     public Event createEvent(Event event) throws SQLException {
         return eventDAO.createEvent(event);
     }
 
-    public List<Event> getAllEvents() throws SQLException{
-        return eventDAO.getAllEvents();
+    public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
+        eventDAO.assignEventCoordinator(event, coordinator);
     }
 
     public void deleteEvent(Event event) throws SQLException{

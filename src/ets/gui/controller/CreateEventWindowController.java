@@ -10,12 +10,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
+import javafx.util.converter.DoubleStringConverter;
 import org.controlsfx.control.CheckComboBox;
 
 // java imports
@@ -25,6 +24,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -140,5 +141,100 @@ public class CreateEventWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 24, 12.30);
+        eventTimeField.setValueFactory(valueFactory);
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        StringConverter<Double> converter = new StringConverter<>() {
+            @Override
+            public String toString(Double value) {
+                if (value == null) {
+                    return "";
+                }
+                return df.format(value);
+            }
+
+            @Override
+            public Double fromString(String string) {
+                try {
+                    if (string == null) {
+                        return null;
+                    }
+                    string = string.trim();
+                    if (string.length() < 1) {
+                        return null;
+                    }
+                    return df.parse(string).doubleValue();
+                } catch (ParseException ex) {
+                    return null;
+                }
+            }
+        };
+
+        eventTimeField.getEditor().setTextFormatter(new TextFormatter<>(converter, 12.30));
     }
+
+    public static class CustomSpinnerValueFactory extends SpinnerValueFactory<Double> {
+        private double min;
+        private double max;
+
+        public CustomSpinnerValueFactory(double min, double max, double initialValue) {
+            this.min = min;
+            this.max = max;
+            setValue(initialValue);
+
+            setConverter(new StringConverter<>() {
+                @Override
+                public String toString(Double value) {
+                    return String.format("%.2f", value);
+                }
+
+                @Override
+                public Double fromString(String string) {
+                    return Double.parseDouble(string);
+                }
+            });
+        }
+
+        @Override
+        public void increment(int steps) {
+            double currentValue = getValue();
+            double newValue = currentValue + steps * 0.5;
+
+            double wholePart = Math.floor(newValue);
+            double decimalPart = newValue - wholePart;
+
+            if (steps > 0) {
+                if (decimalPart > 0 && decimalPart <= 0.5) {
+                    newValue = wholePart + 0.3;
+                } else {
+                    newValue = wholePart + 1;
+                }
+            } else {
+                if (decimalPart > 0 && decimalPart < 0.3) {
+                    newValue = wholePart - 0.3;
+                } else if (decimalPart >= 0.3 && decimalPart < 0.8) {
+                    newValue = wholePart + 0.3;
+                } else {
+                    newValue = wholePart;
+                }
+            }
+
+            // Clamp the value between min and max
+            if (newValue > max) {
+                newValue = max;
+            } else if (newValue < min) {
+                newValue = min;
+            }
+
+            setValue(newValue);
+        }
+
+
+        @Override
+        public void decrement(int steps) {
+            increment(-steps);
+        }
+    }
+
 }

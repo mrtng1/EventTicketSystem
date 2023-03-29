@@ -5,6 +5,7 @@ import ets.be.Event;
 import ets.dal.EventDAO;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
+import io.github.palexdev.materialfx.controls.MFXPagination;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +37,8 @@ public class AdminWindowController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private GridPane eventPane;
+    @FXML
+    private MFXPagination mfxPagination;
 
     @FXML
     private void viewEventsBtn(ActionEvent event) {
@@ -100,6 +103,8 @@ public class AdminWindowController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
 
     private void populateGridPane() throws IOException {
         EventDAO eventDAO = new EventDAO();

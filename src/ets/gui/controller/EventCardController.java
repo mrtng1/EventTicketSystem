@@ -11,10 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 // java imports
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -30,6 +33,8 @@ import java.util.ResourceBundle;
  */
 public class EventCardController implements Initializable {
 
+    @FXML
+    private ImageView eventImage;
     @FXML
     private Label participantsNumber, timeNumber, eventTitle;
     @FXML
@@ -53,11 +58,18 @@ public class EventCardController implements Initializable {
         this.adminWindowController = adminWindowController;
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         eventTitle.setText(event.getName());
+
+        // setting the image
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(event.getImageData());
+        Image image = new Image(inputStream);
+        eventImage.setImage(image);
+        eventImage.setFitWidth(50);
+        eventImage.setFitHeight(50);
+        eventImage.setPreserveRatio(false);
+
         //eventLocation.setText(event.getLocation());
         Duration duration = calculateTimeRemaining(event.getDate());
         if (duration.toHours() < 0) {

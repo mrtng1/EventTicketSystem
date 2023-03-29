@@ -14,11 +14,11 @@ public class Event {
     private String name;
     private String location;
     private LocalDate date;
-    private float time;
+    private double time;
     private String note;
     private byte[] imageData;
 
-    public Event(String name, String location, LocalDate date, float time, String note, byte[] imageData) {
+    public Event(String name, String location, LocalDate date, double time, String note, byte[] imageData) {
         this.name = name;
         this.location = location;
         this.date = date;
@@ -27,7 +27,7 @@ public class Event {
         this.imageData = imageData;
     }
 
-    public Event(int id, String name, String location, LocalDate date, float time, String note, byte[] imageData){
+    public Event(int id, String name, String location, LocalDate date, double time, String note, byte[] imageData){
         this(name, location, date, time, note, imageData);
         this.id = id;
     }
@@ -64,7 +64,7 @@ public class Event {
         this.date = date;
     }
 
-    public float getTime() {
+    public double getTime() {
         return time;
     }
 

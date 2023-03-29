@@ -72,7 +72,7 @@ public class CreateEventWindowController implements Initializable {
         String name = eventNameField.getText();
         String location = eventLocationField.getText();
         LocalDate date = eventDateField.getValue();
-        float time = 0;
+        double time = (double) eventTimeField.getValue();
         String note = "";
 
         if (name.isEmpty() || location.isEmpty() || date == null) {

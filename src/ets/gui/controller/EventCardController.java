@@ -83,8 +83,13 @@ public class EventCardController implements Initializable {
     }
 
     private Duration calculateTimeRemaining(LocalDate eventDate) {
+        double eventTimeDouble = event.getTime();
+        int hours = (int) eventTimeDouble;
+        int minutes = (int) ((eventTimeDouble - hours) * 60);
+        LocalTime eventLocalTime = LocalTime.of(hours, minutes);
+
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime eventDateTime = LocalDateTime.of(eventDate, LocalTime.MIDNIGHT);
+        LocalDateTime eventDateTime = LocalDateTime.of(eventDate, eventLocalTime);
         return Duration.between(now, eventDateTime);
     }
 

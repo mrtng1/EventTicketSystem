@@ -52,7 +52,7 @@ public class EventDAO {
             pst.setString(1, event.getName());
             pst.setString(2, event.getLocation());
             pst.setDate(3, Date.valueOf(event.getDate()));
-            pst.setFloat(4, event.getTime());
+            pst.setDouble(4, event.getTime());
             pst.setString(5, event.getNote());
             pst.setBytes(6, event.getImageData());
 

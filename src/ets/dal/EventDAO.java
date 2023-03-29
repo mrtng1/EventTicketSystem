@@ -35,8 +35,11 @@ public class EventDAO {
                     String name = resultSet.getString("name");
                     String location = resultSet.getString("location");
                     LocalDate date = resultSet.getDate("date").toLocalDate();
+                    float time = resultSet.getFloat("time");
+                    String note = resultSet.getString("note");
+                    byte[] imageData = resultSet.getBytes("imageData");
 
-                    Event event = new Event(id, name, location, date);
+                    Event event = new Event(id, name, location, date, time, note, imageData);
                     allEvents.add(event);
                 }
             }
@@ -45,10 +48,14 @@ public class EventDAO {
 
     public Event createEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, date, location) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, location, date, time, note, imageData) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setString(1, event.getName());
-            pst.setDate(2, Date.valueOf(event.getDate()));
-            pst.setString(3, event.getLocation());
+            pst.setString(2, event.getLocation());
+            pst.setDate(3, Date.valueOf(event.getDate()));
+            pst.setFloat(4, event.getTime());
+            pst.setString(5, event.getNote());
+            pst.setBytes(6, event.getImageData());
+
             pst.execute();
 
             if (pst.getGeneratedKeys().next()) {
@@ -62,7 +69,7 @@ public class EventDAO {
 
     public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(Eventid, Coordinatorid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(eventid, coordinatorid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, event.getId());
             pst.setInt(2, coordinator.getId());
             pst.executeUpdate();
@@ -71,7 +78,7 @@ public class EventDAO {
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
-            PreparedStatement pstEventCoordinator = con.prepareStatement("DELETE FROM EventCoordinator WHERE Eventid = ?");
+            PreparedStatement pstEventCoordinator = con.prepareStatement("DELETE FROM EventCoordinator WHERE eventid = ?");
             pstEventCoordinator.setInt(1, event.getId());
             pstEventCoordinator.executeUpdate();
 

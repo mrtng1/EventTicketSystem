@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Assign coordinator to event">
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="delete event with assigned coordinator(s)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +138,8 @@
       <workItem from="1679943808058" duration="11000" />
       <workItem from="1679943990783" duration="770000" />
       <workItem from="1679998950009" duration="510000" />
-      <workItem from="1679999497690" duration="1779000" />
+      <workItem from="1679999497690" duration="2937000" />
+      <workItem from="1680078134734" duration="3106000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -248,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680001069497</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="delete event with assigned coordinator(s)">
+      <created>1680001411638</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680001411638</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +283,7 @@
     <MESSAGE value="bug" />
     <MESSAGE value="." />
     <MESSAGE value="Assign coordinator to event" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assign coordinator to event" />
+    <MESSAGE value="delete event with assigned coordinator(s)" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete event with assigned coordinator(s)" />
   </component>
 </project>

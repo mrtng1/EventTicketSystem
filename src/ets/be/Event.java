@@ -2,6 +2,7 @@ package ets.be;
 
 // imports
 import java.time.LocalDate;
+import java.util.Arrays;
 
 /**
  *
@@ -13,17 +14,21 @@ public class Event {
     private String name;
     private String location;
     private LocalDate date;
-    private String message;
-    private byte[] image;
+    private float time;
+    private String note;
+    private byte[] imageData;
 
-    public Event(String name, String location, LocalDate date) {
+    public Event(String name, String location, LocalDate date, float time, String note, byte[] imageData) {
         this.name = name;
         this.location = location;
         this.date = date;
+        this.time = time;
+        this.note = note;
+        this.imageData = imageData;
     }
 
-    public Event(int id, String name, String location, LocalDate date){
-        this(name, location, date);
+    public Event(int id, String name, String location, LocalDate date, float time, String note, byte[] imageData){
+        this(name, location, date, time, note, imageData);
         this.id = id;
     }
 
@@ -59,13 +64,40 @@ public class Event {
         this.date = date;
     }
 
+    public float getTime() {
+        return time;
+    }
+
+    public void setTime(float time) {
+        this.time = time;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
-                ", id=" + id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
                 ", date=" + date +
+                ", time=" + time +
+                ", note='" + note + '\'' +
+                ", imageData=" + Arrays.toString(imageData) +
                 '}';
     }
 }

@@ -15,3 +15,7 @@
     -fx-background-color: #d92828;
     -fx-text-fill: white;
 }
+
+#gridPane{
+    -fx-background-color: white;
+}

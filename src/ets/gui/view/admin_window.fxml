@@ -16,11 +16,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.AdminWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.AdminWindowController">
    <children>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hmax="0.0" layoutX="118.0" layoutY="65.0" prefHeight="1000.0" prefWidth="900.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hmax="0.0" layoutX="118.0" layoutY="65.0" prefHeight="1200.0" prefWidth="900.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <VBox prefHeight="1312.0" prefWidth="900.0">
+            <VBox prefHeight="1200.0" prefWidth="900.0">
                <children>
                   <ImageView fitHeight="500.0" fitWidth="900.0" pickOnBounds="true">
                      <image>
@@ -30,7 +30,7 @@
                         <Insets />
                      </VBox.margin>
                   </ImageView>
-                  <HBox prefHeight="100.0" prefWidth="899.0">
+                  <HBox prefHeight="100.0" prefWidth="900.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#createCoordinatorBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="Create coordinator">
                            <font>
@@ -79,34 +79,39 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Pane prefHeight="817.0" prefWidth="900.0">
+                  <Pane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: transparent;">
                      <children>
-                        <Pane layoutX="39.0" layoutY="94.0" prefHeight="606.0" prefWidth="826.0" style="-fx-background-color: transparent;">
+                        <GridPane fx:id="gridPane" layoutX="82.0" layoutY="27.0" prefHeight="543.0" prefWidth="787.0" style="-fx-background-color: transparent;">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <GridPane fx:id="eventPane" layoutX="25.0" layoutY="40.0" prefHeight="543.0" prefWidth="787.0">
-                                <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" />
-                                 </children>
-                              </GridPane>
+                              <Pane>
+                                 <GridPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </GridPane.margin></Pane>
                            </children>
-                        </Pane>
-                        <HBox layoutX="440.0" layoutY="716.0" prefHeight="30.0" prefWidth="64.0">
+                        </GridPane>
+                        <HBox layoutX="425.0" layoutY="570.0" prefHeight="30.0" prefWidth="64.0">
                            <children>
-                              <Button fx:id="leftBut" mnemonicParsing="false" onAction="#handleLeftBtn" text="&lt;" />
-                              <Button fx:id="rightBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRightBtn" text="&gt;">
+                              <Button fx:id="leftBut" mnemonicParsing="false" onAction="#handleLeftBtn" stylesheets="@styles/mainStyle.css" text="&lt;">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font></Button>
+                              <Button fx:id="rightBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRightBtn" stylesheets="@styles/mainStyle.css" text="&gt;">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
                               </Button>
                            </children>
                         </HBox>

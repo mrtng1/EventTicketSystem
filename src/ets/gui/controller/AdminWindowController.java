@@ -5,7 +5,6 @@ import ets.be.Event;
 import ets.dal.EventDAO;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
-import io.github.palexdev.materialfx.controls.MFXPagination;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -37,12 +35,7 @@ public class AdminWindowController implements Initializable {
     @FXML
     private ScrollPane scrollPane;
     @FXML
-    private GridPane eventPane;
-    @FXML
-    private MFXPagination mfxPagination;
-    @FXML
-    private Button leftBut, rightBut;
-
+    private GridPane gridPane;
     private int currentPage;
     private int totalPages;
 
@@ -126,10 +119,6 @@ public class AdminWindowController implements Initializable {
         }
     }
 
-
-
-
-
     private void populateGridPane() throws IOException {
         EventDAO eventDAO = new EventDAO();
         List<Event> events;
@@ -144,9 +133,6 @@ public class AdminWindowController implements Initializable {
         int eventsPerPage = numRows * numColumns;
         totalPages = (int) Math.ceil((double) events.size() / eventsPerPage);
 
-        String borderColor = "#000000";
-        double borderWidth = 1.0;
-
         EventModel eventModel = new EventModel();
 
         for (int row = 0; row < numRows; row++) {
@@ -155,25 +141,22 @@ public class AdminWindowController implements Initializable {
                 if (eventIndex >= events.size()) {
                     break;
                 }
-
                 Pane pane = new Pane();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
+
                 // Pass both Event and EventModel instances to the constructor
                 fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), eventModel, this));
                 Pane contentPane = fxmlLoader.load();
-
                 pane.getChildren().add(contentPane);
-                pane.setStyle("-fx-border-color: " + borderColor + "; -fx-border-width: " + borderWidth + ";");
-
-                eventPane.add(pane, col, row);
+                gridPane.add(pane, col, row);
             }
         }
     }
 
     public void refreshEventCards() {
         try {
-            eventPane.getChildren().clear();
+            gridPane.getChildren().clear();
             populateGridPane();
         } catch (IOException e) {
             throw new RuntimeException(e);

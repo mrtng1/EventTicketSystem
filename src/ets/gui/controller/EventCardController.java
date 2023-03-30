@@ -66,8 +66,8 @@ public class EventCardController implements Initializable {
         ByteArrayInputStream inputStream = new ByteArrayInputStream(event.getImageData());
         Image image = new Image(inputStream);
         eventImage.setImage(image);
-        eventImage.setFitWidth(50);
-        eventImage.setFitHeight(50);
+        eventImage.setFitWidth(120);
+        eventImage.setFitHeight(120);
         eventImage.setPreserveRatio(false);
 
         //eventLocation.setText(event.getLocation());

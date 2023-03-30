@@ -106,6 +106,8 @@ public class AdminWindowController implements Initializable {
 
 
 
+
+
     private void populateGridPane() throws IOException {
         EventDAO eventDAO = new EventDAO();
         List<Event> events;
@@ -115,8 +117,8 @@ public class AdminWindowController implements Initializable {
             throw new RuntimeException("Failed to fetch events from the database.", e);
         }
 
-        int numRows = 5;
-        int numColumns = 1;
+        int numRows = 4;
+        int numColumns = 2;
         String borderColor = "#000000";
         double borderWidth = 1.0;
 

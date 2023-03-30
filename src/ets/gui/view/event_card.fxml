@@ -7,34 +7,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
    <children>
-      <Button fx:id="eventView" layoutX="604.0" layoutY="74.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
-      <HBox layoutX="10.0" layoutY="87.0" prefHeight="22.0" prefWidth="51.0">
+      <Button fx:id="eventView" layoutX="271.0" layoutY="98.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
+      <VBox layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="81.0">
          <children>
-            <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/icons/participants_icon.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
-               <HBox.margin>
-                  <Insets left="5.0" top="2.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-      </HBox>
-      <Button fx:id="deleteButton" layoutX="537.0" layoutY="74.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
-      <HBox fx:id="daysLeft" layoutX="5.0" layoutY="5.0" prefHeight="22.0" prefWidth="651.0">
-         <children>
-            <Label fx:id="eventTitle" prefHeight="17.0" prefWidth="100.0" text="Empty event">
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin></Label>
-            <HBox prefHeight="22.0" prefWidth="64.0">
+            <HBox prefHeight="35.0" prefWidth="64.0">
                <children>
-                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/icons/clock_icon.png" />
                      </image>
@@ -43,14 +26,37 @@
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Label>
                </children>
-               <HBox.margin>
-                  <Insets left="500.0" />
-               </HBox.margin>
+            </HBox>
+            <HBox prefHeight="35.0" prefWidth="51.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons/participants_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
             </HBox>
          </children>
-      </HBox>
-      <ImageView fx:id="eventImage" fitHeight="81.0" fitWidth="186.0" layoutX="239.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
+      </VBox>
+      <Button fx:id="deleteButton" layoutX="204.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
+      <Label fx:id="eventTitle" layoutX="10.0" layoutY="5.0" prefHeight="30.0" prefWidth="210.0" text="Empty event">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="eventImage" fitHeight="100.0" fitWidth="120.0" layoutX="106.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

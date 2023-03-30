@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -39,6 +40,11 @@ public class AdminWindowController implements Initializable {
     private GridPane eventPane;
     @FXML
     private MFXPagination mfxPagination;
+    @FXML
+    private Button leftBut, rightBut;
+
+    private int currentPage;
+    private int totalPages;
 
     @FXML
     private void viewEventsBtn(ActionEvent event) {
@@ -50,6 +56,22 @@ public class AdminWindowController implements Initializable {
                 )
         );
         timeline.play();
+    }
+
+    @FXML
+    private void handleLeftBtn(ActionEvent actionEvent) {
+        if (currentPage > 0) {
+            currentPage--;
+            refreshEventCards();
+        }
+    }
+
+    @FXML
+    private void handleRightBtn(ActionEvent actionEvent) {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            refreshEventCards();
+        }
     }
 
     @FXML
@@ -119,6 +141,9 @@ public class AdminWindowController implements Initializable {
 
         int numRows = 4;
         int numColumns = 2;
+        int eventsPerPage = numRows * numColumns;
+        totalPages = (int) Math.ceil((double) events.size() / eventsPerPage);
+
         String borderColor = "#000000";
         double borderWidth = 1.0;
 
@@ -126,7 +151,7 @@ public class AdminWindowController implements Initializable {
 
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numColumns; col++) {
-                int eventIndex = row * numColumns + col;
+                int eventIndex = currentPage * eventsPerPage + row * numColumns + col;
                 if (eventIndex >= events.size()) {
                     break;
                 }
@@ -157,6 +182,7 @@ public class AdminWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        currentPage = 0;
         try {
             populateGridPane();
         } catch (IOException e) {

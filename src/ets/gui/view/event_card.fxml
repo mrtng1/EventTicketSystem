@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
    <children>
-      <Button fx:id="eventView" layoutX="168.0" layoutY="80.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
+      <Button fx:id="eventView" layoutX="604.0" layoutY="74.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
       <HBox layoutX="10.0" layoutY="87.0" prefHeight="22.0" prefWidth="51.0">
          <children>
             <ImageView fitHeight="18.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
@@ -25,28 +25,32 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="deleteButton" layoutX="101.0" layoutY="80.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
-      <HBox fx:id="daysLeft" layoutX="5.0" layoutY="5.0" prefHeight="22.0" prefWidth="210.0">
+      <Button fx:id="deleteButton" layoutX="537.0" layoutY="74.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
+      <HBox fx:id="daysLeft" layoutX="5.0" layoutY="5.0" prefHeight="22.0" prefWidth="651.0">
          <children>
             <Label fx:id="eventTitle" prefHeight="17.0" prefWidth="100.0" text="Empty event">
                <HBox.margin>
                   <Insets left="5.0" />
                </HBox.margin></Label>
-            <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/icons/clock_icon.png" />
-               </image>
+            <HBox prefHeight="22.0" prefWidth="64.0">
+               <children>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons/clock_icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="timeNumber" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="50.0" text="0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="500.0" />
                </HBox.margin>
-            </ImageView>
-            <Label fx:id="timeNumber" alignment="TOP_LEFT" prefHeight="17.0" prefWidth="50.0" text="0">
-               <HBox.margin>
-                  <Insets left="5.0" top="2.0" />
-               </HBox.margin>
-            </Label>
+            </HBox>
          </children>
       </HBox>
-      <ImageView fx:id="eventImage" fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="eventImage" fitHeight="81.0" fitWidth="186.0" layoutX="239.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

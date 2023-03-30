@@ -116,7 +116,7 @@ public class AdminWindowController implements Initializable {
         }
 
         int numRows = 5;
-        int numColumns = 3;
+        int numColumns = 1;
         String borderColor = "#000000";
         double borderWidth = 1.0;
 

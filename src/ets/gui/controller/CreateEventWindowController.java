@@ -109,7 +109,6 @@ public class CreateEventWindowController implements Initializable {
 
     @FXML
     private void cancelBtn(ActionEvent actionEvent){
-        System.out.println("canceling...");
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
@@ -141,6 +140,10 @@ public class CreateEventWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        initializeTimeSpinner();
+    }
+
+    private void initializeTimeSpinner(){
         CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 24, 12.30);
         eventTimeField.setValueFactory(valueFactory);
 

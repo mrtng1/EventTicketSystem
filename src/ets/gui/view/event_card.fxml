@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="332.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventCardController">
    <children>
-      <Button fx:id="eventView" layoutX="271.0" layoutY="98.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
+      <Button fx:id="eventView" layoutX="326.0" layoutY="94.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/eventCardStyle.css" text="View" />
       <VBox layoutX="10.0" layoutY="82.0" prefHeight="50.0" prefWidth="81.0">
          <children>
             <HBox prefHeight="35.0" prefWidth="64.0">
@@ -51,7 +51,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="deleteButton" layoutX="204.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
+      <Button fx:id="deleteButton" layoutX="259.0" layoutY="94.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/eventCardStyle.css" text="Delete" visible="false" />
       <Label fx:id="eventTitle" layoutX="10.0" layoutY="5.0" prefHeight="30.0" prefWidth="210.0" text="Empty event">
          <font>
             <Font name="System Bold" size="20.0" />

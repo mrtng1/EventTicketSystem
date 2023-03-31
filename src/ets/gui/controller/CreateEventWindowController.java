@@ -28,6 +28,7 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -82,6 +83,25 @@ public class CreateEventWindowController implements Initializable {
             alert.setContentText("Please fill in all the fields.");
             alert.showAndWait();
         } else {
+            // Show an alert with a big text field asking to either "Write a note" or "Skip"
+            TextArea textArea = new TextArea();
+            textArea.setPromptText("Write a note here...");
+            textArea.setWrapText(true);
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Add Note");
+            alert.setHeaderText("Write a note");
+            alert.getDialogPane().setContent(textArea);
+
+            ButtonType skipButtonType = new ButtonType("Skip", ButtonBar.ButtonData.CANCEL_CLOSE);
+            ButtonType writeNoteButtonType = new ButtonType("Write a Note", ButtonBar.ButtonData.OK_DONE);
+            alert.getButtonTypes().setAll(writeNoteButtonType, skipButtonType);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == writeNoteButtonType) {
+                note = textArea.getText();
+            }
+
             try {
                 Event event = new Event(name, location, date, time, note, imageData);
                 eventModel.createEvent(event);

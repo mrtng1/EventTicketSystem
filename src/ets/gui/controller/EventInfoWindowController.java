@@ -24,7 +24,7 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     private Button closeButton;
     @FXML
-    private Label eventTitleLabel, locationLabel, dateLabel;
+    private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
     private Event event;
     EventModel eventModel = new EventModel();
 
@@ -44,6 +44,9 @@ public class EventInfoWindowController implements Initializable {
 
         if(dateLabel != null) {
             dateLabel.setText("Date: "+String.valueOf(event.getDate()));
+        }
+        if(noteLabel != null) {
+            noteLabel.setText(event.getNote());
         }
     }
 

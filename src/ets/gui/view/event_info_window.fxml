@@ -8,25 +8,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="eventCardViewAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
+<AnchorPane fx:id="eventCardViewAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
    <children>
-      <Button fx:id="closeButton" layoutX="537.0" layoutY="360.0" mnemonicParsing="false" onAction="#closeBtn" text="Close" />
-      <Label fx:id="eventTitleLabel" alignment="CENTER" layoutX="252.0" layoutY="25.0" prefHeight="17.0" prefWidth="300.0" text="---event---" textFill="#616161">
+      <Button fx:id="closeButton" layoutX="537.0" layoutY="360.0" mnemonicParsing="false" onAction="#closeBtn" stylesheets="@styles/popupStyle.css" text="Close" />
+      <Label fx:id="eventTitleLabel" alignment="CENTER" layoutX="252.0" layoutY="14.0" prefHeight="17.0" prefWidth="300.0" text="---event---" textFill="#616161">
          <font>
-            <Font name="Impact" size="24.0" />
+            <Font size="24.0" />
          </font></Label>
-      <Button layoutX="448.0" layoutY="360.0" mnemonicParsing="false" text="Print Ticket" />
-      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#deleteEventBtn" text="Delete event" />
-      <ListView layoutX="14.0" layoutY="25.0" prefHeight="320.0" prefWidth="200.0" />
-      <VBox layoutX="433.0" layoutY="62.0" prefHeight="200.0" prefWidth="140.0">
+      <Button layoutX="448.0" layoutY="360.0" mnemonicParsing="false" stylesheets="@styles/popupStyle.css" text="Print Ticket" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#deleteEventBtn" stylesheets="@styles/popupStyle.css" text="Delete event" />
+      <ListView fx:id="participantsList" layoutX="14.0" layoutY="14.0" prefHeight="320.0" prefWidth="200.0" />
+      <VBox layoutX="332.0" layoutY="74.0" prefHeight="200.0" prefWidth="140.0">
          <children>
-            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="141.0" text="--Location--" textAlignment="CENTER" />
+            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="141.0" text="--Location--" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Label>
             <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="142.0" text="--date---" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets top="5.0" />
+                  <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Label fx:id="noteLabel" alignment="TOP_LEFT" layoutX="10.0" layoutY="32.0" prefHeight="65.0" prefWidth="140.0" text="--note--" textAlignment="CENTER" />
+            <Label fx:id="noteLabel" alignment="TOP_LEFT" layoutX="10.0" layoutY="32.0" prefHeight="65.0" prefWidth="140.0" text="--note--" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Label>
          </children>
       </VBox>
    </children>

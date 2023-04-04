@@ -2,6 +2,7 @@ package ets.gui.controller;
 
 // imports
 import ets.be.Event;
+import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,24 +37,17 @@ public class EventCardController implements Initializable {
     @FXML
     private ImageView eventImage;
     @FXML
-    private Label participantsNumber, timeNumber, eventTitle;
+    private Label participants, timeNumber, eventTitle;
     @FXML
     private Button deleteButton;
     private Event event;
     private EventModel eventModel;
+    private CustomerModel customerModel;
     private AdminWindowController adminWindowController;
 
-    public EventCardController(Event event, EventModel eventModel) {
+    public EventCardController(Event event, CustomerModel customerModel, EventModel eventModel, AdminWindowController adminWindowController) {
         this.event = event;
-        this.eventModel = eventModel;
-    }
-
-    public EventCardController(Event event) {
-        this.event = event;
-    }
-
-    public EventCardController(Event event, EventModel eventModel, AdminWindowController adminWindowController) {
-        this.event = event;
+        this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.adminWindowController = adminWindowController;
     }
@@ -80,6 +74,12 @@ public class EventCardController implements Initializable {
         } else {
             timeNumber.setText(duration.toHours() + " h");
         }
+
+        try {
+            participants.setText(String.valueOf(customerModel.getCustomers(event).size()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Duration calculateTimeRemaining(LocalDate eventDate) {
@@ -101,6 +101,7 @@ public class EventCardController implements Initializable {
             Parent createEventParent = fxmlLoader.load();
 
             EventInfoWindowController eventInfoWindowController = fxmlLoader.getController();
+            eventInfoWindowController.setModel(new EventModel(), new CustomerModel());
             eventInfoWindowController.setEvent(event);
 
             // Create a new stage and scene

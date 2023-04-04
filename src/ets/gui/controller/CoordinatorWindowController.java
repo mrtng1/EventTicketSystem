@@ -1,6 +1,7 @@
 package ets.gui.controller;
 
 // imports
+import ets.gui.controller.create.CreateCoordinatorWindowController;
 import ets.gui.model.CoordinatorModel;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -19,7 +20,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 // java imports
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

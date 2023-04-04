@@ -46,7 +46,7 @@
                         <Image url="@images/icons/participants_icon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="participantsNumber" text="0" textAlignment="CENTER">
+                  <Label fx:id="participants" text="0" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>

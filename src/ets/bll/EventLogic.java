@@ -2,9 +2,9 @@ package ets.bll;
 
 // imports
 import ets.be.Coordinator;
+import ets.be.Customer;
 import ets.be.Event;
 import ets.dal.EventDAO;
-import ets.dal.IDataAccess;
 
 // java imports
 import java.sql.SQLException;
@@ -28,6 +28,10 @@ public class EventLogic {
 
     public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
         eventDAO.assignEventCoordinator(event, coordinator);
+    }
+
+    public void joinEvent(Event event, Customer customer) throws SQLException{
+        eventDAO.joinEvent(event, customer);
     }
 
     public void deleteEvent(Event event) throws SQLException{

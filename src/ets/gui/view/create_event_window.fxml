@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.controlsfx.control.CheckComboBox?>
 
-<AnchorPane fx:id="createEventAnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #484c4e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CreateEventWindowController">
+<AnchorPane fx:id="createEventAnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #484c4e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.create.CreateEventWindowController">
    <children>
       <Pane prefHeight="450.0" prefWidth="330.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
          <children>

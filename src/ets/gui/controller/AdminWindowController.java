@@ -3,7 +3,10 @@ package ets.gui.controller;
 // imports
 import ets.be.Event;
 import ets.dal.EventDAO;
+import ets.gui.controller.create.CreateCoordinatorWindowController;
+import ets.gui.controller.create.CreateEventWindowController;
 import ets.gui.model.CoordinatorModel;
+import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -120,10 +123,10 @@ public class AdminWindowController implements Initializable {
     }
 
     private void populateGridPane() throws IOException {
-        EventDAO eventDAO = new EventDAO();
+        EventModel eventModel = new EventModel();
         List<Event> events;
         try {
-            events = eventDAO.getAllEvents();
+            events = eventModel.getEvents();
         } catch (SQLException e) {
             throw new RuntimeException("Failed to fetch events from the database.", e);
         }
@@ -132,8 +135,6 @@ public class AdminWindowController implements Initializable {
         int numColumns = 2;
         int eventsPerPage = numRows * numColumns;
         totalPages = (int) Math.ceil((double) events.size() / eventsPerPage);
-
-        EventModel eventModel = new EventModel();
 
         for (int row = 0; row < numRows; row++) {
             for (int col = 0; col < numColumns; col++) {
@@ -146,7 +147,7 @@ public class AdminWindowController implements Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
 
                 // Pass both Event and EventModel instances to the constructor
-                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), eventModel, this));
+                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), new CustomerModel(), eventModel, this));
                 Pane contentPane = fxmlLoader.load();
                 pane.getChildren().add(contentPane);
                 gridPane.add(pane, col, row);

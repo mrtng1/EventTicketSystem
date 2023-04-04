@@ -1,9 +1,10 @@
-package ets.gui.controller;
+package ets.gui.controller.create;
 
 // imports
 import ets.be.Coordinator;
 import ets.be.Event;
 import ets.gui.model.CoordinatorModel;
+import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;

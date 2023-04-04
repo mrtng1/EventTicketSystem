@@ -10,10 +10,14 @@ public class Customer {
     private String name;
     private String email;
 
-    public Customer(int id, String name, String email) {
-        this.id = id;
+    public Customer(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public Customer(int id, String name, String email) {
+        this(name, email);
+        this.id = id;
     }
 
     public int getId() {
@@ -42,10 +46,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "CustomerDAO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return name;
     }
 }

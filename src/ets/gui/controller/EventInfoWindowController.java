@@ -1,16 +1,27 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Customer;
 import ets.be.Event;
+import ets.gui.controller.create.CreateCustomerWindowController;
+import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 // java imports
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -22,15 +33,20 @@ import java.util.ResourceBundle;
 public class EventInfoWindowController implements Initializable {
 
     @FXML
+    private ListView participantsList;
+    @FXML
+    private AnchorPane eventCardViewAnchorPane;
+    @FXML
     private Button closeButton;
     @FXML
     private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
     private Event event;
-    EventModel eventModel = new EventModel();
+    private EventModel eventModel;
+    private CustomerModel customerModel;
 
-
-
-    public EventInfoWindowController() {
+    public void setModel(EventModel eventModel, CustomerModel customerModel) {
+        this.eventModel = eventModel;
+        this.customerModel = customerModel;
     }
 
     public void setEvent(Event event) {
@@ -43,10 +59,16 @@ public class EventInfoWindowController implements Initializable {
         }
 
         if(dateLabel != null) {
-            dateLabel.setText("Date: "+String.valueOf(event.getDate()));
+            dateLabel.setText("Date: "+ event.getDate());
         }
         if(noteLabel != null) {
             noteLabel.setText(event.getNote());
+        }
+
+        try {
+            participantsList.getItems().addAll(customerModel.getCustomers(event));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -76,5 +98,34 @@ public class EventInfoWindowController implements Initializable {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
 
+    }
+
+    public void addParticipant(ActionEvent actionEvent) {
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_customer_window.fxml"));
+            Parent createEventParent = fxmlLoader.load();
+
+            // Create a new stage and scene
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.setResizable(false);
+            stage.setTitle("Create Customer");
+            stage.setScene(new Scene(createEventParent));
+
+            CreateCustomerWindowController customerWindowController = fxmlLoader.getController();
+            customerWindowController.setModel(new CustomerModel(), new EventModel());
+            customerWindowController.setEvent(event);
+
+            // Show the new stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteParticipant(ActionEvent actionEvent) throws SQLException {
+        Customer selectedItem = (Customer) participantsList.getSelectionModel().getSelectedItem();
+        customerModel.deleteCustomers(selectedItem);
     }
 }

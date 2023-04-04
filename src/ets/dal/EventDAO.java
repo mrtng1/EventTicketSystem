@@ -2,6 +2,7 @@ package ets.dal;
 
 // imports
 import ets.be.Coordinator;
+import ets.be.Customer;
 import ets.be.Event;
 
 // java imports
@@ -72,6 +73,15 @@ public class EventDAO {
             PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(eventid, coordinatorid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, event.getId());
             pst.setInt(2, coordinator.getId());
+            pst.executeUpdate();
+        }
+    }
+
+    public void joinEvent(Event event, Customer customer) throws SQLException{
+        try (Connection con = connectionManager.getConnection()) {
+            PreparedStatement pst = con.prepareStatement("INSERT INTO EventCustomer(eventid, customerid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
+            pst.setInt(1, event.getId());
+            pst.setInt(2, customer.getId());
             pst.executeUpdate();
         }
     }

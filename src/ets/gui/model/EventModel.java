@@ -20,6 +20,7 @@ public class EventModel {
     EventLogic eventLogic = new EventLogic();
 
     private ObservableList<Event> events = FXCollections.observableArrayList();
+    private ObservableList<Event> eventCoordinator = FXCollections.observableArrayList();
     private ObservableList<Coordinator> coordinators = FXCollections.observableArrayList();
     private ObservableList<Customer> customers = FXCollections.observableArrayList();
 
@@ -46,5 +47,10 @@ public class EventModel {
 
     public void deleteEvent(Event event) throws SQLException {
         eventLogic.deleteEvent(event);
+    }
+
+    public ObservableList<Event> getEventsByCoordinator(Coordinator coordinator) throws SQLException {
+        eventCoordinator.addAll(eventLogic.getEventsByCoordinator(coordinator));
+        return eventCoordinator;
     }
 }

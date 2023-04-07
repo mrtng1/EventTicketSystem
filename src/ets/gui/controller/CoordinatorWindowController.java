@@ -1,8 +1,12 @@
 package ets.gui.controller;
 
 // imports
+import ets.be.Coordinator;
+import ets.be.Event;
 import ets.gui.controller.create.CreateCoordinatorWindowController;
 import ets.gui.model.CoordinatorModel;
+import ets.gui.model.CustomerModel;
+import ets.gui.model.EventModel;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -15,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -22,6 +27,8 @@ import javafx.util.Duration;
 // java imports
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -34,10 +41,65 @@ public class CoordinatorWindowController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private GridPane eventPane;
+    private int currentPage, totalPages;
+
+    private Coordinator coordinator;
+
+    public void setCoordinator(Coordinator coordinator) {
+        this.coordinator = coordinator;
+        try {
+            populateGridPane(coordinator);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            populateGridPane(coordinator);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    private void populateGridPane(Coordinator coordinator) throws IOException {
+        EventModel eventModel = new EventModel();
+        List<Event> events;
+        try {
+            if (coordinator != null) {
+                events = eventModel.getEventsByCoordinator(coordinator);
+            } else {
+                // Handle the case when the coordinator is not found
+                System.out.println("Coordinator not found");
+                return;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to fetch events from the database.", e);
+        }
+
+        int numRows = 4;
+        int numColumns = 2;
+        int eventsPerPage = numRows * numColumns;
+        totalPages = (int) Math.ceil((double) events.size() / eventsPerPage);
+
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numColumns; col++) {
+                int eventIndex = currentPage * eventsPerPage + row * numColumns + col;
+                if (eventIndex >= events.size()) {
+                    break;
+                }
+                Pane pane = new Pane();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
+
+                // Pass both Event and EventModel instances to the constructor
+                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), new CustomerModel(), eventModel, this));
+                Pane contentPane = fxmlLoader.load();
+                pane.getChildren().add(contentPane);
+                eventPane.add(pane, col, row);
+            }
+        }
     }
 
     @FXML
@@ -50,6 +112,15 @@ public class CoordinatorWindowController implements Initializable {
                 )
         );
         timeline.play();
+    }
+
+    public void refreshEventCards() {
+        try {
+            eventPane.getChildren().clear();
+            populateGridPane(coordinator);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -73,6 +144,22 @@ public class CoordinatorWindowController implements Initializable {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleLeftBtn(ActionEvent actionEvent) {
+        if (currentPage > 0) {
+            currentPage--;
+            refreshEventCards();
+        }
+    }
+
+    @FXML
+    private void handleRightBtn(ActionEvent actionEvent) {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            refreshEventCards();
         }
     }
 }

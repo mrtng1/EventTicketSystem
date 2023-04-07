@@ -27,4 +27,8 @@ public class CoordinatorLogic {
     public void deleteCoordinator(Coordinator coordinator) throws SQLException{
         coordinatorDAO.deleteCoordinator(coordinator);
     }
+
+    public Coordinator getCoordinatorByUsername(String username) throws SQLException {
+        return coordinatorDAO.getCoordinatorByUsername(username);
+    }
 }

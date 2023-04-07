@@ -44,12 +44,20 @@ public class EventCardController implements Initializable {
     private EventModel eventModel;
     private CustomerModel customerModel;
     private AdminWindowController adminWindowController;
+    private CoordinatorWindowController coordinatorWindowController;
 
     public EventCardController(Event event, CustomerModel customerModel, EventModel eventModel, AdminWindowController adminWindowController) {
         this.event = event;
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.adminWindowController = adminWindowController;
+    }
+
+    public EventCardController(Event event, CustomerModel customerModel, EventModel eventModel, CoordinatorWindowController coordinatorWindowController) {
+        this.event = event;
+        this.customerModel = customerModel;
+        this.eventModel = eventModel;
+        this.coordinatorWindowController = coordinatorWindowController;
     }
 
     @Override

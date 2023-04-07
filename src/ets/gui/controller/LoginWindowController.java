@@ -1,5 +1,6 @@
 package ets.gui.controller;
 
+import ets.be.Coordinator;
 import ets.gui.model.AdminModel;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
@@ -20,6 +21,7 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
@@ -67,9 +69,16 @@ public class LoginWindowController implements Initializable {
                 stage.setTitle("Coordinator Window");
                 stage.show();
 
+                // Get the Coordinator object for the logged-in user
+                Coordinator loggedInCoordinator = coordinatorModel.getCoordinatorByUsername(inputUsername);
+
+                // Pass the Coordinator object to the CoordinatorWindowController
+                CoordinatorWindowController controller = fxmlLoader.getController();
+                controller.setCoordinator(loggedInCoordinator);
+
                 // Close the login window if you need to
                 ((Node) actionEvent.getSource()).getScene().getWindow().hide();
-            } catch (IOException e) {
+            } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }
         }

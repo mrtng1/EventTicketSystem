@@ -37,4 +37,8 @@ public class EventLogic {
     public void deleteEvent(Event event) throws SQLException{
         eventDAO.deleteEvent(event);
     }
+
+    public List<Event> getEventsByCoordinator(Coordinator coordinator) throws SQLException {
+        return eventDAO.getEventsByCoordinator(coordinator);
+    }
 }

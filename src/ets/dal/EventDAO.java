@@ -47,6 +47,7 @@ public class EventDAO {
         } return allEvents;
     }
 
+
     public Event createEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
             PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, location, date, time, note, imageData) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
@@ -86,6 +87,7 @@ public class EventDAO {
         }
     }
 
+
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
             PreparedStatement pstEventCoordinator = con.prepareStatement("DELETE FROM EventCoordinator WHERE eventid = ?");
@@ -96,5 +98,29 @@ public class EventDAO {
             pstEvent.setInt(1, event.getId());
             pstEvent.executeUpdate();
         }
+    }
+
+    public List<Event> getEventsByCoordinator(Coordinator coordinator) throws SQLException {
+        List<Event> events = new ArrayList<>();
+        try (Connection con = connectionManager.getConnection()) {
+            String sql = "SELECT e.* FROM Event e INNER JOIN EventCoordinator ec ON e.id = ec.eventid WHERE ec.coordinatorid = ?;";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setInt(1, coordinator.getId());
+
+            ResultSet resultSet = pst.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String location = resultSet.getString("location");
+                LocalDate date = resultSet.getDate("date").toLocalDate();
+                float time = resultSet.getFloat("time");
+                String note = resultSet.getString("note");
+                byte[] imageData = resultSet.getBytes("imageData");
+
+                Event event = new Event(id, name, location, date, time, note, imageData);
+                events.add(event);
+            }
+        }
+        return events;
     }
 }

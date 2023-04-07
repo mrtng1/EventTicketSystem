@@ -39,8 +39,7 @@ public class AdminWindowController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private GridPane gridPane;
-    private int currentPage;
-    private int totalPages;
+    private int currentPage, totalPages;
 
     @FXML
     private void viewEventsBtn(ActionEvent event) {

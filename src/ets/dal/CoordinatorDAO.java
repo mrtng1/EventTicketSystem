@@ -64,4 +64,21 @@ public class CoordinatorDAO {
             statement.executeUpdate();
         }
     }
+
+    public Coordinator getCoordinatorByUsername(String username) throws SQLException {
+        Coordinator coordinator = null;
+        try (Connection con = connectionManager.getConnection()) {
+            String sql = "SELECT * FROM Coordinator WHERE username = ?;";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, username);
+
+            ResultSet resultSet = pst.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String password = resultSet.getString("password");
+                coordinator = new Coordinator(id, username, password);
+            }
+        }
+        return coordinator;
+    }
 }

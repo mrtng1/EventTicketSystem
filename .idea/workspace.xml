@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="useless commit">
-      <change afterPath="$PROJECT_DIR$/src/ets/bll/CustomerLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/model/CustomerModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/create_customer_window.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateCoordinatorWindowController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/sqljar/mssql-jdbc-11.2.1.jre18.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mrtng/IdeaProjects/EventTicketSystem/src/ets/gui/view&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -82,6 +73,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images/icons" />
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
@@ -161,6 +155,8 @@
       <workItem from="1680220217769" duration="892000" />
       <workItem from="1680344359826" duration="426000" />
       <workItem from="1680550390012" duration="9127000" />
+      <workItem from="1680896058351" duration="930000" />
+      <workItem from="1680906958504" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>

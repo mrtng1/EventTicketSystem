@@ -46,4 +46,8 @@ public class CoordinatorModel {
         return coordinators.stream()
                 .anyMatch(coordinator -> coordinator.getUsername().equals(inputUsername) && coordinator.getPassword().equals(inputPassword));
     }
+
+    public Coordinator getCoordinatorByUsername(String username) throws SQLException {
+        return coordinatorLogic.getCoordinatorByUsername(username);
+    }
 }

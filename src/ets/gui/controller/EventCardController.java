@@ -12,10 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 // java imports
 import java.io.ByteArrayInputStream;
@@ -40,21 +44,24 @@ public class EventCardController implements Initializable {
     private Label participants, timeNumber, eventTitle;
     @FXML
     private Button deleteButton;
+    private ScrollPane scrollPane;
     private Event event;
     private EventModel eventModel;
     private CustomerModel customerModel;
     private AdminWindowController adminWindowController;
     private CoordinatorWindowController coordinatorWindowController;
 
-    public EventCardController(Event event, CustomerModel customerModel, EventModel eventModel, AdminWindowController adminWindowController) {
+    public EventCardController(Event event, ScrollPane scrollPane, CustomerModel customerModel, EventModel eventModel, AdminWindowController adminWindowController) {
         this.event = event;
+        this.scrollPane = scrollPane;
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.adminWindowController = adminWindowController;
     }
 
-    public EventCardController(Event event, CustomerModel customerModel, EventModel eventModel, CoordinatorWindowController coordinatorWindowController) {
+    public EventCardController(Event event, ScrollPane scrollPane, CustomerModel customerModel, EventModel eventModel, CoordinatorWindowController coordinatorWindowController) {
         this.event = event;
+        this.scrollPane = scrollPane;
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.coordinatorWindowController = coordinatorWindowController;
@@ -103,21 +110,27 @@ public class EventCardController implements Initializable {
 
     @FXML
     public void eventViewBtn(ActionEvent actionEvent) {
+        scrollPane.setEffect(new GaussianBlur(10));
+
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_info_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
             EventInfoWindowController eventInfoWindowController = fxmlLoader.getController();
-            eventInfoWindowController.setModel(new EventModel(), new CustomerModel());
+            eventInfoWindowController.setModel(new EventModel(), new CustomerModel(), scrollPane);
             eventInfoWindowController.setEvent(event);
 
             // Create a new stage and scene
             Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
             stage.setResizable(false);
             stage.setTitle(event.getName());
-            stage.setScene(new Scene(createEventParent));
+            Scene scene = new Scene(createEventParent);
+            scene.setFill(Color.TRANSPARENT);
+            scene.getStylesheets().add("ets/gui/view/styles/event_info_style.css");
+            stage.setScene(scene);
 
             // Show the new stage
             stage.show();

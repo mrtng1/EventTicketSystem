@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -21,20 +22,19 @@ import java.util.ResourceBundle;
  */
 public class CreateCoordinatorWindowController implements Initializable {
 
-    private CoordinatorModel model;
     @FXML
     private TextField nameField, passwordField;
+    private ScrollPane scrollPane;
+    private CoordinatorModel model;
 
     public void setModel(CoordinatorModel model){
         this.model = model;
     }
 
-    @FXML
-    public void cancelBtn(ActionEvent actionEvent) {
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+    public void setScrollPane(ScrollPane scrollPane) {
+        this.scrollPane = scrollPane;
     }
+
 
     @FXML
     public void createBtn(ActionEvent actionEvent) {
@@ -50,6 +50,14 @@ public class CreateCoordinatorWindowController implements Initializable {
         }
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    public void cancelBtn(ActionEvent actionEvent) {
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        scrollPane.setEffect(null);
         stage.close();
     }
 

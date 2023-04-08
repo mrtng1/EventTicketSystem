@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CoordinatorWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.CoordinatorWindowController">
    <children>
       <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hmax="0.0" layoutX="118.0" layoutY="65.0" prefHeight="1200.0" prefWidth="900.0" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -32,7 +32,7 @@
                   </ImageView>
                   <HBox prefHeight="100.0" prefWidth="900.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#createCoordinatorBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="Create coordinator">
+                        <Button mnemonicParsing="false" onAction="#createCoordinator" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/main_style.css" text="Create coordinator">
                            <font>
                               <Font name="Serif Regular" size="13.0" />
                            </font>
@@ -44,10 +44,10 @@
                               </DropShadow>
                            </effect>
                            <HBox.margin>
-                              <Insets left="225.0" right="25.0" top="25.0" />
+                              <Insets left="304.0" right="25.0" top="25.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#viewEventsBtn" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/mainStyle.css" text="See all events">
+                        <Button mnemonicParsing="false" onAction="#viewEvents" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/main_style.css" text="See all events">
                            <font>
                               <Font name="Serif Regular" size="13.0" />
                            </font>
@@ -86,11 +86,11 @@
                         </GridPane>
                         <HBox layoutX="425.0" layoutY="570.0" prefHeight="30.0" prefWidth="64.0">
                            <children>
-                              <Button fx:id="leftBut" mnemonicParsing="false" onAction="#handleLeftBtn" stylesheets="@styles/mainStyle.css" text="&lt;">
+                              <Button fx:id="leftBut" mnemonicParsing="false" onAction="#previousPage" stylesheets="@styles/main_style.css" text="&lt;">
                                  <font>
                                     <Font name="System Bold" size="13.0" />
                                  </font></Button>
-                              <Button fx:id="rightBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleRightBtn" stylesheets="@styles/mainStyle.css" text="&gt;">
+                              <Button fx:id="rightBut" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#nextPage" stylesheets="@styles/main_style.css" text="&gt;">
                                  <HBox.margin>
                                     <Insets left="10.0" />
                                  </HBox.margin>

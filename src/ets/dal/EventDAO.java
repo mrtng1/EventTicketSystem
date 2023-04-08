@@ -47,7 +47,6 @@ public class EventDAO {
         } return allEvents;
     }
 
-
     public Event createEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
             PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, location, date, time, note, imageData) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
@@ -86,7 +85,6 @@ public class EventDAO {
             pst.executeUpdate();
         }
     }
-
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {

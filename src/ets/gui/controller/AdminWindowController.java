@@ -2,20 +2,19 @@ package ets.gui.controller;
 
 // imports
 import ets.be.Event;
-import ets.dal.EventDAO;
 import ets.gui.controller.create.CreateCoordinatorWindowController;
 import ets.gui.controller.create.CreateEventWindowController;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.animation.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -39,10 +38,11 @@ public class AdminWindowController implements Initializable {
     private ScrollPane scrollPane;
     @FXML
     private GridPane gridPane;
+
     private int currentPage, totalPages;
 
     @FXML
-    private void viewEventsBtn(ActionEvent event) {
+    private void viewEvents() {
         double startValue = scrollPane.getVvalue();
         double endValue = startValue + 1;
         Timeline timeline = new Timeline(
@@ -54,23 +54,9 @@ public class AdminWindowController implements Initializable {
     }
 
     @FXML
-    private void handleLeftBtn(ActionEvent actionEvent) {
-        if (currentPage > 0) {
-            currentPage--;
-            refreshEventCards();
-        }
-    }
+    private void createEvent() {
+        scrollPane.setEffect(new GaussianBlur(10));
 
-    @FXML
-    private void handleRightBtn(ActionEvent actionEvent) {
-        if (currentPage < totalPages - 1) {
-            currentPage++;
-            refreshEventCards();
-        }
-    }
-
-    @FXML
-    private void createEventBtn(ActionEvent event) {
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_event_window.fxml"));
@@ -89,6 +75,7 @@ public class AdminWindowController implements Initializable {
             createEventWindowController.setEventModel(new EventModel());
             createEventWindowController.setCoordinatorModel(new CoordinatorModel());
             createEventWindowController.setRefreshCallback(this::refreshEventCards);
+            createEventWindowController.setScrollPane(scrollPane);
 
             // Show the new stage
             stage.show();
@@ -98,7 +85,8 @@ public class AdminWindowController implements Initializable {
     }
 
     @FXML
-    private void createCoordinatorBtn(ActionEvent event){
+    private void createCoordinator(){
+        scrollPane.setEffect(new GaussianBlur(10));
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
@@ -113,11 +101,21 @@ public class AdminWindowController implements Initializable {
 
             CreateCoordinatorWindowController createCoordinatorWindowController = fxmlLoader.getController();
             createCoordinatorWindowController.setModel(new CoordinatorModel());
+            createCoordinatorWindowController.setScrollPane(scrollPane);
 
             // Show the new stage
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void refreshEventCards() {
+        try {
+            gridPane.getChildren().clear();
+            populateGridPane();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -129,7 +127,6 @@ public class AdminWindowController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException("Failed to fetch events from the database.", e);
         }
-
         int numRows = 4;
         int numColumns = 2;
         int eventsPerPage = numRows * numColumns;
@@ -146,7 +143,7 @@ public class AdminWindowController implements Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
 
                 // Pass both Event and EventModel instances to the constructor
-                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), new CustomerModel(), eventModel, this));
+                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this));
                 Pane contentPane = fxmlLoader.load();
                 pane.getChildren().add(contentPane);
                 gridPane.add(pane, col, row);
@@ -154,12 +151,19 @@ public class AdminWindowController implements Initializable {
         }
     }
 
-    public void refreshEventCards() {
-        try {
-            gridPane.getChildren().clear();
-            populateGridPane();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    @FXML
+    private void previousPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            refreshEventCards();
+        }
+    }
+
+    @FXML
+    private void nextPage() {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            refreshEventCards();
         }
     }
 

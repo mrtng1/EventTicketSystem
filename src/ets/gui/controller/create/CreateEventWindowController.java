@@ -4,7 +4,6 @@ package ets.gui.controller.create;
 import ets.be.Coordinator;
 import ets.be.Event;
 import ets.gui.model.CoordinatorModel;
-import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
@@ -15,7 +14,6 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import javafx.util.converter.DoubleStringConverter;
 import org.controlsfx.control.CheckComboBox;
 
 // java imports
@@ -39,16 +37,18 @@ import java.util.ResourceBundle;
 public class CreateEventWindowController implements Initializable {
 
     @FXML
-    private Spinner eventTimeField;
-    @FXML
-    private CheckComboBox eventCoordinatorsField;
-    @FXML
     private TextField eventNameField, eventLocationField;
     @FXML
     private DatePicker eventDateField;
-    private Runnable refreshCallback;
+    @FXML
+    private Spinner eventTimeField;
+    @FXML
+    private CheckComboBox eventCoordinatorsField;
+    private ScrollPane scrollPane;
     private EventModel eventModel;
     private CoordinatorModel coordinatorModel;
+
+    private Runnable refreshCallback;
     private byte[] imageData;
 
     public void setCoordinatorModel(CoordinatorModel coordinatorModel) {
@@ -65,6 +65,10 @@ public class CreateEventWindowController implements Initializable {
 
     public void setEventModel(EventModel eventModel) {
         this.eventModel = eventModel;
+    }
+
+    public void setScrollPane(ScrollPane scrollPane) {
+        this.scrollPane = scrollPane;
     }
 
     public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
@@ -102,7 +106,6 @@ public class CreateEventWindowController implements Initializable {
             if (result.isPresent() && result.get() == writeNoteButtonType) {
                 note = textArea.getText();
             }
-
             try {
                 Event event = new Event(name, location, date, time, note, imageData);
                 eventModel.createEvent(event);
@@ -121,7 +124,6 @@ public class CreateEventWindowController implements Initializable {
                 // Handle the exception (e.g., show an error message)
                 e.printStackTrace();
             }
-
             Node source = (Node) actionEvent.getSource();
             Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
@@ -132,10 +134,11 @@ public class CreateEventWindowController implements Initializable {
     private void cancelBtn(ActionEvent actionEvent){
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
+        scrollPane.setEffect(null);
         stage.close();
     }
 
-    public void getEventImage(ActionEvent actionEvent) throws Exception {
+    public void getEventImage() throws Exception {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Images File");
         fileChooser.getExtensionFilters().addAll(
@@ -154,18 +157,14 @@ public class CreateEventWindowController implements Initializable {
         while ((bytesRead = is.read(buffer)) != -1) {
             bos.write(buffer, 0, bytesRead);
         }
+
         is.close();
         bos.close();
         return bos.toByteArray();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        initializeTimeSpinner();
-    }
-
     private void initializeTimeSpinner(){
-        CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 24, 12.30);
+        CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 23.30, 12.30);
         eventTimeField.setValueFactory(valueFactory);
 
         DecimalFormat df = new DecimalFormat("0.00");
@@ -243,7 +242,6 @@ public class CreateEventWindowController implements Initializable {
                     newValue = wholePart;
                 }
             }
-
             // Clamp the value between min and max
             if (newValue > max) {
                 newValue = max;
@@ -254,11 +252,14 @@ public class CreateEventWindowController implements Initializable {
             setValue(newValue);
         }
 
-
         @Override
         public void decrement(int steps) {
             increment(-steps);
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        initializeTimeSpinner();
+    }
 }

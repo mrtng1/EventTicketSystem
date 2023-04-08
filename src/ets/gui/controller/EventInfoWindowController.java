@@ -16,7 +16,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -33,20 +35,24 @@ import java.util.ResourceBundle;
 public class EventInfoWindowController implements Initializable {
 
     @FXML
+    private StackPane eventInfoStackPane;
+    @FXML
     private ListView participantsList;
     @FXML
-    private AnchorPane eventCardViewAnchorPane;
+    private AnchorPane eventInfoAnchorPane;
     @FXML
     private Button closeButton;
     @FXML
     private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
+    private ScrollPane scrollPane;
     private Event event;
     private EventModel eventModel;
     private CustomerModel customerModel;
 
-    public void setModel(EventModel eventModel, CustomerModel customerModel) {
+    public void setModel(EventModel eventModel, CustomerModel customerModel, ScrollPane scrollPane) {
         this.eventModel = eventModel;
         this.customerModel = customerModel;
+        this.scrollPane = scrollPane;
     }
 
     public void setEvent(Event event) {
@@ -74,6 +80,7 @@ public class EventInfoWindowController implements Initializable {
 
     @FXML
     private void closeBtn(javafx.event.ActionEvent actionEvent){
+        scrollPane.setEffect(null);
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();

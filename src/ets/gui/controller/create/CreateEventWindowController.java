@@ -41,9 +41,9 @@ public class CreateEventWindowController implements Initializable {
     @FXML
     private DatePicker eventDateField;
     @FXML
-    private Spinner eventTimeField;
+    private Spinner<Double> eventTimeField;
     @FXML
-    private CheckComboBox eventCoordinatorsField;
+    private CheckComboBox<Coordinator> eventCoordinatorsField;
     private ScrollPane scrollPane;
     private EventModel eventModel;
     private CoordinatorModel coordinatorModel;
@@ -78,7 +78,7 @@ public class CreateEventWindowController implements Initializable {
         String name = eventNameField.getText();
         String location = eventLocationField.getText();
         LocalDate date = eventDateField.getValue();
-        double time = (double) eventTimeField.getValue();
+        double time = eventTimeField.getValue();
         String note = "";
 
         if (name.isEmpty() || location.isEmpty() || date == null) {
@@ -107,6 +107,7 @@ public class CreateEventWindowController implements Initializable {
                 note = textArea.getText();
             }
             try {
+                scrollPane.setEffect(null);
                 Event event = new Event(name, location, date, time, note, imageData);
                 eventModel.createEvent(event);
 

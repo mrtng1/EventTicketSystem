@@ -37,7 +37,7 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     private StackPane eventInfoStackPane;
     @FXML
-    private ListView participantsList;
+    private ListView<Customer> participantsList;
     @FXML
     private AnchorPane eventInfoAnchorPane;
     @FXML
@@ -57,6 +57,7 @@ public class EventInfoWindowController implements Initializable {
 
     public void setEvent(Event event) {
         this.event = event;
+
         if (eventTitleLabel != null) {
             eventTitleLabel.setText(event.getName());
         }
@@ -71,11 +72,8 @@ public class EventInfoWindowController implements Initializable {
             noteLabel.setText(event.getNote());
         }
 
-        try {
-            participantsList.getItems().addAll(customerModel.getCustomers(event));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}
+        participantsList.setItems(customerModel.getCustomers());
     }
 
     @FXML
@@ -107,7 +105,7 @@ public class EventInfoWindowController implements Initializable {
 
     }
 
-    public void addParticipant(ActionEvent actionEvent) {
+    public void addParticipant() {
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_customer_window.fxml"));
@@ -132,7 +130,7 @@ public class EventInfoWindowController implements Initializable {
     }
 
     public void deleteParticipant(ActionEvent actionEvent) throws SQLException {
-        Customer selectedItem = (Customer) participantsList.getSelectionModel().getSelectedItem();
+        Customer selectedItem = participantsList.getSelectionModel().getSelectedItem();
         customerModel.deleteCustomers(selectedItem);
     }
 }

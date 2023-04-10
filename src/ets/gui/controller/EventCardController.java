@@ -57,6 +57,8 @@ public class EventCardController implements Initializable {
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.adminWindowController = adminWindowController;
+
+        try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}
     }
 
     public EventCardController(Event event, ScrollPane scrollPane, CustomerModel customerModel, EventModel eventModel, CoordinatorWindowController coordinatorWindowController) {
@@ -65,6 +67,8 @@ public class EventCardController implements Initializable {
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.coordinatorWindowController = coordinatorWindowController;
+
+        try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}
     }
 
     @Override
@@ -89,12 +93,7 @@ public class EventCardController implements Initializable {
         } else {
             timeNumber.setText(duration.toHours() + " h");
         }
-
-        try {
-            participants.setText(String.valueOf(customerModel.getCustomers(event).size()));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        participants.setText(String.valueOf(customerModel.getCustomers().size()));
     }
 
     private Duration calculateTimeRemaining(LocalDate eventDate) {
@@ -140,7 +139,7 @@ public class EventCardController implements Initializable {
     }
 
     @FXML
-    public void deleteBtn(ActionEvent actionEvent){
+    public void deleteBtn(){
         try {
             eventModel.deleteEvent(event);
             adminWindowController.refreshEventCards();

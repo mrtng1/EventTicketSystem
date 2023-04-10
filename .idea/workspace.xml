@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="news + refactoring">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/event_info_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/admin_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/coordinator_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/eventCardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/event_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/loginStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/login_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/mainStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/AdminModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/AdminModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CustomerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +155,8 @@
       <workItem from="1680550390012" duration="9127000" />
       <workItem from="1680896058351" duration="930000" />
       <workItem from="1680906958504" duration="394000" />
+      <workItem from="1681121407324" duration="702000" />
+      <workItem from="1681122117500" duration="3136000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -296,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680344784690</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="news + refactoring">
+      <created>1680976688035</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680976688035</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

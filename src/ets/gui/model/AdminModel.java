@@ -28,10 +28,6 @@ public class AdminModel {
         }
     }
 
-    public ObservableList<Admin> getAdmins() {
-        return admins;
-    }
-
     public boolean isValidAdmin(String inputUsername, String inputPassword) {
         return admins.stream()
                 .anyMatch(admin -> admin.getUsername().equals(inputUsername) && admin.getPassword().equals(inputPassword));

@@ -47,6 +47,7 @@ public class EventModel {
 
     public void deleteEvent(Event event) throws SQLException {
         eventLogic.deleteEvent(event);
+        events.remove(event);
     }
 
     public ObservableList<Event> getEventsByCoordinator(Coordinator coordinator) throws SQLException {

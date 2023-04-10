@@ -44,6 +44,7 @@ public class CreateCoordinatorWindowController implements Initializable {
         try {
             Coordinator coordinator = new Coordinator(username, password);
             model.createCoordinator(coordinator);
+            scrollPane.setEffect(null);
         } catch (SQLException e) {
             // Handle the exception (e.g., show an error message)
             e.printStackTrace();

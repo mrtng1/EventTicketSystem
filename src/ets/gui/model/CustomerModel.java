@@ -19,9 +19,13 @@ public class CustomerModel {
     CustomerLogic customerLogic = new CustomerLogic();
     private ObservableList<Customer> customers = FXCollections.observableArrayList();
 
-    public ObservableList<Customer> getCustomers(Event event) throws SQLException {
-        customers.addAll(customerLogic.getAllCustomers(event));
+    public ObservableList<Customer> getCustomers() {
         return customers;
+    }
+
+    public void fetchAllCustomers(Event event) throws SQLException {
+        customers.clear();
+        customers.addAll(customerLogic.getAllCustomers(event));
     }
 
     public Customer createCustomer(Customer customer) throws SQLException {
@@ -32,5 +36,6 @@ public class CustomerModel {
 
     public void deleteCustomers(Customer customer) throws SQLException {
         customerLogic.deleteCustomer(customer);
+        customers.remove(customer);
     }
 }

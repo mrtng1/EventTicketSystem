@@ -45,6 +45,7 @@ public class CreateCustomerWindowController implements Initializable {
         Customer customer = new Customer(name, email);
         customerModel.createCustomer(customer);
         eventModel.joinEvent(event, customer);
+        customerModel.fetchAllCustomers(event);
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

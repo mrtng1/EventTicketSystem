@@ -88,6 +88,10 @@ public class EventDAO {
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
+            PreparedStatement pstEventCustomer = con.prepareStatement("DELETE FROM EventCustomer WHERE eventid = ?");
+            pstEventCustomer.setInt(1, event.getId());
+            pstEventCustomer.executeUpdate();
+
             PreparedStatement pstEventCoordinator = con.prepareStatement("DELETE FROM EventCoordinator WHERE eventid = ?");
             pstEventCoordinator.setInt(1, event.getId());
             pstEventCoordinator.executeUpdate();

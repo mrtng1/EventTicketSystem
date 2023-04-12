@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -66,6 +67,7 @@ public class CoordinatorWindowController implements Initializable {
 
     @FXML
     private void createCoordinator(){
+        scrollPane.setEffect(new GaussianBlur(10));
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
@@ -80,6 +82,7 @@ public class CoordinatorWindowController implements Initializable {
 
             CreateCoordinatorWindowController createCoordinatorWindowController = fxmlLoader.getController();
             createCoordinatorWindowController.setModel(new CoordinatorModel());
+            createCoordinatorWindowController.setScrollPane(scrollPane);
 
             // Show the new stage
             stage.show();

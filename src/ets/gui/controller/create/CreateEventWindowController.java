@@ -143,7 +143,7 @@ public class CreateEventWindowController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Images File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Images Files", "*.png", "*.jpg", "*.gif"));
+                new FileChooser.ExtensionFilter("Images Files", "*.png", "*.jpg", "*.gif","*.jpeg"));
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
             imageData = readBytesFromFile(selectedFile);
@@ -175,7 +175,9 @@ public class CreateEventWindowController implements Initializable {
                 if (value == null) {
                     return "";
                 }
-                return df.format(value);
+                int hours = (int) Math.floor(value);
+                int minutes = (int) ((value - hours) * 100);
+                return String.format("%02d.%02d", hours, minutes);
             }
 
             @Override
@@ -188,8 +190,11 @@ public class CreateEventWindowController implements Initializable {
                     if (string.length() < 1) {
                         return null;
                     }
-                    return df.parse(string).doubleValue();
-                } catch (ParseException ex) {
+                    String[] parts = string.split("\\.");
+                    int hours = Integer.parseInt(parts[0]);
+                    int minutes = Integer.parseInt(parts[1]);
+                    return (double) hours + (double) minutes / 100;
+                } catch (NumberFormatException ex) {
                     return null;
                 }
             }
@@ -223,30 +228,25 @@ public class CreateEventWindowController implements Initializable {
         @Override
         public void increment(int steps) {
             double currentValue = getValue();
-            double newValue = currentValue + steps * 0.5;
+            int hours = (int) currentValue;
+            int minutes = (int) Math.round((currentValue - hours) * 100);
 
-            double wholePart = Math.floor(newValue);
-            double decimalPart = newValue - wholePart;
+            minutes += steps * 30;
 
-            if (steps > 0) {
-                if (decimalPart > 0 && decimalPart <= 0.5) {
-                    newValue = wholePart + 0.3;
-                } else {
-                    newValue = wholePart + 1;
-                }
-            } else {
-                if (decimalPart > 0 && decimalPart < 0.3) {
-                    newValue = wholePart - 0.3;
-                } else if (decimalPart >= 0.3 && decimalPart < 0.8) {
-                    newValue = wholePart + 0.3;
-                } else {
-                    newValue = wholePart;
-                }
+            if (minutes >= 60) {
+                hours++;
+                minutes -= 60;
+            } else if (minutes < 0) {
+                hours--;
+                minutes += 60;
             }
+
+            double newValue = hours + (double) minutes / 100;
+
             // Clamp the value between min and max
-            if (newValue > max) {
+            if (newValue >= max) {
                 newValue = max;
-            } else if (newValue < min) {
+            } else if (newValue <= min) {
                 newValue = min;
             }
 

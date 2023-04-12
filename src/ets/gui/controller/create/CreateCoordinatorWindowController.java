@@ -24,6 +24,7 @@ public class CreateCoordinatorWindowController implements Initializable {
 
     @FXML
     private TextField nameField, passwordField;
+    @FXML
     private ScrollPane scrollPane;
     private CoordinatorModel model;
 

@@ -49,6 +49,8 @@ public class EventDAO {
 
     public Event createEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
+            con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             PreparedStatement pst = con.prepareStatement("INSERT INTO Event (name, location, date, time, note, imageData) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setString(1, event.getName());
             pst.setString(2, event.getLocation());
@@ -62,32 +64,58 @@ public class EventDAO {
             if (pst.getGeneratedKeys().next()) {
                 int id = pst.getGeneratedKeys().getInt(1);
                 event.setId(id);
+                con.commit();
                 return event;
+            } else {
+                con.rollback();
+                throw new RuntimeException("Id not set");
             }
+        } catch (SQLException e) {
+            try (Connection con = connectionManager.getConnection()) {
+                con.rollback();
+            }
+            throw e;
         }
-        throw new RuntimeException("Id not set");
     }
 
-    public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException{
+    public void assignEventCoordinator(Event event, Coordinator coordinator) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
+            con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             PreparedStatement pst = con.prepareStatement("INSERT INTO EventCoordinator(eventid, coordinatorid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, event.getId());
             pst.setInt(2, coordinator.getId());
             pst.executeUpdate();
+            con.commit();
+        } catch (SQLException e) {
+            try (Connection con = connectionManager.getConnection()) {
+                con.rollback();
+            }
+            throw e;
         }
     }
 
-    public void joinEvent(Event event, Customer customer) throws SQLException{
+    public void joinEvent(Event event, Customer customer) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
+            con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             PreparedStatement pst = con.prepareStatement("INSERT INTO EventCustomer(eventid, customerid) VALUES(?, ?)", Statement.RETURN_GENERATED_KEYS);
             pst.setInt(1, event.getId());
             pst.setInt(2, customer.getId());
             pst.executeUpdate();
+            con.commit();
+        } catch (SQLException e) {
+            try (Connection con = connectionManager.getConnection()) {
+                con.rollback();
+            }
+            throw e;
         }
     }
 
     public void deleteEvent(Event event) throws SQLException {
         try (Connection con = connectionManager.getConnection()) {
+            con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             PreparedStatement pstEventCustomer = con.prepareStatement("DELETE FROM EventCustomer WHERE eventid = ?");
             pstEventCustomer.setInt(1, event.getId());
             pstEventCustomer.executeUpdate();
@@ -99,6 +127,13 @@ public class EventDAO {
             PreparedStatement pstEvent = con.prepareStatement("DELETE FROM Event WHERE id = ?");
             pstEvent.setInt(1, event.getId());
             pstEvent.executeUpdate();
+
+            con.commit();
+        } catch (SQLException e) {
+            try (Connection con = connectionManager.getConnection()) {
+                con.rollback();
+            }
+            throw e;
         }
     }
 

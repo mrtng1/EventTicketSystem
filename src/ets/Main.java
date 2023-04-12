@@ -30,6 +30,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("Ticket system"); // Set the window title
         primaryStage.setScene(scene); // Set the scene to the stage
+        primaryStage.setResizable(false);
         primaryStage.show(); // Show the stage
     }
 }

@@ -35,13 +35,7 @@ import java.util.ResourceBundle;
 public class EventInfoWindowController implements Initializable {
 
     @FXML
-    private StackPane eventInfoStackPane;
-    @FXML
     private ListView<Customer> participantsList;
-    @FXML
-    private AnchorPane eventInfoAnchorPane;
-    @FXML
-    private Button closeButton;
     @FXML
     private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
     private ScrollPane scrollPane;
@@ -84,20 +78,10 @@ public class EventInfoWindowController implements Initializable {
         stage.close();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        if (event != null) {
-            eventTitleLabel.setText(event.getName());
-        }
-    }
-
     @FXML
     private void deleteEventBtn(javafx.event.ActionEvent actionEvent){
-        try {
-            eventModel.deleteEvent(this.event);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        scrollPane.setEffect(null);
+        try {eventModel.deleteEvent(this.event);} catch (SQLException e) {throw new RuntimeException(e);}
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
@@ -132,5 +116,12 @@ public class EventInfoWindowController implements Initializable {
     public void deleteParticipant(ActionEvent actionEvent) throws SQLException {
         Customer selectedItem = participantsList.getSelectionModel().getSelectedItem();
         customerModel.deleteCustomers(selectedItem);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if (event != null) {
+            eventTitleLabel.setText(event.getName());
+        }
     }
 }

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="useless commit">
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="hmm">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680976688035</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="hmm">
+      <created>1681332196704</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1681332196704</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +324,7 @@
     <MESSAGE value="CHANGES&#10;- added notes, image, time" />
     <MESSAGE value="useless commit" />
     <MESSAGE value="news + refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="news + refactoring" />
+    <MESSAGE value="hmm" />
+    <option name="LAST_COMMIT_MESSAGE" value="hmm" />
   </component>
 </project>

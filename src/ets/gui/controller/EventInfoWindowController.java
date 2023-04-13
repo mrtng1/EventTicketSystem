@@ -62,8 +62,13 @@ public class EventInfoWindowController implements Initializable {
         if(dateLabel != null) {
             dateLabel.setText("Date: "+ event.getDate());
         }
-        if(noteLabel != null) {
-            noteLabel.setText(event.getNote());
+        if (noteLabel != null) {
+            String note = event.getNote();
+            if (note.isEmpty()) {
+                noteLabel.setText("Note is empty");
+            } else {
+                noteLabel.setText(note);
+            }
         }
 
         try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}

@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="eventInfoAnchorPane" prefHeight="450.0" prefWidth="650.0" stylesheets="@styles/event_info_style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
+<AnchorPane fx:id="eventInfoAnchorPane" prefHeight="450.0" prefWidth="650.0" stylesheets="@styles/event_info_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
    <children>
       <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#closeBtn" opacity="0.7" stylesheets="@styles/event_info_style.css" text="Close">
          <effect>
@@ -55,9 +55,9 @@
                </color>
             </DropShadow>
          </effect></ListView>
-      <VBox layoutX="453.0" layoutY="125.0" prefHeight="200.0" prefWidth="140.0">
+      <VBox layoutX="229.0" layoutY="113.0" prefHeight="200.0" prefWidth="256.0" style="-fx-border-color: white;">
          <children>
-            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="17.0" prefWidth="141.0" text="--Location--" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="30.0" prefWidth="256.0" text="--Location--" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
@@ -68,7 +68,7 @@
                      </color>
                   </DropShadow>
                </effect></Label>
-            <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="142.0" text="--date---" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="256.0" text="--date---" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
@@ -80,7 +80,7 @@
                   </DropShadow>
                </effect>
             </Label>
-            <Label fx:id="noteLabel" alignment="TOP_CENTER" layoutX="10.0" layoutY="32.0" prefHeight="65.0" prefWidth="140.0" text="--note--" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="noteLabel" alignment="TOP_CENTER" layoutX="10.0" layoutY="32.0" prefHeight="65.0" prefWidth="256.0" text="--note--" textAlignment="CENTER" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>

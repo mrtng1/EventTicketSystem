@@ -1,9 +1,9 @@
 package ets.gui.controller;
 
+// imports
 import ets.be.Coordinator;
 import ets.gui.model.AdminModel;
 import ets.gui.model.CoordinatorModel;
-import ets.gui.model.EventModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,10 +15,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
+// java imports
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

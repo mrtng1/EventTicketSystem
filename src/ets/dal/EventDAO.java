@@ -25,8 +25,9 @@ public class EventDAO {
 
     public List<Event> getAllEvents() throws SQLException {
         List<Event> allEvents = new ArrayList<>();
+
         try (Connection con = connectionManager.getConnection()) {
-            String sql = "SELECT * FROM Event;";
+            String sql = "SELECT * FROM Event";
             Statement statement = con.createStatement();
 
             if (statement.execute(sql)) {
@@ -140,7 +141,7 @@ public class EventDAO {
     public List<Event> getEventsByCoordinator(Coordinator coordinator) throws SQLException {
         List<Event> events = new ArrayList<>();
         try (Connection con = connectionManager.getConnection()) {
-            String sql = "SELECT e.* FROM Event e INNER JOIN EventCoordinator ec ON e.id = ec.eventid WHERE ec.coordinatorid = ?;";
+            String sql = "SELECT e.* FROM Event e INNER JOIN EventCoordinator ec ON e.id = ec.eventid WHERE ec.coordinatorid = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setInt(1, coordinator.getId());
 

@@ -6,6 +6,8 @@ import ets.be.Event;
 import ets.gui.controller.create.CreateCustomerWindowController;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.model.TicketModel;
+import ets.gui.util.MessagePopup;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,12 +15,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -42,10 +42,13 @@ public class EventInfoWindowController implements Initializable {
     private Event event;
     private EventModel eventModel;
     private CustomerModel customerModel;
+    private TicketModel ticketModel;
+    private Customer customer;
 
-    public void setModel(EventModel eventModel, CustomerModel customerModel, ScrollPane scrollPane) {
+    public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel, ScrollPane scrollPane) {
         this.eventModel = eventModel;
         this.customerModel = customerModel;
+        this.ticketModel = ticketModel;
         this.scrollPane = scrollPane;
     }
 
@@ -76,7 +79,17 @@ public class EventInfoWindowController implements Initializable {
     }
 
     @FXML
-    private void closeBtn(javafx.event.ActionEvent actionEvent){
+    private void deleteEvent(ActionEvent actionEvent){
+        scrollPane.setEffect(null);
+        try {eventModel.deleteEvent(this.event);} catch (SQLException e) {throw new RuntimeException(e);}
+
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void closeWindow(ActionEvent actionEvent){
         scrollPane.setEffect(null);
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
@@ -84,14 +97,35 @@ public class EventInfoWindowController implements Initializable {
     }
 
     @FXML
-    private void deleteEventBtn(javafx.event.ActionEvent actionEvent){
-        scrollPane.setEffect(null);
-        try {eventModel.deleteEvent(this.event);} catch (SQLException e) {throw new RuntimeException(e);}
+    public void printTicket() {
+        customer = participantsList.getSelectionModel().getSelectedItem();
 
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        if (participantsList.getSelectionModel().getSelectedItem() == null) {
+            MessagePopup.showAlert("Oops!", "You haven't selected a customer", Alert.AlertType.ERROR);
+        }
 
+        else {
+            try {
+                // Load the FXML file
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/ticket_inspect_window.fxml"));
+                Parent createEventParent = fxmlLoader.load();
+
+                TicketWindowController ticketWindowController = fxmlLoader.getController();
+                ticketWindowController.setModel(new EventModel(), new CustomerModel());
+                ticketWindowController.setDetails(event, customer);
+
+                // Create a new stage and scene
+                Stage stage = new Stage();
+                stage.setResizable(false);
+                Scene scene = new Scene(createEventParent);
+                stage.setScene(scene);
+
+                // Show the new stage
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void addParticipant() {
@@ -108,7 +142,7 @@ public class EventInfoWindowController implements Initializable {
             stage.setScene(new Scene(createEventParent));
 
             CreateCustomerWindowController customerWindowController = fxmlLoader.getController();
-            customerWindowController.setModel(new CustomerModel(), new EventModel());
+            customerWindowController.setModel(new CustomerModel(), new EventModel(), new TicketModel());
             customerWindowController.setEvent(event);
 
             // Show the new stage

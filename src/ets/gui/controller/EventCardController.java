@@ -4,6 +4,7 @@ package ets.gui.controller;
 import ets.be.Event;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.model.TicketModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -117,7 +118,7 @@ public class EventCardController implements Initializable {
             Parent createEventParent = fxmlLoader.load();
 
             EventInfoWindowController eventInfoWindowController = fxmlLoader.getController();
-            eventInfoWindowController.setModel(new EventModel(), new CustomerModel(), scrollPane);
+            eventInfoWindowController.setModel(new EventModel(), new CustomerModel(), new TicketModel(), scrollPane);
             eventInfoWindowController.setEvent(event);
 
             // Create a new stage and scene

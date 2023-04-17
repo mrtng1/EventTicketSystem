@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="eventInfoAnchorPane" prefHeight="450.0" prefWidth="650.0" stylesheets="@styles/event_info_style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
    <children>
-      <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#closeBtn" stylesheets="@styles/event_info_style.css" text="Close">
+      <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#closeWindow" stylesheets="@styles/event_info_style.css" text="Close">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>
@@ -31,7 +31,7 @@
                </color>
             </DropShadow>
          </effect></Label>
-      <Button layoutX="498.0" layoutY="410.0" mnemonicParsing="false" stylesheets="@styles/event_info_style.css" text="Print Ticket">
+      <Button layoutX="498.0" layoutY="410.0" mnemonicParsing="false" onAction="#printTicket" stylesheets="@styles/event_info_style.css" text="Print Ticket">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>
@@ -39,7 +39,7 @@
                </color>
             </DropShadow>
          </effect></Button>
-      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEventBtn" stylesheets="@styles/event_info_style.css" text="Delete event">
+      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" stylesheets="@styles/event_info_style.css" text="Delete event">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>

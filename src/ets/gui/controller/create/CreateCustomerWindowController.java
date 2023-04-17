@@ -3,8 +3,10 @@ package ets.gui.controller.create;
 // imports
 import ets.be.Customer;
 import ets.be.Event;
+import ets.be.Ticket;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.model.TicketModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,18 +29,20 @@ public class CreateCustomerWindowController implements Initializable {
     private TextField nameField, emailField;
     private CustomerModel customerModel;
     private EventModel eventModel;
+    private TicketModel ticketModel;
     private Event event;
 
-    public void setModel(CustomerModel customerModel, EventModel eventModel) {
+    public void setModel(CustomerModel customerModel, EventModel eventModel, TicketModel ticketModel) {
         this.customerModel = customerModel;
         this.eventModel = eventModel;
+        this.ticketModel = ticketModel;
     }
 
     public void setEvent(Event event) {
         this.event = event;
     }
 
-    public void createBtn(ActionEvent actionEvent) throws SQLException {
+    public void createParticipant(ActionEvent actionEvent) throws SQLException {
         String name = nameField.getText();
         String email = emailField.getText();
 
@@ -46,6 +50,9 @@ public class CreateCustomerWindowController implements Initializable {
         customerModel.createCustomer(customer);
         eventModel.joinEvent(event, customer);
         customerModel.fetchAllCustomers(event);
+
+        Ticket ticket = new Ticket("Event ticket", event, customer);
+        ticketModel.createTicket(ticket);
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

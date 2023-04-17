@@ -14,11 +14,18 @@ public class Ticket {
     private Customer customer;
     private String ticketType;
 
-    public Ticket(UUID uuid, Event event, Customer customer, String ticketType) {
-        this.uuid = uuid;
+    public Ticket(String ticketType, Event event, Customer customer) {
+        this.uuid = UUID.randomUUID();
+        this.ticketType = ticketType;
         this.event = event;
         this.customer = customer;
+    }
+
+    public Ticket(UUID uuid, String ticketType, Event event, Customer customer) {
+        this.uuid = uuid;
         this.ticketType = ticketType;
+        this.event = event;
+        this.customer = customer;
     }
 
     public UUID getUuid() {

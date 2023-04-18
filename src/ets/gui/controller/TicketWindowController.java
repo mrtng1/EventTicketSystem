@@ -8,12 +8,24 @@ import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.AnchorPane;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.rendering.PDFRenderer;
 
 // java imports
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;
@@ -24,6 +36,8 @@ import java.util.UUID;
  */
 public class TicketWindowController implements Initializable {
 
+    @FXML
+    private AnchorPane ticketAnchor;
     @FXML
     private Label ticketEvent, ticketLocation, ticketDateAndTime, ticketParticipantName;
     @FXML
@@ -58,8 +72,42 @@ public class TicketWindowController implements Initializable {
         }
     }
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    public void printTicket() throws IOException {
+        // Load the FXML file into a Parent object
+        Parent root = FXMLLoader.load(getClass().getResource("/ets/gui/view/ticket_inspect_window.fxml"));
+
+        // Create a JavaFX scene to be saved as PDF
+        Scene scene = new Scene(root, 595, 842); // A4 size
+
+        // Create a PDF document
+        PDDocument document = new PDDocument();
+        PDPage page = new PDPage();
+        document.addPage(page);
+
+        // Convert the scene to an image and add it to the PDF document
+        PDFRenderer renderer = new PDFRenderer(document);
+        BufferedImage image = new BufferedImage(595, 842, BufferedImage.TYPE_INT_RGB);
+        Graphics2D graphics = image.createGraphics();
+        WritableImage fxImage = scene.getRoot().snapshot(null, null);
+        SwingFXUtils.fromFXImage(fxImage, image);
+        renderer.renderPageToGraphics(0, graphics);
+        graphics.dispose();
+
+        // Save the image to a file at the specified path
+        String event = ticketEvent.getText();
+        String name = ticketParticipantName.getText();
+        File outputFile = new File("tickets/Ticket_" +event +"_" +name +".pdf");
+        document.save(outputFile);
+
+        // Close the document
+        document.close();
+    }
 }
+

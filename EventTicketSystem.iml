@@ -12,5 +12,6 @@
     <orderEntry type="library" name="mssql-jdbc-11.2.1.jre18" level="project" />
     <orderEntry type="library" name="google.zxing.core" level="project" />
     <orderEntry type="library" name="google.zxing.javase" level="project" />
+    <orderEntry type="library" name="apache.pdfbox" level="project" />
   </component>
 </module>

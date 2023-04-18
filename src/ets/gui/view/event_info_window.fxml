@@ -31,7 +31,7 @@
                </color>
             </DropShadow>
          </effect></Label>
-      <Button layoutX="498.0" layoutY="410.0" mnemonicParsing="false" onAction="#printTicket" stylesheets="@styles/event_info_style.css" text="Print Ticket">
+      <Button layoutX="498.0" layoutY="410.0" mnemonicParsing="false" onAction="#getTicket" stylesheets="@styles/event_info_style.css" text="Get Ticket">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>
@@ -39,7 +39,7 @@
                </color>
             </DropShadow>
          </effect></Button>
-      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" stylesheets="@styles/event_info_style.css" text="Delete event">
+      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" stylesheets="@styles/event_info_style.css" text="Delete Event">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>

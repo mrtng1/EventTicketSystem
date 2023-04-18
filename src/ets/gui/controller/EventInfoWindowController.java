@@ -97,7 +97,7 @@ public class EventInfoWindowController implements Initializable {
     }
 
     @FXML
-    public void printTicket() {
+    public void getTicket() {
         customer = participantsList.getSelectionModel().getSelectedItem();
 
         if (participantsList.getSelectionModel().getSelectedItem() == null) {

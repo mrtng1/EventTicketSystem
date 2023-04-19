@@ -29,7 +29,7 @@
                     </children>
                 </VBox>
                 <Button layoutX="95.0" layoutY="345.0" mnemonicParsing="false" onAction="#createParticipant" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
-                <Button layoutX="169.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
+                <Button layoutX="169.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancel" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
             </children>
             <effect>
                 <DropShadow />

@@ -1,0 +1,21 @@
+#eventView{
+    -fx-background-color: transparent;
+}
+
+#eventView:hover{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+#deleteButton{
+    -fx-background-color: transparent;
+}
+
+#deleteButton:hover{
+    -fx-background-color: #d92828;
+    -fx-text-fill: white;
+}
+
+#gridPane{
+    -fx-background-color: white;
+}

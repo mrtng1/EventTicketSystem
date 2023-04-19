@@ -90,14 +90,6 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", date=" + date +
-                ", time=" + time +
-                ", note='" + note + '\'' +
-                ", imageData=" + Arrays.toString(imageData) +
-                '}';
+        return name;
     }
 }

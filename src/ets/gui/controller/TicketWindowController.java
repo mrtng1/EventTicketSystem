@@ -3,27 +3,33 @@ package ets.gui.controller;
 // imports
 import ets.be.Customer;
 import ets.be.Event;
+import ets.be.Ticket;
+import ets.bll.util.BarcodeGenerator;
 import ets.bll.util.QRCodeGenerator;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.model.TicketModel;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.StrokeLineCap;
+import javafx.scene.shape.StrokeLineJoin;
+import javafx.scene.shape.StrokeType;
+import javafx.stage.Stage;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
-import org.apache.pdfbox.rendering.PDFRenderer;
 
 // java imports
 import javax.imageio.ImageIO;
@@ -33,9 +39,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.UUID;
-
 
 /**
  *
@@ -44,56 +50,63 @@ import java.util.UUID;
 public class TicketWindowController implements Initializable {
 
     @FXML
+    private Button printButton;
+    @FXML
     private AnchorPane ticketAnchor;
     @FXML
     private Label ticketEvent, ticketLocation, ticketDateAndTime, ticketParticipantName;
     @FXML
-    private ImageView imgQRCode;
+    private ImageView imgQRCode, imgBarcode;
     EventModel eventModel;
     CustomerModel customerModel;
+    TicketModel ticketModel;
     Event event;
     Customer customer;
 
-    public void setModel(EventModel eventModel, CustomerModel customerModel) {
+    public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel) {
         this.eventModel = eventModel;
         this.customerModel = customerModel;
+        this.ticketModel = ticketModel;
     }
 
     public void setDetails(Event event, Customer customer) {
         this.event = event;
         this.customer = customer;
+
+        try {ticketModel.fetchAllTickets(customer, event);} catch (SQLException e) {throw new RuntimeException(e);}
         ticketInitialize();
     }
 
-    public void ticketInitialize(){
-        ticketEvent.setText(event.getName());
-        ticketLocation.setText(event.getLocation());
-        ticketDateAndTime.setText(event.getDate() +", " +event.getTime());
-        ticketParticipantName.setText(customer.getName());
+    public void ticketInitialize() {
+        List<Ticket> tickets = ticketModel.getTickets();
 
-        try {
-            Image qrCode = SwingFXUtils.toFXImage(QRCodeGenerator.generateQRCodeImage(UUID.randomUUID().toString()), null);
-            imgQRCode.setImage(qrCode);
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (Ticket ticket : tickets) {
+            if (ticket.getCustomer().getId() == customer.getId()) {
+                ticketEvent.setText(ticket.getEvent().getName());
+                ticketLocation.setText(ticket.getEvent().getLocation());
+                ticketDateAndTime.setText(ticket.getEvent().getLocation() +", " +ticket.getEvent().getTime());
+                ticketParticipantName.setText(ticket.getCustomer().getName());
+
+                try {
+                    Image qrCode = SwingFXUtils.toFXImage(QRCodeGenerator.generateQRCodeImage(ticket.getUuid().toString()), null);
+                    imgQRCode.setImage(qrCode);
+
+                    Image barCode = SwingFXUtils.toFXImage(BarcodeGenerator.generateBarcodeImage(ticket.getUuid().toString()), null);
+                    imgBarcode.setImage(barCode);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     public void printTicket() throws IOException {
-        // Get the current scene
+        printButton.setVisible(false);
+
+        // Gets the scene
         Scene scene = ticketAnchor.getScene();
-
         float aspectRatio = (float) scene.getWidth() / (float) scene.getHeight();
-
-        // Calculate the new height while maintaining the aspect ratio
-        float pdfWidth = 595; // A4 width
+        float pdfWidth = 595;
         float pdfHeight = pdfWidth / aspectRatio;
 
         // Create a PDF document
@@ -122,9 +135,23 @@ public class TicketWindowController implements Initializable {
         String name = ticketParticipantName.getText();
         File outputFile = new File("tickets/Ticket" + event + "_" + name + ".pdf");
         document.save(outputFile);
-
-        // Close the document
         document.close();
+
+        // Opens the PDF document
+        if (Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            if (desktop.isSupported(Desktop.Action.OPEN)) {
+                desktop.open(outputFile);
+            }
+        }
+
+        // Stage close
+        Stage stage = (Stage) ticketAnchor.getScene().getWindow();
+        stage.close();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
     }
 }
 

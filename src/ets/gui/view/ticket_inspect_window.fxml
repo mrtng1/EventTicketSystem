@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ticketAnchor" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: f4f5f9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.TicketWindowController">
+<AnchorPane fx:id="ticketAnchor" prefHeight="200.0" prefWidth="550.0" style="-fx-background-color: f4f5f9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.TicketWindowController">
    <children>
-      <VBox layoutX="60.0" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: ffffff;">
+      <VBox layoutX="110.0" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: ffffff;">
          <children>
             <Label text="EVENT" textFill="#768591">
                <VBox.margin>
@@ -54,21 +54,22 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="310.0" prefHeight="160.0" prefWidth="190.0" style="-fx-background-color: ffffff;">
+      <VBox layoutX="360.0" prefHeight="160.0" prefWidth="190.0" style="-fx-background-color: ffffff;">
          <children>
             <Pane prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: black;" />
-            <ImageView fx:id="imgQRCode" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgQRCode" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="44.0" top="10.0" />
+                  <Insets left="33.0" top="6.0" />
                </VBox.margin>
             </ImageView>
          </children>
       </VBox>
-      <Label fx:id="ticketParticipantName" layoutX="326.0" layoutY="168.0" text="NAME">
+      <Label fx:id="ticketParticipantName" layoutX="376.0" layoutY="168.0" text="NAME">
          <font>
-            <Font size="10.0" />
+            <Font size="11.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#printTicket" prefHeight="17.0" prefWidth="34.0" text="..." />
+      <Button fx:id="printButton" layoutX="484.0" layoutY="165.0" mnemonicParsing="false" onAction="#printTicket" prefHeight="26.0" prefWidth="53.0" text="Print" />
+      <ImageView fx:id="imgBarcode" fitHeight="190.0" fitWidth="80.0" layoutX="35.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

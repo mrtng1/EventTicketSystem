@@ -66,6 +66,10 @@ public class CustomerDAO {
             pstEventCustomer.setInt(1, customer.getId());
             pstEventCustomer.executeUpdate();
 
+            PreparedStatement pstTicket = con.prepareStatement("DELETE FROM Ticket WHERE customerid = ?");
+            pstTicket.setInt(1, customer.getId());
+            pstTicket.executeUpdate();
+
             PreparedStatement pstCustomer = con.prepareStatement("DELETE FROM Customer WHERE id = ?");
             pstCustomer.setInt(1, customer.getId());
             pstCustomer.executeUpdate();

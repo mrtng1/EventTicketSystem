@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="eventInfoAnchorPane" prefHeight="450.0" prefWidth="650.0" stylesheets="@styles/event_info_style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
+   <children>
+      <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#closeWindow" stylesheets="@styles/event_info_style.css" text="Close">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <Label fx:id="eventTitleLabel" alignment="CENTER" layoutX="326.0" layoutY="75.0" opacity="0.8" prefHeight="29.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="---event---">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.48627451062202454" green="0.48627451062202454" blue="0.48627451062202454" />
+               </color>
+            </DropShadow>
+         </effect></Label>
+      <Button layoutX="498.0" layoutY="410.0" mnemonicParsing="false" onAction="#getTicket" stylesheets="@styles/event_info_style.css" text="Get Ticket">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <Button layoutX="14.0" layoutY="410.0" mnemonicParsing="false" onAction="#deleteEvent" stylesheets="@styles/event_info_style.css" text="Delete Event">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <ListView fx:id="participantsList" layoutX="14.0" layoutY="54.0" opacity="0.9" prefHeight="320.0" prefWidth="200.0" stylesheets="@styles/event_info_style.css">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></ListView>
+      <VBox layoutX="303.0" layoutY="134.0" opacity="0.9" prefHeight="200.0" prefWidth="256.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <Label fx:id="locationLabel" alignment="CENTER" prefHeight="30.0" prefWidth="256.0" text="--Location--" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Label>
+            <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="256.0" text="--date---" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="noteLabel" alignment="TOP_CENTER" layoutX="10.0" layoutY="32.0" prefHeight="65.0" prefWidth="256.0" text="--note--" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Label>
+         </children>
+         <effect>
+            <DropShadow offsetX="5.0" offsetY="5.0">
+               <color>
+                  <Color red="0.48627451062202454" green="0.48627451062202454" blue="0.48627451062202454" />
+               </color>
+            </DropShadow>
+         </effect>
+      </VBox>
+      <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#addParticipant" stylesheets="@styles/event_info_style.css" text="Add">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+      <Button layoutX="83.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteParticipant" stylesheets="@styles/event_info_style.css" text="Delete">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect></Button>
+   </children>
+</AnchorPane>

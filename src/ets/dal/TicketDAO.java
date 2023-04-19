@@ -22,23 +22,21 @@ public class TicketDAO {
         connectionManager = new ConnectionManager();
     }
 
-    public List<Ticket> getAllTickets(Customer customer) throws SQLException {
+    public List<Ticket> getAllTickets(Customer customer, Event event) throws SQLException {
         List<Ticket> tickets = new ArrayList<>();
 
-        try (Connection con = connectionManager.getConnection()) {
-            String sql = "SELECT * FROM Ticket";
-            Statement statement = con.createStatement();
+        String sql = "SELECT * FROM Ticket INNER JOIN Customer ON Ticket.customerid = Customer.id INNER JOIN Event ON Ticket.eventid = Event.id WHERE Ticket.customerid = ? AND Ticket.eventid = ?";
+        try (Connection con = connectionManager.getConnection();
+             PreparedStatement statement = con.prepareStatement(sql)) {
+            statement.setInt(1, customer.getId());
+            statement.setInt(2, event.getId());
 
-            if (statement.execute(sql)) {
-                ResultSet rs = statement.getResultSet();
+            try (ResultSet rs = statement.executeQuery()) {
                 while (rs.next()) {
-                    UUID uuid = UUID.fromString(rs.getString("uuid"));
                     String ticketType = rs.getString("ticketType");
-                    int eventid = rs.getInt("eventid");
-                    int customerid = rs.getInt("customerid");
 
-                    //Ticket ticket = new Ticket(uuid, ticketType, eventid, customerid);
-                    //tickets.add(ticket);
+                    Ticket ticket = new Ticket(UUID.fromString(rs.getString("uuid")), ticketType, event, customer);
+                    tickets.add(ticket);
                 }
             }
         } return tickets;

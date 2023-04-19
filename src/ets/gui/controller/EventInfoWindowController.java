@@ -3,6 +3,7 @@ package ets.gui.controller;
 // imports
 import ets.be.Customer;
 import ets.be.Event;
+import ets.be.Ticket;
 import ets.gui.controller.create.CreateCustomerWindowController;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
@@ -39,11 +40,13 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
     private ScrollPane scrollPane;
-    private Event event;
     private EventModel eventModel;
     private CustomerModel customerModel;
     private TicketModel ticketModel;
+    private Ticket ticket;
+    private Event event;
     private Customer customer;
+
 
     public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel, ScrollPane scrollPane) {
         this.eventModel = eventModel;
@@ -99,6 +102,8 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     public void getTicket() {
         customer = participantsList.getSelectionModel().getSelectedItem();
+        ticket = new Ticket("Event ticket", event, customer);
+        System.out.println(ticket);
 
         if (participantsList.getSelectionModel().getSelectedItem() == null) {
             MessagePopup.showAlert("Oops!", "You haven't selected a customer", Alert.AlertType.ERROR);
@@ -111,7 +116,7 @@ public class EventInfoWindowController implements Initializable {
                 Parent createEventParent = fxmlLoader.load();
 
                 TicketWindowController ticketWindowController = fxmlLoader.getController();
-                ticketWindowController.setModel(new EventModel(), new CustomerModel());
+                ticketWindowController.setModel(eventModel, customerModel, ticketModel);
                 ticketWindowController.setDetails(event, customer);
 
                 // Create a new stage and scene

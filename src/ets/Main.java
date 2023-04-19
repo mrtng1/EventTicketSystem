@@ -28,9 +28,9 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
 
-        primaryStage.setTitle("Ticket system"); // Set the window title
-        primaryStage.setScene(scene); // Set the scene to the stage
+        primaryStage.setTitle("Event Ticket system");
+        primaryStage.setScene(scene);
         primaryStage.setResizable(false);
-        primaryStage.show(); // Show the stage
+        primaryStage.show();
     }
 }

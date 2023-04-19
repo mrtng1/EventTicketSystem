@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 /**
  *
@@ -51,7 +52,7 @@ public class CreateCustomerWindowController implements Initializable {
         eventModel.joinEvent(event, customer);
         customerModel.fetchAllCustomers(event);
 
-        Ticket ticket = new Ticket("Event ticket", event, customer);
+        Ticket ticket = new Ticket(UUID.randomUUID(), "Event Ticket", event, customer);
         ticketModel.createTicket(ticket);
 
         Node source = (Node) actionEvent.getSource();
@@ -59,7 +60,7 @@ public class CreateCustomerWindowController implements Initializable {
         stage.close();
     }
 
-    public void cancelBtn(ActionEvent actionEvent) {
+    public void cancel(ActionEvent actionEvent) {
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();

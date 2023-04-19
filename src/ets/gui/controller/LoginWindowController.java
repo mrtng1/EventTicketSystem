@@ -4,6 +4,7 @@ package ets.gui.controller;
 import ets.be.Coordinator;
 import ets.gui.model.AdminModel;
 import ets.gui.model.CoordinatorModel;
+import ets.gui.util.MessagePopup;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,11 +34,10 @@ public class LoginWindowController implements Initializable {
     private AnchorPane loginAnchorPane;
     @FXML
     private Button loginButton;
-
     @FXML
     private TextField passwordField, nameField;
-    private AdminModel adminModel = new AdminModel();
-    private CoordinatorModel coordinatorModel = new CoordinatorModel();
+    private AdminModel adminModel;
+    private CoordinatorModel coordinatorModel;
 
     public void loginButtonClicked(ActionEvent actionEvent) {
         String inputUsername = nameField.getText();
@@ -52,8 +52,9 @@ public class LoginWindowController implements Initializable {
                 stage.setTitle("Admin Window");
                 stage.show();
 
-                // Close the login window if you need to
-                ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+                // Close the login window
+                Stage currentStage = (Stage) loginAnchorPane.getScene().getWindow();
+                currentStage.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -82,20 +83,13 @@ public class LoginWindowController implements Initializable {
             }
         }
         else {
-            showAlert("Invalid Credentials", "Username or password is incorrect");
+            MessagePopup.showAlert("Invalid Credentials", "Username or password is incorrect", Alert.AlertType.ERROR);
         }
-    }
-
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        adminModel = new AdminModel();
+        coordinatorModel = new CoordinatorModel();
     }
 }

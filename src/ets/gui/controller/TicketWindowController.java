@@ -10,6 +10,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,16 +20,22 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.rendering.PDFRenderer;
 
 // java imports
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;
+
 
 /**
  *
@@ -80,30 +87,40 @@ public class TicketWindowController implements Initializable {
     }
 
     public void printTicket() throws IOException {
-        // Load the FXML file into a Parent object
-        Parent root = FXMLLoader.load(getClass().getResource("/ets/gui/view/ticket_inspect_window.fxml"));
+        // Get the current scene
+        Scene scene = ticketAnchor.getScene();
 
-        // Create a JavaFX scene to be saved as PDF
-        Scene scene = new Scene(root, 595, 842); // A4 size
+        float aspectRatio = (float) scene.getWidth() / (float) scene.getHeight();
+
+        // Calculate the new height while maintaining the aspect ratio
+        float pdfWidth = 595; // A4 width
+        float pdfHeight = pdfWidth / aspectRatio;
 
         // Create a PDF document
         PDDocument document = new PDDocument();
-        PDPage page = new PDPage();
+        PDPage page = new PDPage(new PDRectangle(pdfWidth, pdfHeight));
         document.addPage(page);
 
-        // Convert the scene to an image and add it to the PDF document
-        PDFRenderer renderer = new PDFRenderer(document);
-        BufferedImage image = new BufferedImage(595, 842, BufferedImage.TYPE_INT_RGB);
-        Graphics2D graphics = image.createGraphics();
-        WritableImage fxImage = scene.getRoot().snapshot(null, null);
-        SwingFXUtils.fromFXImage(fxImage, image);
-        renderer.renderPageToGraphics(0, graphics);
-        graphics.dispose();
+        // Convert the scene to an image
+        WritableImage fxImage = new WritableImage((int) scene.getWidth(), (int) scene.getHeight());
+        scene.snapshot(fxImage);
+        BufferedImage image = SwingFXUtils.fromFXImage(fxImage, null);
+
+        // Convert the BufferedImage to a byte array
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        ImageIO.write(image, "PNG", outputStream);
+        byte[] imageBytes = outputStream.toByteArray();
+
+        // Add the image to the PDF document
+        PDImageXObject xImage = PDImageXObject.createFromByteArray(document, imageBytes, "ticket");
+        PDPageContentStream contentStream = new PDPageContentStream(document, page);
+        contentStream.drawImage(xImage, 0, 0, pdfWidth, pdfHeight);
+        contentStream.close();
 
         // Save the image to a file at the specified path
         String event = ticketEvent.getText();
         String name = ticketParticipantName.getText();
-        File outputFile = new File("tickets/Ticket_" +event +"_" +name +".pdf");
+        File outputFile = new File("tickets/Ticket" + event + "_" + name + ".pdf");
         document.save(outputFile);
 
         // Close the document

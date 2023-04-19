@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="tickets">
-      <change afterPath="$PROJECT_DIR$/tickets/Ticket_Football_Jasper.pdf" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="PDF maker">
+      <change afterPath="$PROJECT_DIR$/tickets/Ticket_Football_Maya.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/ticket_inspect_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/ticket_inspect_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +154,8 @@
       <workItem from="1681815888601" duration="547000" />
       <workItem from="1681816439937" duration="2020000" />
       <workItem from="1681818468508" duration="1502000" />
-      <workItem from="1681819978058" duration="322000" />
+      <workItem from="1681819978058" duration="1249000" />
+      <workItem from="1681894581170" duration="684000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -322,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681765882545</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="PDF maker">
+      <created>1681820628051</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1681820628051</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +355,7 @@
     <MESSAGE value="hmm" />
     <MESSAGE value="push" />
     <MESSAGE value="tickets" />
-    <option name="LAST_COMMIT_MESSAGE" value="tickets" />
+    <MESSAGE value="PDF maker" />
+    <option name="LAST_COMMIT_MESSAGE" value="PDF maker" />
   </component>
 </project>

@@ -33,9 +33,6 @@
                   <HBox prefHeight="100.0" prefWidth="900.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#createCoordinator" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/main_style.css" text="Create coordinator">
-                           <font>
-                              <Font name="Serif Regular" size="13.0" />
-                           </font>
                            <effect>
                               <DropShadow blurType="GAUSSIAN" offsetX="5.0" offsetY="5.0">
                                  <color>
@@ -46,11 +43,11 @@
                            <HBox.margin>
                               <Insets left="225.0" right="25.0" top="25.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
                         </Button>
                         <Button mnemonicParsing="false" onAction="#viewEvents" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/main_style.css" text="See all events">
-                           <font>
-                              <Font name="Serif Regular" size="13.0" />
-                           </font>
                            <effect>
                               <DropShadow blurType="GAUSSIAN" offsetX="5.0" offsetY="5.0">
                                  <color>
@@ -61,11 +58,11 @@
                            <HBox.margin>
                               <Insets left="25.0" right="25.0" top="25.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
                         </Button>
                         <Button mnemonicParsing="false" onAction="#createEvent" prefHeight="40.0" prefWidth="120.0" stylesheets="@styles/main_style.css" text="Create event">
-                           <font>
-                              <Font name="Serif Regular" size="13.0" />
-                           </font>
                            <effect>
                               <DropShadow blurType="GAUSSIAN" offsetX="5.0" offsetY="5.0">
                                  <color>
@@ -76,6 +73,9 @@
                            <HBox.margin>
                               <Insets left="25.0" right="25.0" top="25.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
                         </Button>
                      </children>
                   </HBox>

@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 /**
  *
@@ -47,6 +48,7 @@ public class EventInfoWindowController implements Initializable {
     private Ticket ticket;
     private Event event;
     private Customer customer;
+    private Consumer<Event> onDeleteEventCallback;
 
 
     public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel, ScrollPane scrollPane) {
@@ -54,6 +56,10 @@ public class EventInfoWindowController implements Initializable {
         this.customerModel = customerModel;
         this.ticketModel = ticketModel;
         this.scrollPane = scrollPane;
+    }
+
+    public void setOnDeleteEventCallback(Consumer<Event> onDeleteEventCallback) {
+        this.onDeleteEventCallback = onDeleteEventCallback;
     }
 
     public void setEvent(Event event) {
@@ -104,7 +110,14 @@ public class EventInfoWindowController implements Initializable {
     @FXML
     private void deleteEvent(ActionEvent actionEvent){
         scrollPane.setEffect(null);
-        try {eventModel.deleteEvent(this.event);} catch (SQLException e) {throw new RuntimeException(e);}
+        try {
+            eventModel.deleteEvent(this.event);
+            if (onDeleteEventCallback != null) {
+                onDeleteEventCallback.accept(event);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

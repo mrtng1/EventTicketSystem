@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Working tickets">
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/coupon.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/ticket.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/ticket_inspect_window.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

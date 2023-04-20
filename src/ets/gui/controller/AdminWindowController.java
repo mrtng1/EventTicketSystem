@@ -143,7 +143,11 @@ public class AdminWindowController implements Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
 
                 // Pass both Event and EventModel instances to the constructor
-                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this));
+                fxmlLoader.setControllerFactory(clazz -> {
+                    EventCardController controller = new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this);
+                    controller.setOnDeleteEventCallback(deletedEvent -> refreshEventCards());
+                    return controller;
+                });
                 Pane contentPane = fxmlLoader.load();
                 pane.getChildren().add(contentPane);
                 gridPane.add(pane, col, row);

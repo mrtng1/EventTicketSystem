@@ -32,6 +32,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 /**
  *
@@ -51,6 +52,7 @@ public class EventCardController implements Initializable {
     private CustomerModel customerModel;
     private AdminWindowController adminWindowController;
     private CoordinatorWindowController coordinatorWindowController;
+    private Consumer<Event> onDeleteEventCallback;
 
     public EventCardController(Event event, ScrollPane scrollPane, CustomerModel customerModel, EventModel eventModel, AdminWindowController adminWindowController) {
         this.event = event;
@@ -70,6 +72,10 @@ public class EventCardController implements Initializable {
         this.coordinatorWindowController = coordinatorWindowController;
 
         try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}
+    }
+
+    public void setOnDeleteEventCallback(Consumer<Event> onDeleteEventCallback) {
+        this.onDeleteEventCallback = onDeleteEventCallback;
     }
 
     @Override
@@ -120,6 +126,11 @@ public class EventCardController implements Initializable {
             EventInfoWindowController eventInfoWindowController = fxmlLoader.getController();
             eventInfoWindowController.setModel(new EventModel(), new CustomerModel(), new TicketModel(), scrollPane);
             eventInfoWindowController.setEvent(event);
+            eventInfoWindowController.setOnDeleteEventCallback(deletedEvent -> {
+                if (onDeleteEventCallback != null) {
+                    onDeleteEventCallback.accept(deletedEvent);
+                }
+            });
 
             // Create a new stage and scene
             Stage stage = new Stage();

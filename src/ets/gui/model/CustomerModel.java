@@ -3,7 +3,7 @@ package ets.gui.model;
 // imports
 import ets.be.Customer;
 import ets.be.Event;
-import ets.bll.CustomerLogic;
+import ets.bll.logic.CustomerLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

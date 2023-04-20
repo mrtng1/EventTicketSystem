@@ -4,7 +4,7 @@ package ets.gui.model;
 import ets.be.Customer;
 import ets.be.Event;
 import ets.be.Ticket;
-import ets.bll.TicketLogic;
+import ets.bll.logic.TicketLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

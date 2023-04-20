@@ -1,9 +1,9 @@
-package ets.bll;
+package ets.bll.logic;
 
 // imports
 import ets.be.Customer;
 import ets.be.Event;
-import ets.dal.CustomerDAO;
+import ets.dal.dao.CustomerDAO;
 
 // java imports
 import java.sql.SQLException;

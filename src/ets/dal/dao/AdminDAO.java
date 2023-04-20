@@ -1,6 +1,8 @@
-package ets.dal;
+package ets.dal.dao;
 
 import ets.be.Admin;
+import ets.dal.db.ConnectionManager;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

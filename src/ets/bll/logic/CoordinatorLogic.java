@@ -1,8 +1,8 @@
-package ets.bll;
+package ets.bll.logic;
 
 // imports
 import ets.be.Coordinator;
-import ets.dal.CoordinatorDAO;
+import ets.dal.dao.CoordinatorDAO;
 
 // java imports
 import java.sql.SQLException;

@@ -2,7 +2,7 @@ package ets.gui.model;
 
 // imports
 import ets.be.Admin;
-import ets.bll.AdminLogic;
+import ets.bll.logic.AdminLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

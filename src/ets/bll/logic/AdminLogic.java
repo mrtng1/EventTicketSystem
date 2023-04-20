@@ -1,8 +1,8 @@
-package ets.bll;
+package ets.bll.logic;
 
 // imports
 import ets.be.Admin;
-import ets.dal.AdminDAO;
+import ets.dal.dao.AdminDAO;
 
 // java imports
 import java.sql.SQLException;

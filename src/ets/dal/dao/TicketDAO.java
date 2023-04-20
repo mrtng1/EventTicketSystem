@@ -1,11 +1,11 @@
-package ets.dal;
+package ets.dal.dao;
 
 import ets.be.Customer;
 import ets.be.Event;
 import ets.be.Ticket;
+import ets.dal.db.ConnectionManager;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

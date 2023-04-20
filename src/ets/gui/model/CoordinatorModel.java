@@ -2,7 +2,7 @@ package ets.gui.model;
 
 // imports
 import ets.be.Coordinator;
-import ets.bll.CoordinatorLogic;
+import ets.bll.logic.CoordinatorLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

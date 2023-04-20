@@ -4,7 +4,7 @@ package ets.gui.model;
 import ets.be.Coordinator;
 import ets.be.Customer;
 import ets.be.Event;
-import ets.bll.EventLogic;
+import ets.bll.logic.EventLogic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

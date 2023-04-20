@@ -1,10 +1,10 @@
-package ets.bll;
+package ets.bll.logic;
 
 // imports
 import ets.be.Coordinator;
 import ets.be.Customer;
 import ets.be.Event;
-import ets.dal.EventDAO;
+import ets.dal.dao.EventDAO;
 
 // java imports
 import java.sql.SQLException;

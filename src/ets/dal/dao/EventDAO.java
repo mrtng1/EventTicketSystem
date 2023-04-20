@@ -1,9 +1,10 @@
-package ets.dal;
+package ets.dal.dao;
 
 // imports
 import ets.be.Coordinator;
 import ets.be.Customer;
 import ets.be.Event;
+import ets.dal.db.ConnectionManager;
 
 // java imports
 import java.sql.*;

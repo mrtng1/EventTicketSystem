@@ -4,6 +4,7 @@ package ets.gui.controller.create;
 import ets.be.Customer;
 import ets.be.Event;
 import ets.be.Ticket;
+import ets.gui.controller.EventInfoWindowController;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
@@ -19,6 +20,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 /**
  *
@@ -32,7 +34,7 @@ public class CreateCustomerWindowController implements Initializable {
     private EventModel eventModel;
     private TicketModel ticketModel;
     private Event event;
-    private Runnable onCustomerAddedCallback;
+    private EventInfoWindowController eventInfoWindowController;
 
     public void setModel(CustomerModel customerModel, EventModel eventModel, TicketModel ticketModel) {
         this.customerModel = customerModel;
@@ -40,9 +42,10 @@ public class CreateCustomerWindowController implements Initializable {
         this.ticketModel = ticketModel;
     }
 
-    public void setOnCustomerAddedCallback(Runnable onCustomerAddedCallback) {
-        this.onCustomerAddedCallback = onCustomerAddedCallback;
+    public void setEventInfoWindowController(EventInfoWindowController eventInfoWindowController) {
+        this.eventInfoWindowController = eventInfoWindowController;
     }
+
 
     public void setEvent(Event event) {
         this.event = event;
@@ -60,9 +63,7 @@ public class CreateCustomerWindowController implements Initializable {
         Ticket ticket = new Ticket(UUID.randomUUID(), "Event Ticket", event, customer);
         ticketModel.createTicket(ticket);
 
-        if (onCustomerAddedCallback != null) {
-            onCustomerAddedCallback.run();
-        }
+
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

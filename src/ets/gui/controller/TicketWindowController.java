@@ -87,7 +87,12 @@ public class TicketWindowController implements Initializable {
                 ticketEvent.setText(ticket.getEvent().getName());
                 ticketLocation.setText(ticket.getEvent().getLocation());
                 ticketDate.setText(String.valueOf(ticket.getEvent().getDate()));
-                ticketTime.setText(String.valueOf(ticket.getEvent().getTime()));
+
+                double decimalNumber = ticket.getEvent().getTime();
+                double roundedNumber = Math.round(decimalNumber * 100.0) / 100.0;
+                String roundedString = String.format("%.2f", roundedNumber);
+                ticketTime.setText(roundedString);
+
                 ticketParticipantName.setText(ticket.getCustomer().getName());
 
                 try {

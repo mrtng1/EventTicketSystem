@@ -8,6 +8,7 @@ import ets.gui.controller.create.CreateCustomerWindowController;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
+import ets.gui.util.BlurEffectUtil;
 import ets.gui.util.MessagePopup;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -26,6 +27,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
@@ -60,6 +62,14 @@ public class EventInfoWindowController implements Initializable {
 
     public void setOnDeleteEventCallback(Consumer<Event> onDeleteEventCallback) {
         this.onDeleteEventCallback = onDeleteEventCallback;
+    }
+
+    public void updateParticipantsList() {
+        try {
+            customerModel.fetchAllCustomers(event);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setEvent(Event event) {
@@ -108,25 +118,30 @@ public class EventInfoWindowController implements Initializable {
     }
 
     @FXML
-    private void deleteEvent(ActionEvent actionEvent){
-        scrollPane.setEffect(null);
-        try {
-            eventModel.deleteEvent(this.event);
-            if (onDeleteEventCallback != null) {
-                onDeleteEventCallback.accept(event);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    private void deleteEvent(ActionEvent actionEvent) {
 
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        Optional<ButtonType> result = MessagePopup.showConfirmationAlert("Delete Event", "Are you sure you want to delete this event?");
+
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                eventModel.deleteEvent(this.event);
+                if (onDeleteEventCallback != null) {
+                    onDeleteEventCallback.accept(event);
+                    BlurEffectUtil.removeBlurEffect(scrollPane);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            Node source = (Node) actionEvent.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
+        }
     }
 
     @FXML
     private void closeWindow(ActionEvent actionEvent){
-        scrollPane.setEffect(null);
+        BlurEffectUtil.removeBlurEffect(scrollPane);
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
@@ -202,13 +217,14 @@ public class EventInfoWindowController implements Initializable {
             customerWindowController.setModel(new CustomerModel(), new EventModel(), new TicketModel());
             customerWindowController.setEvent(event);
 
-            customerWindowController.setOnCustomerAddedCallback(() -> {
-                try {
-                    customerModel.fetchAllCustomers(event);
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            });
+            try {
+                customerModel.fetchAllCustomers(event);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            // Add an onHidden event handler to update the participants list
+            stage.setOnHidden(e -> updateParticipantsList());
 
             // Show the new stage
             stage.show();

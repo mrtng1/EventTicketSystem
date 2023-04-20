@@ -7,6 +7,7 @@ import ets.gui.controller.create.CreateEventWindowController;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.util.BlurEffectUtil;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,7 +56,7 @@ public class AdminWindowController implements Initializable {
 
     @FXML
     private void createEvent() {
-        scrollPane.setEffect(new GaussianBlur(10));
+        BlurEffectUtil.applyBlurEffect(scrollPane, 10);
 
         try {
             // Load the FXML file
@@ -76,6 +77,7 @@ public class AdminWindowController implements Initializable {
             createEventWindowController.setCoordinatorModel(new CoordinatorModel());
             createEventWindowController.setRefreshCallback(this::refreshEventCards);
             createEventWindowController.setScrollPane(scrollPane);
+            createEventWindowController.setOnCloseRequestHandler(stage);
 
             // Show the new stage
             stage.show();
@@ -86,7 +88,7 @@ public class AdminWindowController implements Initializable {
 
     @FXML
     private void createCoordinator(){
-        scrollPane.setEffect(new GaussianBlur(10));
+        BlurEffectUtil.applyBlurEffect(scrollPane, 10);
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
@@ -102,6 +104,7 @@ public class AdminWindowController implements Initializable {
             CreateCoordinatorWindowController createCoordinatorWindowController = fxmlLoader.getController();
             createCoordinatorWindowController.setModel(new CoordinatorModel());
             createCoordinatorWindowController.setScrollPane(scrollPane);
+            createCoordinatorWindowController.setOnCloseRequestHandler(stage);
 
             // Show the new stage
             stage.show();

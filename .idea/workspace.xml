@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Working tickets">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/util/BlurEffectUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/AdminWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/AdminWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CoordinatorWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CoordinatorWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventCardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

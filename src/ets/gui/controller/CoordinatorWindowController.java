@@ -7,6 +7,7 @@ import ets.gui.controller.create.CreateCoordinatorWindowController;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
+import ets.gui.util.BlurEffectUtil;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -67,7 +68,7 @@ public class CoordinatorWindowController implements Initializable {
 
     @FXML
     private void createCoordinator(){
-        scrollPane.setEffect(new GaussianBlur(10));
+        BlurEffectUtil.applyBlurEffect(scrollPane, 10);
         try {
             // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
@@ -83,6 +84,7 @@ public class CoordinatorWindowController implements Initializable {
             CreateCoordinatorWindowController createCoordinatorWindowController = fxmlLoader.getController();
             createCoordinatorWindowController.setModel(new CoordinatorModel());
             createCoordinatorWindowController.setScrollPane(scrollPane);
+
 
             // Show the new stage
             stage.show();
@@ -130,8 +132,12 @@ public class CoordinatorWindowController implements Initializable {
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
 
-                // Pass both Event and EventModel instances to the constructor
-                fxmlLoader.setControllerFactory(clazz -> new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this));
+                // Pass both Event and EventModel instances to the constructor, and add the callback
+                fxmlLoader.setControllerFactory(clazz -> {
+                    EventCardController controller = new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this);
+                    controller.setOnDeleteEventCallback(deletedEvent -> refreshEventCards());
+                    return controller;
+                });
                 Pane contentPane = fxmlLoader.load();
                 pane.getChildren().add(contentPane);
                 eventPane.add(pane, col, row);

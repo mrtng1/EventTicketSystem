@@ -5,6 +5,7 @@ import ets.be.Coordinator;
 import ets.be.Event;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
+import ets.gui.util.BlurEffectUtil;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,6 +74,12 @@ public class CreateEventWindowController implements Initializable {
 
     public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
 
+    public void setOnCloseRequestHandler(Stage stage) {
+        stage.setOnCloseRequest(event -> {
+            BlurEffectUtil.removeBlurEffect(scrollPane);
+        });
+    }
+
     @FXML
     private void createBtn(ActionEvent actionEvent) {
         String name = eventNameField.getText();
@@ -135,7 +142,7 @@ public class CreateEventWindowController implements Initializable {
     private void cancelBtn(ActionEvent actionEvent){
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
-        scrollPane.setEffect(null);
+        BlurEffectUtil.removeBlurEffect(scrollPane);
         stage.close();
     }
 

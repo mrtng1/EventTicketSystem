@@ -3,6 +3,7 @@ package ets.gui.controller.create;
 // imports
 import ets.be.Coordinator;
 import ets.gui.model.CoordinatorModel;
+import ets.gui.util.BlurEffectUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,6 +37,12 @@ public class CreateCoordinatorWindowController implements Initializable {
         this.scrollPane = scrollPane;
     }
 
+    public void setOnCloseRequestHandler(Stage stage) {
+        stage.setOnCloseRequest(event -> {
+            BlurEffectUtil.removeBlurEffect(scrollPane);
+        });
+    }
+
 
     @FXML
     public void createBtn(ActionEvent actionEvent) {
@@ -53,6 +60,7 @@ public class CreateCoordinatorWindowController implements Initializable {
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+        BlurEffectUtil.removeBlurEffect(scrollPane);
     }
 
     @FXML

@@ -5,6 +5,7 @@ import ets.be.Event;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
+import ets.gui.util.BlurEffectUtil;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -116,7 +117,7 @@ public class EventCardController implements Initializable {
 
     @FXML
     public void eventViewBtn(ActionEvent actionEvent) {
-        scrollPane.setEffect(new GaussianBlur(10));
+        BlurEffectUtil.applyBlurEffect(scrollPane, 10);
 
         try {
             // Load the FXML file

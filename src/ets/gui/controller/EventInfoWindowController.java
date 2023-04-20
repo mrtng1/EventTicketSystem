@@ -9,6 +9,8 @@ import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
 import ets.gui.util.MessagePopup;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -37,6 +36,8 @@ public class EventInfoWindowController implements Initializable {
 
     @FXML
     private ListView<Customer> participantsList;
+    @FXML
+    private TextField searchField;
     @FXML
     private Label eventTitleLabel, locationLabel, dateLabel, noteLabel;
     private ScrollPane scrollPane;
@@ -79,6 +80,25 @@ public class EventInfoWindowController implements Initializable {
 
         try {customerModel.fetchAllCustomers(event);} catch (SQLException e) {throw new RuntimeException(e);}
         participantsList.setItems(customerModel.getCustomers());
+
+        FilteredList<Customer> filteredCustomers = new FilteredList<>(customerModel.getCustomers(), s -> true);
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredCustomers.setPredicate(customer -> {
+                // If the search field is empty, show all customers
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Filter the customers based on the user's input, case insensitive
+                String lowerCaseFilter = newValue.toLowerCase();
+                return customer.getName().toLowerCase().contains(lowerCaseFilter);
+            });
+        });
+
+        // Create a SortedList and bind it to the FilteredList
+        SortedList<Customer> sortedCustomers = new SortedList<>(filteredCustomers);
+        participantsList.setItems(sortedCustomers);
+
     }
 
     @FXML

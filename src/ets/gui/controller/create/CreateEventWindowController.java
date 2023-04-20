@@ -164,7 +164,7 @@ public class CreateEventWindowController implements Initializable {
         return bos.toByteArray();
     }
 
-    private void initializeTimeSpinner(){
+    private StringConverter<Double> initializeTimeSpinner(){
         CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 23.30, 12.30);
         eventTimeField.setValueFactory(valueFactory);
 
@@ -201,6 +201,7 @@ public class CreateEventWindowController implements Initializable {
         };
 
         eventTimeField.getEditor().setTextFormatter(new TextFormatter<>(converter, 12.30));
+        return converter;
     }
 
     public static class CustomSpinnerValueFactory extends SpinnerValueFactory<Double> {
@@ -261,6 +262,10 @@ public class CreateEventWindowController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initializeTimeSpinner();
+        StringConverter<Double> converter = initializeTimeSpinner();
+        eventTimeField.valueProperty().addListener((obs, oldValue, newValue) -> {
+            String newText = converter.toString(newValue);
+            eventTimeField.getEditor().setText(newText);
+        });
     }
 }

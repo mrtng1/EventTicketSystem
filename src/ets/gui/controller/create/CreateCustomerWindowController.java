@@ -32,11 +32,16 @@ public class CreateCustomerWindowController implements Initializable {
     private EventModel eventModel;
     private TicketModel ticketModel;
     private Event event;
+    private Runnable onCustomerAddedCallback;
 
     public void setModel(CustomerModel customerModel, EventModel eventModel, TicketModel ticketModel) {
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.ticketModel = ticketModel;
+    }
+
+    public void setOnCustomerAddedCallback(Runnable onCustomerAddedCallback) {
+        this.onCustomerAddedCallback = onCustomerAddedCallback;
     }
 
     public void setEvent(Event event) {
@@ -54,6 +59,10 @@ public class CreateCustomerWindowController implements Initializable {
 
         Ticket ticket = new Ticket(UUID.randomUUID(), "Event Ticket", event, customer);
         ticketModel.createTicket(ticket);
+
+        if (onCustomerAddedCallback != null) {
+            onCustomerAddedCallback.run();
+        }
 
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

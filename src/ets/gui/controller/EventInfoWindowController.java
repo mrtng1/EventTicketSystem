@@ -202,6 +202,14 @@ public class EventInfoWindowController implements Initializable {
             customerWindowController.setModel(new CustomerModel(), new EventModel(), new TicketModel());
             customerWindowController.setEvent(event);
 
+            customerWindowController.setOnCustomerAddedCallback(() -> {
+                try {
+                    customerModel.fetchAllCustomers(event);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            });
+
             // Show the new stage
             stage.show();
         } catch (IOException e) {

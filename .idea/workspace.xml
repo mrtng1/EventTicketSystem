@@ -4,26 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="push">
-      <change afterPath="$PROJECT_DIR$/src/ets/bll/util/BarcodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/ticket_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tickets/TicketSepar concert_Tomas Dracka.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Working tickets">
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/CouponWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCouponWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/coupon.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coupon_window.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/ticket.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tickets/Coupon_Coupon.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/be/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/be/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/TicketLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/TicketLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/util/QRCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/util/QRCodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/TicketWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/TicketWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/styles/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/styles/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/ticket_inspect_window.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/bll/util/QRCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/util/QRCodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/TicketModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/TicketModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_customer_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_customer_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/ticket_inspect_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/ticket_inspect_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/styles/main_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/styles/main_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/ticket_inspect_window.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/TicketSepar concert_Tomas Dracka.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/TicketSepar concert_Tomas Dracka.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +36,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -84,6 +86,7 @@
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ets/gui/view" />
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images/icons" />
       <recent name="$PROJECT_DIR$/src/ets/gui/view/images" />
       <recent name="C:\Users\mrtng\IdeaProjects\EventTicketSystem\src\ets\gui\view\images" />
@@ -172,7 +175,7 @@
       <workItem from="1681816439937" duration="2020000" />
       <workItem from="1681818468508" duration="1502000" />
       <workItem from="1681819978058" duration="1249000" />
-      <workItem from="1681894581170" duration="14692000" />
+      <workItem from="1681894581170" duration="23324000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -349,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681896372888</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Working tickets">
+      <created>1681911784010</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681911784010</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Working tickets">
+      <created>1681911816463</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681911816463</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +397,7 @@
     <MESSAGE value="tickets" />
     <MESSAGE value="PDF maker" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="Working tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working tickets" />
   </component>
 </project>

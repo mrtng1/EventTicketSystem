@@ -6,6 +6,5 @@
 .button:hover{
     -fx-background-color: black;
     -fx-background-radius: 30;
-    -fx-font-family: Serif;
     -fx-text-fill:white;
 }

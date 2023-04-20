@@ -95,5 +95,14 @@
                </color>
             </DropShadow>
          </effect></Button>
+      <Button layoutX="401.0" layoutY="410.0" mnemonicParsing="false" onAction="#getCoupon" stylesheets="@styles/event_info_style.css" text="Get Coupon">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+               <color>
+                  <Color red="0.6052631735801697" green="0.5968567132949829" blue="0.5968567132949829" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

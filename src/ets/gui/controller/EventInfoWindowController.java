@@ -112,7 +112,7 @@ public class EventInfoWindowController implements Initializable {
         else {
             try {
                 // Load the FXML file
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/ticket_inspect_window.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/ticket_preview.fxml"));
                 Parent createEventParent = fxmlLoader.load();
 
                 TicketWindowController ticketWindowController = fxmlLoader.getController();
@@ -130,6 +130,25 @@ public class EventInfoWindowController implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void getCoupon() {
+        try {
+            // Load the FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coupon_window.fxml"));
+            Parent createCouponParent = fxmlLoader.load();
+
+            // Create a new stage and scene
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            Scene scene = new Scene(createCouponParent);
+            stage.setScene(scene);
+
+            // Show the new stage
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -168,4 +187,6 @@ public class EventInfoWindowController implements Initializable {
             eventTitleLabel.setText(event.getName());
         }
     }
+
+
 }

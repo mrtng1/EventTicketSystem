@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -47,7 +46,7 @@ public class EventCardController implements Initializable {
     private Label participants, timeNumber, eventTitle;
     @FXML
     private Button deleteButton;
-    private ScrollPane scrollPane;
+    private final ScrollPane scrollPane;
     private Event event;
     private EventModel eventModel;
     private CustomerModel customerModel;

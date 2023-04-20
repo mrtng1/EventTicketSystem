@@ -18,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
@@ -70,13 +69,11 @@ public class CoordinatorWindowController implements Initializable {
     private void createCoordinator(){
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
         try {
-            // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
-            // Create a new stage and scene
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
             stage.setTitle("Create Coordinator");
             stage.setScene(new Scene(createEventParent));
@@ -85,8 +82,6 @@ public class CoordinatorWindowController implements Initializable {
             createCoordinatorWindowController.setModel(new CoordinatorModel());
             createCoordinatorWindowController.setScrollPane(scrollPane);
 
-
-            // Show the new stage
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

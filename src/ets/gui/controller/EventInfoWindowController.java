@@ -10,6 +10,8 @@ import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
 import ets.gui.util.BlurEffectUtil;
 import ets.gui.util.MessagePopup;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -52,6 +54,8 @@ public class EventInfoWindowController implements Initializable {
     private Customer customer;
     private Consumer<Event> onDeleteEventCallback;
 
+    private boolean sortAscending = true;
+
 
     public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel, ScrollPane scrollPane) {
         this.eventModel = eventModel;
@@ -70,6 +74,39 @@ public class EventInfoWindowController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void sortButtonHandle(ActionEvent actionEvent) {
+        ObservableList<Customer> items = participantsList.getItems();
+        ObservableList<Customer> sortedItems = FXCollections.observableArrayList(items);
+
+        int n = sortedItems.size();
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                // Ascending order sorting
+                if (sortAscending) {
+                    if (sortedItems.get(j).getName().compareToIgnoreCase(sortedItems.get(j + 1).getName()) > 0) {
+                        Customer temp = sortedItems.get(j);
+                        sortedItems.set(j, sortedItems.get(j + 1));
+                        sortedItems.set(j + 1, temp);
+                    }
+                }
+                // Descending order sorting
+                else {
+                    if (sortedItems.get(j).getName().compareToIgnoreCase(sortedItems.get(j + 1).getName()) < 0) {
+                        Customer temp = sortedItems.get(j);
+                        sortedItems.set(j, sortedItems.get(j + 1));
+                        sortedItems.set(j + 1, temp);
+                    }
+                }
+            }
+        }
+
+        // Reverse the sort order for the next click
+        sortAscending = !sortAscending;
+
+        participantsList.setItems(sortedItems);
     }
 
     public void setEvent(Event event) {
@@ -98,18 +135,15 @@ public class EventInfoWindowController implements Initializable {
         participantsList.setItems(customerModel.getCustomers());
 
         FilteredList<Customer> filteredCustomers = new FilteredList<>(customerModel.getCustomers(), s -> true);
-        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredCustomers.setPredicate(customer -> {
-                // If the search field is empty, show all customers
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> filteredCustomers.setPredicate(customer -> {
+            // If the search field is empty, show all customers
+            if (newValue == null || newValue.isEmpty()) {
+                return true;
+            }
 
-                // Filter the customers based on the user's input, case insensitive
-                String lowerCaseFilter = newValue.toLowerCase();
-                return customer.getName().toLowerCase().contains(lowerCaseFilter);
-            });
-        });
+            String lowerCaseFilter = newValue.toLowerCase();
+            return customer.getName().toLowerCase().contains(lowerCaseFilter);
+        }));
 
         // Create a SortedList and bind it to the FilteredList
         SortedList<Customer> sortedCustomers = new SortedList<>(filteredCustomers);

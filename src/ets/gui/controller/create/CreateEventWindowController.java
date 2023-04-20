@@ -24,8 +24,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -75,9 +73,7 @@ public class CreateEventWindowController implements Initializable {
     public void setRefreshCallback(Runnable refreshCallback) {this.refreshCallback = refreshCallback;}
 
     public void setOnCloseRequestHandler(Stage stage) {
-        stage.setOnCloseRequest(event -> {
-            BlurEffectUtil.removeBlurEffect(scrollPane);
-        });
+        stage.setOnCloseRequest(event -> BlurEffectUtil.removeBlurEffect(scrollPane));
     }
 
     @FXML
@@ -95,7 +91,6 @@ public class CreateEventWindowController implements Initializable {
             alert.setContentText("Please fill in all the fields.");
             alert.showAndWait();
         } else {
-            // Show an alert with a big text field asking to either "Write a note" or "Skip"
             TextArea textArea = new TextArea();
             textArea.setPromptText("Write a note here...");
             textArea.setWrapText(true);
@@ -175,7 +170,6 @@ public class CreateEventWindowController implements Initializable {
         CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 23.30, 12.30);
         eventTimeField.setValueFactory(valueFactory);
 
-        DecimalFormat df = new DecimalFormat("0.00");
         StringConverter<Double> converter = new StringConverter<>() {
             @Override
             public String toString(Double value) {
@@ -212,8 +206,8 @@ public class CreateEventWindowController implements Initializable {
     }
 
     public static class CustomSpinnerValueFactory extends SpinnerValueFactory<Double> {
-        private double min;
-        private double max;
+        private final double min;
+        private final double max;
 
         public CustomSpinnerValueFactory(double min, double max, double initialValue) {
             this.min = min;

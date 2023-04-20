@@ -38,9 +38,7 @@ public class CreateCoordinatorWindowController implements Initializable {
     }
 
     public void setOnCloseRequestHandler(Stage stage) {
-        stage.setOnCloseRequest(event -> {
-            BlurEffectUtil.removeBlurEffect(scrollPane);
-        });
+        stage.setOnCloseRequest(event -> BlurEffectUtil.removeBlurEffect(scrollPane));
     }
 
 

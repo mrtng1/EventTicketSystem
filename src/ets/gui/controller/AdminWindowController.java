@@ -15,14 +15,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-// java imports
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -59,13 +57,11 @@ public class AdminWindowController implements Initializable {
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
 
         try {
-            // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_event_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
-            // Create a new stage and scene
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);// Set the modality if you want to block interaction with other windows while this one is open
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Create Event");
             stage.setResizable(false);
             Scene scene = new Scene(createEventParent);
@@ -79,7 +75,7 @@ public class AdminWindowController implements Initializable {
             createEventWindowController.setScrollPane(scrollPane);
             createEventWindowController.setOnCloseRequestHandler(stage);
 
-            // Show the new stage
+
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,13 +86,12 @@ public class AdminWindowController implements Initializable {
     private void createCoordinator(){
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
         try {
-            // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
             // Create a new stage and scene
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL); // Set the modality if you want to block interaction with other windows while this one is open
+            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
             stage.setTitle("Create Coordinator");
             stage.setScene(new Scene(createEventParent));
@@ -106,7 +101,6 @@ public class AdminWindowController implements Initializable {
             createCoordinatorWindowController.setScrollPane(scrollPane);
             createCoordinatorWindowController.setOnCloseRequestHandler(stage);
 
-            // Show the new stage
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

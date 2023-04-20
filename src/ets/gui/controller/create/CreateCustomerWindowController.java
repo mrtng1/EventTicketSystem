@@ -4,7 +4,6 @@ package ets.gui.controller.create;
 import ets.be.Customer;
 import ets.be.Event;
 import ets.be.Ticket;
-import ets.gui.controller.EventInfoWindowController;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
@@ -34,18 +33,12 @@ public class CreateCustomerWindowController implements Initializable {
     private EventModel eventModel;
     private TicketModel ticketModel;
     private Event event;
-    private EventInfoWindowController eventInfoWindowController;
 
     public void setModel(CustomerModel customerModel, EventModel eventModel, TicketModel ticketModel) {
         this.customerModel = customerModel;
         this.eventModel = eventModel;
         this.ticketModel = ticketModel;
     }
-
-    public void setEventInfoWindowController(EventInfoWindowController eventInfoWindowController) {
-        this.eventInfoWindowController = eventInfoWindowController;
-    }
-
 
     public void setEvent(Event event) {
         this.event = event;

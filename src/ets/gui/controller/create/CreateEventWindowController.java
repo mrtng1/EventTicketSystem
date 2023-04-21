@@ -6,12 +6,12 @@ import ets.be.Event;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.model.EventModel;
 import ets.gui.util.BlurEffectUtil;
+import ets.gui.util.MessagePopup;
 import javafx.collections.ListChangeListener;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
@@ -35,6 +35,10 @@ import java.util.ResourceBundle;
  */
 public class CreateEventWindowController implements Initializable {
 
+
+    // instance variables with @FXML
+    @FXML
+    private AnchorPane createEventAnchorPane;
     @FXML
     private TextField eventNameField, eventLocationField;
     @FXML
@@ -43,16 +47,14 @@ public class CreateEventWindowController implements Initializable {
     private Spinner<Double> eventTimeField;
     @FXML
     private CheckComboBox<Coordinator> eventCoordinatorsField;
+
+    // instance variables
     private ScrollPane scrollPane;
     private EventModel eventModel;
-    private CoordinatorModel coordinatorModel;
-
     private Runnable refreshCallback;
     private byte[] imageData;
 
     public void setCoordinatorModel(CoordinatorModel coordinatorModel) {
-        this.coordinatorModel = coordinatorModel;
-
         eventCoordinatorsField.setTitle("Coordinators");
         eventCoordinatorsField.getItems().addAll(coordinatorModel.getCoordinators());
 
@@ -76,20 +78,18 @@ public class CreateEventWindowController implements Initializable {
         stage.setOnCloseRequest(event -> BlurEffectUtil.removeBlurEffect(scrollPane));
     }
 
-    @FXML
-    private void createBtn(ActionEvent actionEvent) {
+    /**
+     * Create Event method - creates event
+     */
+    public void createEvent() {
         String name = eventNameField.getText();
         String location = eventLocationField.getText();
         LocalDate date = eventDateField.getValue();
         double time = eventTimeField.getValue();
-        String note = "";
+        String note = " ";
 
         if (name.isEmpty() || location.isEmpty() || date == null) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
-            alert.setHeaderText("Input Error");
-            alert.setContentText("Please fill in all the fields.");
-            alert.showAndWait();
+            MessagePopup.showAlert("Error", "Please fill in all the fields", Alert.AlertType.WARNING);
         } else {
             TextArea textArea = new TextArea();
             textArea.setPromptText("Write a note here...");
@@ -115,7 +115,7 @@ public class CreateEventWindowController implements Initializable {
 
                 // assign coordinators to the event
                 List<Coordinator> selectedItems = eventCoordinatorsField.getCheckModel().getCheckedItems();
-                for (Coordinator item : selectedItems) { //Loop
+                for (Coordinator item : selectedItems) {
                     eventModel.assignEventCoordinator(event, new Coordinator(item.getId(), item.getUsername(), item.getPassword()));
                 }
 
@@ -124,34 +124,39 @@ public class CreateEventWindowController implements Initializable {
                     refreshCallback.run();
                 }
             } catch (SQLException e) {
-                // Handle the exception (e.g., show an error message)
                 e.printStackTrace();
             }
-            Node source = (Node) actionEvent.getSource();
-            Stage stage = (Stage) source.getScene().getWindow();
+            Stage stage = (Stage) createEventAnchorPane.getScene().getWindow();
             stage.close();
         }
     }
 
-    @FXML
-    private void cancelBtn(ActionEvent actionEvent){
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
+    /**
+     * Cancel method - close the current window
+     */
+    public void cancel(){
+        Stage stage = (Stage) createEventAnchorPane.getScene().getWindow();
         BlurEffectUtil.removeBlurEffect(scrollPane);
         stage.close();
     }
 
+    /**
+     * Get Event Image method - gets the image from file chooser
+     */
     public void getEventImage() throws Exception {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Images File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Images Files", "*.png", "*.jpg", "*.gif","*.jpeg"));
+                new FileChooser.ExtensionFilter("Images Files", "*.png", "*.jpg", "*.jpeg","*.gif"));
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
             imageData = readBytesFromFile(selectedFile);
         }
     }
 
+    /**
+     * Read Bytes From File - reads the bytes from selected file
+     */
     private static byte[] readBytesFromFile(File file) throws Exception {
         InputStream is = new FileInputStream(file);
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -166,6 +171,9 @@ public class CreateEventWindowController implements Initializable {
         return bos.toByteArray();
     }
 
+    /**
+     * Initialize Time Spinner method
+     */
     private StringConverter<Double> initializeTimeSpinner(){
         CustomSpinnerValueFactory valueFactory = new CustomSpinnerValueFactory(0, 23.30, 12.30);
         eventTimeField.setValueFactory(valueFactory);
@@ -200,7 +208,6 @@ public class CreateEventWindowController implements Initializable {
                 }
             }
         };
-
         eventTimeField.getEditor().setTextFormatter(new TextFormatter<>(converter, 12.30));
         return converter;
     }
@@ -261,6 +268,9 @@ public class CreateEventWindowController implements Initializable {
         }
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringConverter<Double> converter = initializeTimeSpinner();

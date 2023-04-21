@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="eventInfoAnchorPane" prefHeight="450.0" prefWidth="650.0" stylesheets="@styles/event_info_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.EventInfoWindowController">
    <children>
-      <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#closeWindow" stylesheets="@styles/event_info_style.css" text="Close">
+      <Button fx:id="closeButton" layoutX="587.0" layoutY="410.0" mnemonicParsing="false" onAction="#close" stylesheets="@styles/event_info_style.css" text="Close">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
                <color>
@@ -106,6 +106,6 @@
          </effect>
       </Button>
       <TextField fx:id="searchField" layoutX="154.0" layoutY="14.0" prefHeight="25.0" prefWidth="69.0" promptText="search..." />
-      <Button fx:id="sortButton" layoutX="230.0" layoutY="14.0" mnemonicParsing="false" onAction="#sortButtonHandle" prefHeight="25.0" prefWidth="45.0" text="sort" />
+      <Button fx:id="sortButton" layoutX="230.0" layoutY="14.0" mnemonicParsing="false" onAction="#sorting" prefHeight="25.0" prefWidth="45.0" text="sort" />
    </children>
 </AnchorPane>

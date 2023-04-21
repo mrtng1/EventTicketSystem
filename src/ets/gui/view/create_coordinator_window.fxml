@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="createEventAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #484c4e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.create.CreateCoordinatorWindowController">
+<AnchorPane fx:id="createCoordinatorAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #484c4e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ets.gui.controller.create.CreateCoordinatorWindowController">
    <children>
       <Pane prefHeight="400.0" prefWidth="330.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;">
          <children>
@@ -28,8 +28,8 @@
                   </TextField>
                </children>
             </VBox>
-            <Button layoutX="95.0" layoutY="345.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
-            <Button layoutX="169.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
+            <Button layoutX="95.0" layoutY="345.0" mnemonicParsing="false" onAction="#createCoordinator" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
+            <Button layoutX="169.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancel" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
             <VBox layoutX="10.0" layoutY="10.0" />
          </children>
          <effect>

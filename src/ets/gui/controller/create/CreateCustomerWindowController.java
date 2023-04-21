@@ -7,11 +7,10 @@ import ets.be.Ticket;
 import ets.gui.model.CustomerModel;
 import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 // java imports
@@ -19,16 +18,20 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.UUID;
-import java.util.function.Consumer;
 
 /**
  *
  * @author tomdra01, mrtng1
  */
 public class CreateCustomerWindowController implements Initializable {
-    
+
+    // instance variables with @FXML
+    @FXML
+    public AnchorPane createCustomerAnchorPane;
     @FXML
     private TextField nameField, emailField;
+
+    // instance variables
     private CustomerModel customerModel;
     private EventModel eventModel;
     private TicketModel ticketModel;
@@ -44,31 +47,38 @@ public class CreateCustomerWindowController implements Initializable {
         this.event = event;
     }
 
-    public void createParticipant(ActionEvent actionEvent) throws SQLException {
+    /**
+     * Create participant - creates participant with a ticket
+     */
+    public void createParticipant() throws SQLException {
         String name = nameField.getText();
         String email = emailField.getText();
 
+        // Creating customer
         Customer customer = new Customer(name, email);
         customerModel.createCustomer(customer);
         eventModel.joinEvent(event, customer);
         customerModel.fetchAllCustomers(event);
 
+        // Creating ticket for the customer
         Ticket ticket = new Ticket(UUID.randomUUID(), "Event Ticket", event, customer);
         ticketModel.createTicket(ticket);
 
-
-
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
+        Stage stage = (Stage) createCustomerAnchorPane.getScene().getWindow();
         stage.close();
     }
 
-    public void cancel(ActionEvent actionEvent) {
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
+    /**
+     * Cancel method - close the current window
+     */
+    public void cancel() {
+        Stage stage = (Stage) createCustomerAnchorPane.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }

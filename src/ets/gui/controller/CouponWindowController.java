@@ -35,28 +35,38 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
+/**
+ *
+ * @author tomdra01, mrtng1
+ */
 public class CouponWindowController implements Initializable {
 
-    @FXML
-    private Line couponLine;
+    // instance variables with @FXML
     @FXML
     private AnchorPane couponAnchor;
     @FXML
-    private Label coupon;
+    private Line couponLine;
     @FXML
-    private ImageView imgBarcode, imgQRCode;
+    private Label couponLabel;
     @FXML
     private Button printButton;
+    @FXML
+    private ImageView imgBarcode, imgQRCode;
+
+    // instance variables
     private String couponName;
-    private UUID uuid = UUID.randomUUID();
+    private final UUID uuid = UUID.randomUUID();
     
-    public void setCoupon(String name) {
+    public void setCouponLabel(String name) {
         this.couponName = name;
         couponInitialize();
     }
 
+    /**
+     * Coupon Initialize method
+     */
     private void couponInitialize() {
-        coupon.setText(couponName);
+        couponLabel.setText(couponName);
 
         try {
             javafx.scene.image.Image qrCode = SwingFXUtils.toFXImage(QRCodeGenerator.generateQRCodeImage(uuid.toString()), null);
@@ -69,10 +79,12 @@ public class CouponWindowController implements Initializable {
         }
     }
 
+    /**
+     * Print Coupon method - creates a PDF of the coupon
+     */
     public void printCoupon() throws IOException {
         printButton.setVisible(false);
 
-        // Gets the scene
         Scene scene = couponAnchor.getScene();
         float aspectRatio = (float) scene.getWidth() / (float) scene.getHeight();
         float pdfWidth = 595;
@@ -111,12 +123,13 @@ public class CouponWindowController implements Initializable {
                 desktop.open(outputFile);
             }
         }
-
-        // Stage close
         Stage stage = (Stage) couponAnchor.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         couponLine.setStrokeWidth(2);

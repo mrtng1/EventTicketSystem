@@ -58,8 +58,8 @@
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="deleteButton" layoutX="220.0" layoutY="80.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/event_style.css" text="Delete" visible="false" />
-      <Button fx:id="eventView" layoutX="290.0" layoutY="80.0" mnemonicParsing="false" onAction="#eventViewBtn" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/event_style.css" text="View" />
+      <Button fx:id="deleteButton" layoutX="220.0" layoutY="80.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="26.0" prefWidth="60.0" stylesheets="@styles/event_style.css" text="Delete" visible="false" />
+      <Button fx:id="eventView" layoutX="290.0" layoutY="80.0" mnemonicParsing="false" onAction="#viewEvent" prefHeight="23.0" prefWidth="45.0" stylesheets="@styles/event_style.css" text="View" />
    </children>
    <effect>
       <DropShadow>

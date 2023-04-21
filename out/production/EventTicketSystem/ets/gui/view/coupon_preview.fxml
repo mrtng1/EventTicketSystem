@@ -19,7 +19,7 @@
                 <Font name="Monaco" size="72.0" />
             </font>
         </Label>
-        <Label fx:id="coupon" layoutX="230.0" layoutY="205.0" prefHeight="30.0" prefWidth="180.0" text="-" textFill="WHITE">
+        <Label fx:id="couponLabel" layoutX="230.0" layoutY="205.0" prefHeight="30.0" prefWidth="180.0" text="-" textFill="WHITE">
             <font>
                 <Font name="Monaco" size="14.0" />
             </font>

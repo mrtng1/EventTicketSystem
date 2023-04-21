@@ -4,12 +4,11 @@ package ets.gui.controller.create;
 import ets.be.Coordinator;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.util.BlurEffectUtil;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 // java imports
@@ -23,10 +22,15 @@ import java.util.ResourceBundle;
  */
 public class CreateCoordinatorWindowController implements Initializable {
 
+    // instance variables with @FXML
     @FXML
-    private TextField nameField, passwordField;
+    private AnchorPane createCoordinatorAnchorPane;
     @FXML
     private ScrollPane scrollPane;
+    @FXML
+    private TextField nameField, passwordField;
+
+    // instance variables
     private CoordinatorModel model;
 
     public void setModel(CoordinatorModel model){
@@ -41,9 +45,10 @@ public class CreateCoordinatorWindowController implements Initializable {
         stage.setOnCloseRequest(event -> BlurEffectUtil.removeBlurEffect(scrollPane));
     }
 
-
-    @FXML
-    public void createBtn(ActionEvent actionEvent) {
+    /**
+     * Create Coordinator method - create coordinator
+     */
+    public void createCoordinator() {
         String username = nameField.getText();
         String password = passwordField.getText();
 
@@ -52,23 +57,25 @@ public class CreateCoordinatorWindowController implements Initializable {
             model.createCoordinator(coordinator);
             scrollPane.setEffect(null);
         } catch (SQLException e) {
-            // Handle the exception (e.g., show an error message)
             e.printStackTrace();
         }
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
         BlurEffectUtil.removeBlurEffect(scrollPane);
-    }
-
-    @FXML
-    public void cancelBtn(ActionEvent actionEvent) {
-        Node source = (Node) actionEvent.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        scrollPane.setEffect(null);
+        Stage stage = (Stage) createCoordinatorAnchorPane.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Cancel method - close the current window
+     */
+    public void cancel() {
+        scrollPane.setEffect(null);
+        Stage stage = (Stage) createCoordinatorAnchorPane.getScene().getWindow();
+        stage.close();
+    }
+
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }

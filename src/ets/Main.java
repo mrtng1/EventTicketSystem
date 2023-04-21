@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 // java imports
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         URL fxmlUrl = getClass().getResource("gui/view/login_window.fxml");
-        Parent root = FXMLLoader.load(fxmlUrl);
+        Parent root = FXMLLoader.load(Objects.requireNonNull(fxmlUrl));
 
         Scene scene = new Scene(root);
 

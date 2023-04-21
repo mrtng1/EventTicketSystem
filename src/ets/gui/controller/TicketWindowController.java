@@ -6,8 +6,6 @@ import ets.be.Event;
 import ets.be.Ticket;
 import ets.bll.util.BarcodeGenerator;
 import ets.bll.util.QRCodeGenerator;
-import ets.gui.model.CustomerModel;
-import ets.gui.model.EventModel;
 import ets.gui.model.TicketModel;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -48,36 +46,35 @@ import java.util.ResourceBundle;
  */
 public class TicketWindowController implements Initializable {
 
-    @FXML
-    private Line ticketLine;
-    @FXML
-    private Button printButton;
+    // instance variable with @FXML
     @FXML
     private AnchorPane ticketAnchor;
     @FXML
+    private Line ticketLine;
+    @FXML
     private Label ticketEvent, ticketLocation, ticketDate, ticketTime, ticketParticipantName;
     @FXML
+    private Button printButton;
+    @FXML
     private ImageView imgQRCode, imgBarcode;
-    EventModel eventModel;
-    CustomerModel customerModel;
-    TicketModel ticketModel;
-    Event event;
-    Customer customer;
 
-    public void setModel(EventModel eventModel, CustomerModel customerModel, TicketModel ticketModel) {
-        this.eventModel = eventModel;
-        this.customerModel = customerModel;
+    // instance variables
+    private TicketModel ticketModel;
+    private Customer customer;
+
+    public void setModel(TicketModel ticketModel) {
         this.ticketModel = ticketModel;
     }
 
     public void setDetails(Event event, Customer customer) {
-        this.event = event;
         this.customer = customer;
-
         try {ticketModel.fetchAllTickets(customer, event);} catch (SQLException e) {throw new RuntimeException(e);}
         ticketInitialize();
     }
 
+    /**
+     * Ticket Initialize method
+     */
     public void ticketInitialize() {
         List<Ticket> tickets = ticketModel.getTickets();
 
@@ -107,10 +104,12 @@ public class TicketWindowController implements Initializable {
         }
     }
 
+    /**
+     * Print Ticket method - creates a PDF of the ticket
+     */
     public void printTicket() throws IOException {
         printButton.setVisible(false);
 
-        // Gets the scene
         Scene scene = ticketAnchor.getScene();
         float aspectRatio = (float) scene.getWidth() / (float) scene.getHeight();
         float pdfWidth = 595;
@@ -151,12 +150,13 @@ public class TicketWindowController implements Initializable {
                 desktop.open(outputFile);
             }
         }
-
-        // Stage close
         Stage stage = (Stage) ticketAnchor.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ticketLine.setStrokeWidth(2);

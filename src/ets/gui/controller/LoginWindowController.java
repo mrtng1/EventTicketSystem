@@ -5,11 +5,9 @@ import ets.be.Coordinator;
 import ets.gui.model.AdminModel;
 import ets.gui.model.CoordinatorModel;
 import ets.gui.util.MessagePopup;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -29,14 +27,20 @@ import java.util.ResourceBundle;
  */
 public class LoginWindowController implements Initializable {
 
+    // instance variables with @FXML
     @FXML
     private AnchorPane loginAnchorPane;
     @FXML
     private TextField passwordField, nameField;
+
+    // instance variables
     private AdminModel adminModel;
     private CoordinatorModel coordinatorModel;
 
-    public void loginButtonClicked(ActionEvent actionEvent) {
+    /**
+     * Login method - allows user to log in either as an admin or as a coordinator
+     */
+    public void logIn() {
         String inputUsername = nameField.getText();
         String inputPassword = passwordField.getText();
 
@@ -45,23 +49,23 @@ public class LoginWindowController implements Initializable {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/admin_window.fxml"));
                 Parent root = fxmlLoader.load();
                 Stage stage = new Stage();
+                stage.setResizable(false);
                 stage.setScene(new Scene(root));
                 stage.setTitle("Admin Window");
                 stage.show();
 
-                // Close the login window
                 Stage currentStage = (Stage) loginAnchorPane.getScene().getWindow();
                 currentStage.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
         else if (coordinatorModel.isValidCoordinator(inputUsername, inputPassword)) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/coordinator_window.fxml"));
                 Parent root = fxmlLoader.load();
                 Stage stage = new Stage();
+                stage.setResizable(false);
                 stage.setScene(new Scene(root));
                 stage.setTitle("Coordinator Window");
                 stage.show();
@@ -73,8 +77,8 @@ public class LoginWindowController implements Initializable {
                 CoordinatorWindowController controller = fxmlLoader.getController();
                 controller.setCoordinator(loggedInCoordinator);
 
-                // Close the login window if you need to
-                ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+                Stage currentStage = (Stage) loginAnchorPane.getScene().getWindow();
+                currentStage.close();
             } catch (IOException | SQLException e) {
                 e.printStackTrace();
             }
@@ -84,6 +88,9 @@ public class LoginWindowController implements Initializable {
         }
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         adminModel = new AdminModel();

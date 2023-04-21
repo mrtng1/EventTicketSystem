@@ -4,43 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Working tickets">
-      <change afterPath="$PROJECT_DIR$/src/ets/dal/db/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/coupon_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ets/gui/view/images/icons/customers_icon.png" afterDir="false" />
+    <list default="true" id="a0e60ca7-62c9-41b8-b543-f668b64bdc9a" name="Changes" comment="Class">
+      <change afterPath="$PROJECT_DIR$/tickets/TicketSepar concert_Hello.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/AdminLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/AdminLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/CoordinatorLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/CoordinatorLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/CustomerLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/CustomerLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/EventLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/EventLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/TicketLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/bll/TicketLogic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/AdminDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/CoordinatorDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/CustomerDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/EventDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/dal/TicketDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/AdminWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/AdminWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CoordinatorWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CoordinatorWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CouponWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/CouponWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventCardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/EventInfoWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/LoginWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/LoginWindowController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/TicketWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/TicketWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_coupon_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_coupon_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/AdminLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/logic/AdminLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/CoordinatorLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/logic/CoordinatorLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/CustomerLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/logic/CustomerLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/EventLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/logic/EventLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/bll/TicketLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/bll/logic/TicketLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/AdminDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/dao/AdminDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/db/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/CoordinatorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/dao/CoordinatorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/dal/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/dal/dao/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/AdminModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/AdminModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CoordinatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/CustomerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/CustomerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/EventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/model/TicketModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/model/TicketModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coupon_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coupon_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCoordinatorWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCoordinatorWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCouponWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCouponWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCustomerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateCustomerWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController$CustomSpinnerValueFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/controller/create/CreateEventWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/coupon_preview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/coupon_preview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_customer_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_customer_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/create_event_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/login_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EventTicketSystem/ets/gui/view/login_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/AdminWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/CouponWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/CouponWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/EventInfoWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/LoginWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/TicketWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCoordinatorWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCouponWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCouponWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateCustomerWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/controller/create/CreateEventWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/coupon_preview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/coupon_preview.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_coordinator_window.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_customer_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_customer_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/TicketSepar concert_Tomas Dracka.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/create_event_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/event_info_window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ets/gui/view/login_window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +199,7 @@
       <workItem from="1681819978058" duration="1249000" />
       <workItem from="1681894581170" duration="23324000" />
       <workItem from="1682025589244" duration="666000" />
-      <workItem from="1682029008486" duration="412000" />
+      <workItem from="1682029008486" duration="6581000" />
     </task>
     <task id="LOCAL-00001" summary="eventCard.fxml fixes">
       <created>1679436883233</created>
@@ -384,7 +390,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681911816463</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Ready to GitHub">
+      <created>1682029561808</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1682029561808</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Class">
+      <created>1682029572827</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682029572827</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +412,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="eventCard.fxml fixes" />
     <MESSAGE value="22.3.2023 - 9:33 push" />
     <MESSAGE value="los custom" />
     <MESSAGE value="neviem" />
@@ -416,6 +435,8 @@
     <MESSAGE value="PDF maker" />
     <MESSAGE value="push" />
     <MESSAGE value="Working tickets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working tickets" />
+    <MESSAGE value="Ready to GitHub" />
+    <MESSAGE value="Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Class" />
   </component>
 </project>

@@ -37,10 +37,13 @@ import java.util.ResourceBundle;
  */
 public class CoordinatorWindowController implements Initializable {
 
+    // instance variables with @FXML
     @FXML
     private ScrollPane scrollPane;
     @FXML
     private GridPane eventPane;
+
+    // instance variables
     private Coordinator coordinator;
     private int currentPage, totalPages;
 
@@ -53,8 +56,10 @@ public class CoordinatorWindowController implements Initializable {
         }
     }
 
-    @FXML
-    private void viewEvents() {
+    /**
+     * View Events - shows the events with a scroll animation
+     */
+    public void viewEvents() {
         double startValue = scrollPane.getVvalue();
         double endValue = startValue + 1;
         Timeline timeline = new Timeline(
@@ -65,8 +70,10 @@ public class CoordinatorWindowController implements Initializable {
         timeline.play();
     }
 
-    @FXML
-    private void createCoordinator(){
+    /**
+     * Create Coordinator method - opens the create_coordinator_window.fxml
+     */
+    public void createCoordinator(){
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
@@ -88,6 +95,9 @@ public class CoordinatorWindowController implements Initializable {
         }
     }
 
+    /**
+     * Refresh Event Cards method - refresh events
+     */
     public void refreshEventCards() {
         try {
             eventPane.getChildren().clear();
@@ -97,6 +107,9 @@ public class CoordinatorWindowController implements Initializable {
         }
     }
 
+    /**
+     * Populate Grid Pane method - spawn events into the gird pane
+     */
     private void populateGridPane(Coordinator coordinator) throws IOException {
         EventModel eventModel = new EventModel();
         List<Event> events;
@@ -126,10 +139,8 @@ public class CoordinatorWindowController implements Initializable {
                 Pane pane = new Pane();
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
-
-                // Pass both Event and EventModel instances to the constructor, and add the callback
                 fxmlLoader.setControllerFactory(clazz -> {
-                    EventCardController controller = new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this);
+                    EventCardController controller = new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel);
                     controller.setOnDeleteEventCallback(deletedEvent -> refreshEventCards());
                     return controller;
                 });
@@ -140,22 +151,29 @@ public class CoordinatorWindowController implements Initializable {
         }
     }
 
-    @FXML
-    private void previousPage() {
+    /**
+     * Previous Page method - go to the previous page
+     */
+    public void previousPage() {
         if (currentPage > 0) {
             currentPage--;
             refreshEventCards();
         }
     }
 
-    @FXML
-    private void nextPage() {
+    /**
+     * Next Page method - go to the next page
+     */
+    public void nextPage() {
         if (currentPage < totalPages - 1) {
             currentPage++;
             refreshEventCards();
         }
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {

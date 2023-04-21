@@ -58,8 +58,8 @@
                   <Insets bottom="30.0" />
                </padding>
             </VBox>
-            <Button layoutX="89.0" layoutY="407.0" mnemonicParsing="false" onAction="#createBtn" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
-            <Button layoutX="163.0" layoutY="407.0" mnemonicParsing="false" onAction="#cancelBtn" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
+            <Button layoutX="89.0" layoutY="407.0" mnemonicParsing="false" onAction="#createEvent" stylesheets="@styles/popupStyle.css" text="CREATE" textFill="#686868" />
+            <Button layoutX="163.0" layoutY="407.0" mnemonicParsing="false" onAction="#cancel" stylesheets="@styles/popupStyle.css" text="CANCEL" textFill="#686868" />
          </children>
          <effect>
             <DropShadow />

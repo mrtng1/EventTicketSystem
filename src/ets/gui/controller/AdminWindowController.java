@@ -21,6 +21,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+// java imports
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -33,15 +34,19 @@ import java.util.ResourceBundle;
  */
 public class AdminWindowController implements Initializable {
 
+    // instance variables with @FXML
     @FXML
     private ScrollPane scrollPane;
     @FXML
     private GridPane gridPane;
 
+    // instance variables
     private int currentPage, totalPages;
 
-    @FXML
-    private void viewEvents() {
+    /**
+     * View Events - shows the events with a scroll animation
+     */
+    public void viewEvents() {
         double startValue = scrollPane.getVvalue();
         double endValue = startValue + 1;
         Timeline timeline = new Timeline(
@@ -52,8 +57,10 @@ public class AdminWindowController implements Initializable {
         timeline.play();
     }
 
-    @FXML
-    private void createEvent() {
+    /**
+     * Create Event method - opens the create_event_window.fxml
+     */
+    public void createEvent() {
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
 
         try {
@@ -67,29 +74,28 @@ public class AdminWindowController implements Initializable {
             Scene scene = new Scene(createEventParent);
             stage.setScene(scene);
 
-            // Set the model for the CreateEventWindowController
             CreateEventWindowController createEventWindowController = fxmlLoader.getController();
             createEventWindowController.setEventModel(new EventModel());
             createEventWindowController.setCoordinatorModel(new CoordinatorModel());
             createEventWindowController.setRefreshCallback(this::refreshEventCards);
             createEventWindowController.setScrollPane(scrollPane);
             createEventWindowController.setOnCloseRequestHandler(stage);
-
-
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    @FXML
-    private void createCoordinator(){
+    /**
+     * Create Coordinator method - opens the create_coordinator_window.fxml
+     */
+    public void createCoordinator(){
         BlurEffectUtil.applyBlurEffect(scrollPane, 10);
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/create_coordinator_window.fxml"));
             Parent createEventParent = fxmlLoader.load();
 
-            // Create a new stage and scene
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setResizable(false);
@@ -100,13 +106,15 @@ public class AdminWindowController implements Initializable {
             createCoordinatorWindowController.setModel(new CoordinatorModel());
             createCoordinatorWindowController.setScrollPane(scrollPane);
             createCoordinatorWindowController.setOnCloseRequestHandler(stage);
-
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Refresh Event Cards method - refresh events
+     */
     public void refreshEventCards() {
         try {
             gridPane.getChildren().clear();
@@ -116,6 +124,9 @@ public class AdminWindowController implements Initializable {
         }
     }
 
+    /**
+     * Populate Grid Pane method - spawn events into the gird pane
+     */
     private void populateGridPane() throws IOException {
         EventModel eventModel = new EventModel();
         List<Event> events;
@@ -139,7 +150,6 @@ public class AdminWindowController implements Initializable {
 
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ets/gui/view/event_card.fxml"));
 
-                // Pass both Event and EventModel instances to the constructor
                 fxmlLoader.setControllerFactory(clazz -> {
                     EventCardController controller = new EventCardController(events.get(eventIndex), scrollPane, new CustomerModel(), eventModel, this);
                     controller.setOnDeleteEventCallback(deletedEvent -> refreshEventCards());
@@ -152,22 +162,29 @@ public class AdminWindowController implements Initializable {
         }
     }
 
-    @FXML
-    private void previousPage() {
+    /**
+     * Previous Page method - go to the previous page
+     */
+    public void previousPage() {
         if (currentPage > 0) {
             currentPage--;
             refreshEventCards();
         }
     }
 
-    @FXML
-    private void nextPage() {
+    /**
+     * Next Page method - go to the next page
+     */
+    public void nextPage() {
         if (currentPage < totalPages - 1) {
             currentPage++;
             refreshEventCards();
         }
     }
 
+    /**
+     * Initialize method
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         currentPage = 0;
